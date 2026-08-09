@@ -7,6 +7,7 @@
 <title>الصفوف الدراسية - أساس التمريض</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -22,8 +23,14 @@ body{
 header{
     background:linear-gradient(135deg,#0b5d3b,#16804f);
     color:white;
-    padding:25px 15px;
     text-align:center;
+    padding:28px 15px;
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
+}
+
+header .icon{
+    font-size:50px;
+    margin-bottom:10px;
 }
 
 header h1{
@@ -36,24 +43,24 @@ header p{
 }
 
 .container{
-    max-width:900px;
+    max-width:1000px;
     margin:30px auto;
     padding:0 15px;
 }
 
 .back{
     display:inline-block;
-    margin-bottom:20px;
     color:#0b5d3b;
     text-decoration:none;
     font-weight:bold;
+    margin-bottom:25px;
 }
 
 .title{
     text-align:center;
     color:#0b5d3b;
+    font-size:28px;
     margin-bottom:25px;
-    font-size:27px;
 }
 
 .cards{
@@ -64,14 +71,19 @@ header p{
 
 .card{
     background:white;
-    padding:30px 20px;
     border-radius:18px;
+    padding:30px 20px;
     text-align:center;
     box-shadow:0 4px 15px rgba(0,0,0,.08);
     border:1px solid #e5eee8;
+    transition:.2s;
 }
 
-.icon{
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.card-icon{
     font-size:50px;
     margin-bottom:15px;
 }
@@ -87,7 +99,7 @@ header p{
     margin-bottom:20px;
 }
 
-.card a{
+.btn{
     display:inline-block;
     background:#0b5d3b;
     color:white;
@@ -97,64 +109,142 @@ header p{
     font-weight:bold;
 }
 
+.btn:hover{
+    background:#084a2f;
+}
+
 footer{
-    margin-top:50px;
     background:#083f29;
     color:white;
     text-align:center;
-    padding:25px 10px;
+    padding:25px 15px;
+    margin-top:50px;
     line-height:1.8;
 }
+
+@media(max-width:600px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:27px;
+    }
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>🩺 أساس التمريض</h1>
-    <p>الصفوف الدراسية</p>
+
+<div class="icon">🎓</div>
+
+<h1>الصفوف الدراسية</h1>
+
+<p>أساس التمريض - اختر صفك الدراسي</p>
+
 </header>
+
 
 <div class="container">
 
-    <a class="back" href="index.html">← العودة للرئيسية</a>
+<a href="index.html" class="back">
+← العودة للرئيسية
+</a>
 
-    <h2 class="title">🎓 اختر صفك الدراسي</h2>
+<h2 class="title">
+📚 اختر صفك الدراسي
+</h2>
 
-    <div class="cards">
 
-        <div class="card">
-            <div class="icon">👨‍⚕️</div>
-            <h2>الصف الأول</h2>
-            <p>المحاضرات والمواد التعليمية الخاصة بالصف الأول.</p>
-            <a href="#">دخول الصف</a>
-        </div>
+<div class="cards">
 
-        <div class="card">
-            <div class="icon">🩺</div>
-            <h2>الصف الثاني</h2>
-            <p>المحاضرات والمواد التعليمية الخاصة بالصف الثاني.</p>
-            <a href="#">دخول الصف</a>
-        </div>
 
-        <div class="card">
-            <div class="icon">👩‍⚕️</div>
-            <h2>الصف الثالث</h2>
-            <p>المحاضرات والمواد التعليمية الخاصة بالصف الثالث.</p>
-            <a href="#">دخول الصف</a>
-        </div>
+<!-- الصف الأول -->
 
-    </div>
+<div class="card">
+
+<div class="card-icon">
+👨‍⚕️
+</div>
+
+<h2>الصف الأول</h2>
+
+<p>
+المواد والمحاضرات والمذكرات الخاصة بطلاب الصف الأول.
+</p>
+
+<a href="first-year.html" class="btn">
+دخول الصف
+</a>
 
 </div>
 
+
+<!-- الصف الثاني -->
+
+<div class="card">
+
+<div class="card-icon">
+🩺
+</div>
+
+<h2>الصف الثاني</h2>
+
+<p>
+المواد والمحاضرات والمذكرات الخاصة بطلاب الصف الثاني.
+</p>
+
+<a href="#" class="btn">
+قريبًا
+</a>
+
+</div>
+
+
+<!-- الصف الثالث -->
+
+<div class="card">
+
+<div class="card-icon">
+👩‍⚕️
+</div>
+
+<h2>الصف الثالث</h2>
+
+<p>
+المواد والمحاضرات والمذكرات الخاصة بطلاب الصف الثالث.
+</p>
+
+<a href="#" class="btn">
+قريبًا
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+
 <footer>
-    <strong>🩺 أساس التمريض</strong>
-    <br>
-    منصتك التعليمية لطلاب التمريض
-    <br>
-    © 2026 أساس التمريض
+
+<strong>🩺 أساس التمريض</strong>
+
+<br>
+
+منصتك التعليمية لطلاب التمريض
+
+<br>
+
+© 2026 أساس التمريض
+
 </footer>
 
 </body>
-              </html>
+    </html>
