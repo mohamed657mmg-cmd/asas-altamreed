@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>أساس التمريض</title>
+<title>أساس التمريض - المنصة التعليمية</title>
 
 <style>
 
@@ -15,7 +16,7 @@
 }
 
 body{
-    font-family:Arial, Tahoma, sans-serif;
+    font-family:Arial,Tahoma,sans-serif;
     background:#f4f7f5;
     color:#222;
 }
@@ -23,120 +24,56 @@ body{
 header{
     background:linear-gradient(135deg,#0b5d3b,#16804f);
     color:white;
-    padding:18px 20px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 3px 12px rgba(0,0,0,.15);
-}
-
-.header-content{
-    max-width:1100px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
+    text-align:center;
+    padding:45px 15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
 .logo{
-    font-size:24px;
-    font-weight:bold;
-}
-
-.logo span{
-    display:block;
-    font-size:13px;
-    font-weight:normal;
-    margin-top:5px;
-    opacity:.9;
-}
-
-.menu-btn{
-    background:rgba(255,255,255,.15);
-    border:1px solid rgba(255,255,255,.3);
-    color:white;
-    padding:9px 12px;
-    border-radius:8px;
-    font-size:20px;
-    cursor:pointer;
-}
-
-nav{
-    background:white;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
-}
-
-.nav-content{
-    max-width:1100px;
-    margin:auto;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-nav a{
-    color:#145c3b;
-    text-decoration:none;
-    padding:15px 18px;
-    font-weight:bold;
-    transition:.2s;
-}
-
-nav a:hover{
-    background:#eaf5ef;
-}
-
-.hero{
-    max-width:1100px;
-    margin:30px auto;
-    padding:50px 25px;
-    background:linear-gradient(135deg,#e6f5ec,#f8fffb);
-    border-radius:20px;
-    text-align:center;
-}
-
-.hero .icon{
-    font-size:55px;
-    margin-bottom:15px;
-}
-
-.hero h1{
-    color:#0b5d3b;
-    font-size:34px;
+    font-size:65px;
     margin-bottom:12px;
 }
 
-.hero p{
-    color:#555;
-    font-size:18px;
-    line-height:1.9;
-    max-width:700px;
-    margin:auto;
+header h1{
+    font-size:34px;
+    margin-bottom:10px;
 }
 
-.hero-btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:13px 25px;
-    background:#0b5d3b;
-    color:white;
-    text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
+header p{
+    font-size:16px;
+    line-height:1.8;
 }
 
 .container{
-    max-width:1100px;
-    margin:auto;
-    padding:10px 20px 40px;
+    max-width:1000px;
+    margin:35px auto;
+    padding:0 15px;
+}
+
+.welcome{
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+    margin-bottom:30px;
+}
+
+.welcome h2{
+    color:#0b5d3b;
+    margin-bottom:10px;
+}
+
+.welcome p{
+    color:#666;
+    line-height:1.8;
 }
 
 .title{
     text-align:center;
     color:#0b5d3b;
-    margin:30px 0 22px;
-    font-size:26px;
+    font-size:27px;
+    margin-bottom:25px;
 }
 
 .cards{
@@ -147,21 +84,20 @@ nav a:hover{
 
 .card{
     background:white;
-    border-radius:15px;
-    padding:25px 20px;
+    border-radius:17px;
+    padding:28px 18px;
     text-align:center;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    border:1px solid #e5eee8;
     transition:.2s;
-    border:1px solid #e8eee9;
 }
 
 .card:hover{
     transform:translateY(-4px);
-    box-shadow:0 7px 18px rgba(0,0,0,.12);
 }
 
 .card-icon{
-    font-size:42px;
+    font-size:45px;
     margin-bottom:12px;
 }
 
@@ -172,30 +108,42 @@ nav a:hover{
 
 .card p{
     color:#666;
-    line-height:1.6;
+    line-height:1.7;
     font-size:14px;
+    margin-bottom:18px;
 }
 
-.card a{
+.btn{
     display:inline-block;
-    margin-top:15px;
-    color:#0b5d3b;
+    background:#0b5d3b;
+    color:white;
     text-decoration:none;
+    padding:11px 24px;
+    border-radius:10px;
     font-weight:bold;
 }
 
-.announcement{
-    background:white;
-    border-right:5px solid #0b5d3b;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 3px 10px rgba(0,0,0,.07);
-    margin-top:20px;
+.btn:hover{
+    background:#084a2f;
 }
 
-.announcement h3{
+.notice{
+    margin-top:30px;
+    background:white;
+    border-right:5px solid #0b5d3b;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,.06);
+}
+
+.notice h3{
     color:#0b5d3b;
     margin-bottom:8px;
+}
+
+.notice p{
+    color:#555;
+    line-height:1.8;
 }
 
 footer{
@@ -203,210 +151,222 @@ footer{
     color:white;
     text-align:center;
     padding:25px 15px;
-    margin-top:20px;
-}
-
-footer p{
-    margin:5px;
-    line-height:1.7;
+    margin-top:50px;
+    line-height:1.8;
 }
 
 @media(max-width:600px){
 
-    .header-content{
-        flex-direction:column;
-        text-align:center;
+    header h1{
+        font-size:29px;
     }
 
-    .nav-content{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    nav a{
-        text-align:center;
-        padding:12px 5px;
-        border-bottom:1px solid #eee;
-    }
-
-    .hero{
-        margin:20px 12px;
-        padding:35px 18px;
-    }
-
-    .hero h1{
-        font-size:28px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .container{
-        padding:5px 12px 30px;
+    .cards{
+        grid-template-columns:1fr;
     }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
+
 <header>
 
-<div class="header-content">
-
 <div class="logo">
-🩺 أساس التمريض
-<span>منصتك التعليمية لطلاب التمريض</span>
+🩺
 </div>
 
-<button class="menu-btn">☰</button>
+<h1>أساس التمريض</h1>
 
-</div>
+<p>
+منصتك التعليمية لطلاب التمريض
+</p>
 
 </header>
 
 
-<nav>
+<div class="container">
 
-<div class="nav-content">
 
-<a href="index.html">🏠 الرئيسية</a>
+<div class="welcome">
 
-<a href="classes.html">🎓 الصفوف</a>
-    
-<a href="#lectures">📚 المحاضرات</a>
+<h2>
+👋 أهلًا بيكم في أساس التمريض
+</h2>
 
-<a href="#schedule">📅 الجدول</a>
-
-<a href="#exams">📝 الاختبارات</a>
-
-<a href="#announcements">📢 الإعلانات</a>
+<p>
+منصة تعليمية تهدف إلى توفير محتوى تعليمي منظم
+يساعد طلاب التمريض في الوصول إلى المواد والمحاضرات
+والمذكرات والملفات التعليمية بسهولة.
+</p>
 
 </div>
 
-</nav>
+
+<h2 class="title">
+📚 أقسام المنصة
+</h2>
 
 
-<section class="hero">
+<div class="cards">
 
-<div class="icon">🩺</div>
 
-<h1>أهلًا بك في أساس التمريض</h1>
+<!-- الصفوف -->
+
+<div class="card">
+
+<div class="card-icon">
+🎓
+</div>
+
+<h3>
+الصفوف الدراسية
+</h3>
 
 <p>
-منصة تعليمية متخصصة لطلاب التمريض،
-تجمع المحاضرات والمواد الدراسية والجداول
-والاختبارات في مكان واحد بطريقة بسيطة ومنظمة.
+اختر الصف الدراسي للوصول إلى المحتوى الخاص به.
 </p>
 
-<a href="#classes" class="hero-btn">
-ابدأ التعلم الآن
+<a href="classes.html" class="btn">
+دخول
 </a>
 
-</section>
+</div>
 
 
-<section class="container" id="classes">
-
-<h2 class="title">🎓 الصفوف الدراسية</h2>
-
-<div class="cards">
+<!-- جدول المحاضرات -->
 
 <div class="card">
-<div class="card-icon">👨‍⚕️</div>
-<h3>الصف الأول</h3>
-<p>المواد والمحاضرات الخاصة بطلاب الصف الأول.</p>
-<a href="#">دخول الصف ←</a>
+
+<div class="card-icon">
+📅
 </div>
 
-<div class="card">
-<div class="card-icon">🩺</div>
-<h3>الصف الثاني</h3>
-<p>المواد والمحاضرات الخاصة بطلاب الصف الثاني.</p>
-<a href="#">دخول الصف ←</a>
-</div>
-
-<div class="card">
-<div class="card-icon">👩‍⚕️</div>
-<h3>الصف الثالث</h3>
-<p>المواد والمحاضرات الخاصة بطلاب الصف الثالث.</p>
-<a href="#">دخول الصف ←</a>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="container">
-
-<h2 class="title">📚 خدمات المنصة</h2>
-
-<div class="cards">
-
-<div class="card" id="lectures">
-<div class="card-icon">📖</div>
-<h3>المحاضرات</h3>
-<p>الوصول إلى المحاضرات التعليمية وتنظيمها حسب الصف والمادة.</p>
-<a href="#">عرض المحاضرات ←</a>
-</div>
-
-<div class="card" id="schedule">
-<div class="card-icon">📅</div>
-<h3>جدول المحاضرات</h3>
-<p>تابع مواعيد المحاضرات والدروس بشكل منظم.</p>
-<a href="#">عرض الجدول ←</a>
-</div>
-
-<div class="card" id="exams">
-<div class="card-icon">📝</div>
-<h3>الاختبارات</h3>
-<p>اختبارات وأسئلة تدريبية لمراجعة وفهم المحتوى.</p>
-<a href="#">دخول الاختبارات ←</a>
-</div>
-
-<div class="card">
-<div class="card-icon">📄</div>
-<h3>المذكرات والملفات</h3>
-<p>مكان مخصص للمذكرات والملفات التعليمية.</p>
-<a href="#">عرض الملفات ←</a>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="container" id="announcements">
-
-<h2 class="title">📢 آخر الإعلانات</h2>
-
-<div class="announcement">
-
-<h3>مرحبًا بكم في منصة أساس التمريض</h3>
+<h3>
+جدول المحاضرات
+</h3>
 
 <p>
-تابعوا المنصة باستمرار لمعرفة أحدث المحاضرات
-والجداول والمواد التعليمية والإعلانات الجديدة.
+سيتم إضافة جدول المحاضرات هنا لاحقًا.
+</p>
+
+<span class="btn">
+قريبًا
+</span>
+
+</div>
+
+
+<!-- الإعلانات -->
+
+<div class="card">
+
+<div class="card-icon">
+📢
+</div>
+
+<h3>
+الإعلانات
+</h3>
+
+<p>
+تابع أهم الإعلانات والتنبيهات الخاصة بالمنصة.
+</p>
+
+<span class="btn">
+قريبًا
+</span>
+
+</div>
+
+
+<!-- عن المنصة -->
+
+<div class="card">
+
+<div class="card-icon">
+ℹ️
+</div>
+
+<h3>
+عن المنصة
+</h3>
+
+<p>
+تعرف على منصة أساس التمريض وأهدافها.
+</p>
+
+<span class="btn">
+قريبًا
+</span>
+
+</div>
+
+
+<!-- تواصل معنا -->
+
+<div class="card">
+
+<div class="card-icon">
+📞
+</div>
+
+<h3>
+تواصل معنا
+</h3>
+
+<p>
+سيتم إضافة طرق التواصل مع إدارة المنصة.
+</p>
+
+<span class="btn">
+قريبًا
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="notice">
+
+<h3>
+💡 المنصة قيد التجهيز
+</h3>
+
+<p>
+يتم حاليًا تجهيز المنصة وتنظيم أقسامها،
+وسيتم إضافة المحتوى التعليمي تدريجيًا.
 </p>
 
 </div>
 
-</section>
+
+</div>
 
 
 <footer>
 
-<p><strong>🩺 أساس التمريض</strong></p>
+<strong>
+🩺 أساس التمريض
+</strong>
 
-<p>منصتك التعليمية لطلاب التمريض</p>
+<br>
 
-<p>© 2026 أساس التمريض - جميع الحقوق محفوظة</p>
+منصتك التعليمية لطلاب التمريض
+
+<br>
+
+© 2026 أساس التمريض
 
 </footer>
 
+
 </body>
+
     </html>
