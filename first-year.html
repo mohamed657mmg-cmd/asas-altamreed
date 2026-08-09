@@ -25,12 +25,12 @@ header{
     background:linear-gradient(135deg,#0b5d3b,#16804f);
     color:white;
     text-align:center;
-    padding:30px 15px;
-    box-shadow:0 3px 12px rgba(0,0,0,.15);
+    padding:35px 15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
-header .icon{
-    font-size:50px;
+.icon{
+    font-size:55px;
     margin-bottom:10px;
 }
 
@@ -45,7 +45,7 @@ header p{
 
 .container{
     max-width:1000px;
-    margin:30px auto;
+    margin:35px auto;
     padding:0 15px;
 }
 
@@ -72,58 +72,41 @@ header p{
 
 .card{
     background:white;
-    border-radius:17px;
+    border-radius:18px;
     padding:28px 18px;
     text-align:center;
-    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
     border:1px solid #e5eee8;
 }
 
 .card-icon{
-    font-size:45px;
+    font-size:50px;
     margin-bottom:12px;
 }
 
 .card h2{
     color:#0b5d3b;
-    font-size:20px;
     margin-bottom:10px;
 }
 
 .card p{
     color:#666;
     line-height:1.7;
-    font-size:14px;
     margin-bottom:18px;
 }
 
-.soon{
+.btn{
     display:inline-block;
-    background:#eaf5ef;
-    color:#0b5d3b;
-    padding:9px 18px;
-    border-radius:9px;
+    background:#0b5d3b;
+    color:white;
+    text-decoration:none;
+    padding:11px 22px;
+    border-radius:10px;
     font-weight:bold;
-    font-size:14px;
 }
 
-.info{
-    margin-top:30px;
-    background:white;
-    border-right:5px solid #0b5d3b;
-    border-radius:12px;
-    padding:20px;
-    box-shadow:0 3px 10px rgba(0,0,0,.07);
-}
-
-.info h3{
-    color:#0b5d3b;
-    margin-bottom:8px;
-}
-
-.info p{
-    color:#555;
-    line-height:1.8;
+.btn:hover{
+    background:#084a2f;
 }
 
 footer{
@@ -131,18 +114,18 @@ footer{
     color:white;
     text-align:center;
     padding:25px 15px;
-    margin-top:50px;
+    margin-top:60px;
     line-height:1.8;
 }
 
 @media(max-width:600px){
 
-    header h1{
-        font-size:27px;
-    }
-
     .cards{
         grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:27px;
     }
 
 }
@@ -155,11 +138,17 @@ footer{
 
 <header>
 
-<div class="icon">👨‍⚕️</div>
+<div class="icon">
+🎓
+</div>
 
-<h1>الصف الأول</h1>
+<h1>
+الصف الأول
+</h1>
 
-<p>أساس التمريض - المنصة التعليمية</p>
+<p>
+أساس التمريض - محتوى الصف الأول
+</p>
 
 </header>
 
@@ -167,11 +156,11 @@ footer{
 <div class="container">
 
 <a href="classes.html" class="back">
-← العودة إلى الصفوف
+← العودة للصفوف الدراسية
 </a>
 
 <h2 class="title">
-📚 محتوى الصف الأول
+📚 أقسام الصف الأول
 </h2>
 
 
@@ -182,17 +171,21 @@ footer{
 
 <div class="card">
 
-<div class="card-icon">📚</div>
+<div class="card-icon">
+📚
+</div>
 
-<h2>المواد الدراسية</h2>
+<h2>
+المواد الدراسية
+</h2>
 
 <p>
-هنا سيتم إضافة المواد الدراسية الخاصة بالصف الأول.
+تعرف على المواد الدراسية الخاصة بالصف الأول.
 </p>
 
-<span class="soon">
-سيتم الإضافة قريبًا
-</span>
+<a href="first-year-subjects.html" class="btn">
+دخول
+</a>
 
 </div>
 
@@ -201,16 +194,20 @@ footer{
 
 <div class="card">
 
-<div class="card-icon">🎓</div>
+<div class="card-icon">
+🎓
+</div>
 
-<h2>المحاضرات</h2>
+<h2>
+المحاضرات
+</h2>
 
 <p>
-هنا سيتم إضافة المحاضرات التعليمية الخاصة بالصف الأول.
+سيتم إضافة المحاضرات الخاصة بالصف الأول هنا.
 </p>
 
-<span class="soon">
-سيتم الإضافة قريبًا
+<span class="btn">
+قريبًا
 </span>
 
 </div>
@@ -220,35 +217,20 @@ footer{
 
 <div class="card">
 
-<div class="card-icon">📄</div>
-
-<h2>المذكرات والملفات</h2>
-
-<p>
-هنا سيتم إضافة المذكرات والملفات التعليمية.
-</p>
-
-<span class="soon">
-سيتم الإضافة قريبًا
-</span>
-
+<div class="card-icon">
+📄
 </div>
 
-
-<!-- جدول المحاضرات -->
-
-<div class="card">
-
-<div class="card-icon">📅</div>
-
-<h2>جدول المحاضرات</h2>
+<h2>
+المذكرات والملفات
+</h2>
 
 <p>
-هنا سيتم إضافة جدول المحاضرات الخاص بالصف الأول.
+سيتم إضافة المذكرات والملفات التعليمية هنا.
 </p>
 
-<span class="soon">
-سيتم الإضافة قريبًا
+<span class="btn">
+قريبًا
 </span>
 
 </div>
@@ -258,51 +240,47 @@ footer{
 
 <div class="card">
 
-<div class="card-icon">📝</div>
+<div class="card-icon">
+📝
+</div>
 
-<h2>الاختبارات</h2>
+<h2>
+الاختبارات
+</h2>
 
 <p>
-هنا سيتم إضافة الاختبارات والأسئلة التدريبية.
+سيتم إضافة الاختبارات الخاصة بالصف الأول لاحقًا.
 </p>
 
-<span class="soon">
-سيتم الإضافة قريبًا
+<span class="btn">
+قريبًا
 </span>
 
 </div>
 
 
-<!-- الإعلانات -->
+<!-- جدول المحاضرات -->
 
 <div class="card">
 
-<div class="card-icon">📢</div>
+<div class="card-icon">
+📅
+</div>
 
-<h2>الإعلانات</h2>
+<h2>
+جدول المحاضرات
+</h2>
 
 <p>
-هنا سيتم إضافة الإعلانات والتنبيهات الخاصة بالصف الأول.
+يمكنك متابعة جدول المحاضرات عند توفره.
 </p>
 
-<span class="soon">
-سيتم الإضافة قريبًا
-</span>
+<a href="schedule.html" class="btn">
+دخول
+</a>
 
 </div>
 
-
-</div>
-
-
-<div class="info">
-
-<h3>💡 قريبًا</h3>
-
-<p>
-يتم تجهيز محتوى المنصة حاليًا. سيتم إضافة المواد والمحاضرات
-والمذكرات والاختبارات والجداول والإعلانات تدريجيًا.
-</p>
 
 </div>
 
@@ -311,7 +289,9 @@ footer{
 
 <footer>
 
-<strong>🩺 أساس التمريض</strong>
+<strong>
+🩺 أساس التمريض
+</strong>
 
 <br>
 
