@@ -57,42 +57,47 @@ header p{
     margin-bottom:30px;
 }
 
-.section-title{
+.title{
     text-align:center;
     color:#0b5d3b;
-    font-size:26px;
-    margin:30px 0 20px;
+    font-size:28px;
+    margin-bottom:25px;
 }
 
-.subjects{
+.sections{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;
 }
 
-.subject{
+.section{
     background:white;
-    border-radius:18px;
-    padding:28px 18px;
+    border-radius:20px;
+    padding:35px 20px;
     text-align:center;
     box-shadow:0 4px 15px rgba(0,0,0,.08);
     border:1px solid #e5eee8;
+    transition:.2s;
 }
 
-.subject-icon{
-    font-size:50px;
+.section:hover{
+    transform:translateY(-5px);
+}
+
+.section-icon{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.section h2{
+    color:#0b5d3b;
     margin-bottom:12px;
 }
 
-.subject h2{
-    color:#0b5d3b;
-    margin-bottom:10px;
-}
-
-.subject p{
+.section p{
     color:#666;
-    line-height:1.7;
-    margin-bottom:18px;
+    line-height:1.8;
+    margin-bottom:20px;
 }
 
 .btn{
@@ -100,9 +105,13 @@ header p{
     background:#0b5d3b;
     color:white;
     text-decoration:none;
-    padding:11px 22px;
+    padding:12px 28px;
     border-radius:10px;
     font-weight:bold;
+}
+
+.btn:hover{
+    background:#084a2f;
 }
 
 footer{
@@ -112,6 +121,18 @@ footer{
     padding:25px 15px;
     margin-top:60px;
     line-height:1.8;
+}
+
+@media(max-width:600px){
+
+    .sections{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:27px;
+    }
+
 }
 
 </style>
@@ -143,192 +164,56 @@ footer{
 ← العودة للصف الأول
 </a>
 
+<h2 class="title">
+📚 أقسام المواد الدراسية
+</h2>
+
+
+<div class="sections">
+
 
 <!-- المواد التمريضية -->
 
-<h2 class="section-title">
-🩺 المواد التمريضية
-</h2>
+<div class="section">
 
-<div class="subjects">
-
-
-<div class="subject">
-
-<div class="subject-icon">
+<div class="section-icon">
 🩺
 </div>
 
 <h2>
-Foundations of Nursing
+المواد التمريضية
 </h2>
 
 <p>
-النظري
+المواد الخاصة بتخصص التمريض للصف الأول.
 </p>
 
-<span class="btn">
-قريبًا
-</span>
-
-</div>
-
-
-<div class="subject">
-
-<div class="subject-icon">
-👨‍⚕️
-</div>
-
-<h2>
-Foundations of Nursing
-</h2>
-
-<p>
-العملي
-</p>
-
-<span class="btn">
-قريبًا
-</span>
-
-</div>
-
-
-<div class="subject">
-
-<div class="subject-icon">
-🫀
-</div>
-
-<h2>
-Physiological Anatomy
-</h2>
-
-<p>
-التشريح الفسيولوجي
-</p>
-
-<span class="btn">
-قريبًا
-</span>
-
-</div>
-
+<a href="first-year-nursing-subjects.html" class="btn">
+دخول
+</a>
 
 </div>
 
 
 <!-- المواد الثقافية -->
 
-<h2 class="section-title">
-📚 المواد الثقافية
-</h2>
+<div class="section">
 
-<div class="subjects">
-
-
-<div class="subject">
-
-<div class="subject-icon">
-📖
+<div class="section-icon">
+📚
 </div>
 
 <h2>
-اللغة العربية
+المواد الثقافية
 </h2>
 
 <p>
-مادة اللغة العربية للصف الأول.
+المواد الثقافية المقررة لطلاب الصف الأول.
 </p>
 
-<span class="btn">
-قريبًا
-</span>
-
-</div>
-
-
-<div class="subject">
-
-<div class="subject-icon">
-🇬🇧
-</div>
-
-<h2>
-اللغة الإنجليزية
-</h2>
-
-<p>
-مادة اللغة الإنجليزية للصف الأول.
-</p>
-
-<span class="btn">
-قريبًا
-</span>
-
-</div>
-
-
-<div class="subject">
-
-<div class="subject-icon">
-🔬
-</div>
-
-<h2>
-العلوم المتكاملة
-</h2>
-
-<p>
-مادة العلوم المتكاملة للصف الأول.
-</p>
-
-<span class="btn">
-قريبًا
-</span>
-
-</div>
-
-
-<div class="subject">
-
-<div class="subject-icon">
-📐
-</div>
-
-<h2>
-الرياضيات
-</h2>
-
-<p>
-مادة الرياضيات للصف الأول.
-</p>
-
-<span class="btn">
-قريبًا
-</span>
-
-</div>
-
-
-<div class="subject">
-
-<div class="subject-icon">
-🌍
-</div>
-
-<h2>
-الدراسات
-</h2>
-
-<p>
-مادة الدراسات للصف الأول.
-</p>
-
-<span class="btn">
-قريبًا
-</span>
+<a href="first-year-cultural-subjects.html" class="btn">
+دخول
+</a>
 
 </div>
 
