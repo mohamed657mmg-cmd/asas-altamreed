@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>مساعد أساس التمريض AI</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Tahoma,sans-serif;
+    background:#f4f7f5;
+    color:#222;
+    min-height:100vh;
+}
+
+/* Header */
+
+header{
+    background:linear-gradient(135deg,#0b5d3b,#16804f);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.ai-icon{
+    font-size:55px;
+    margin-bottom:8px;
+}
+
+header h1{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+header p{
+    font-size:15px;
+    line-height:1.7;
+}
+
+/* Container */
+
+.container{
+    max-width:850px;
+    margin:30px auto;
+    padding:0 15px;
+}
+
+/* Back */
+
+.back{
+    display:inline-block;
+    color:#0b5d3b;
+    text-decoration:none;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.back:hover{
+    text-decoration:underline;
+}
+
+/* AI Card */
+
+.ai-box{
+    background:white;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    overflow:hidden;
+    border:1px solid #e5eee8;
+}
+
+/* Chat Header */
+
+.chat-header{
+    background:#eef8f2;
+    padding:18px;
+    text-align:center;
+    border-bottom:1px solid #dcebe2;
+}
+
+.chat-header h2{
+    color:#0b5d3b;
+    font-size:22px;
+    margin-bottom:6px;
+}
+
+.chat-header p{
+    color:#666;
+    font-size:14px;
+}
+
+/* Chat Area */
+
+.chat-area{
+    height:430px;
+    padding:20px;
+    overflow-y:auto;
+    background:#fafcfb;
+}
+
+/* Messages */
+
+.message{
+    display:flex;
+    margin-bottom:15px;
+}
+
+.message.ai{
+    justify-content:flex-start;
+}
+
+.message.user{
+    justify-content:flex-end;
+}
+
+.message-content{
+    max-width:75%;
+    padding:13px 16px;
+    border-radius:15px;
+    line-height:1.7;
+    font-size:15px;
+}
+
+.message.ai .message-content{
+    background:#e8f5ed;
+    color:#234;
+    border-bottom-right-radius:4px;
+}
+
+.message.user .message-content{
+    background:#0b5d3b;
+    color:white;
+    border-bottom-left-radius:4px;
+}
+
+/* Input */
+
+.input-area{
+    padding:15px;
+    background:white;
+    border-top:1px solid #e5eee8;
+}
+
+.input-box{
+    display:flex;
+    gap:10px;
+}
+
+.input-box textarea{
+    flex:1;
+    resize:none;
+    height:50px;
+    border:1px solid #ccdcd3;
+    border-radius:12px;
+    padding:13px;
+    font-family:Arial,Tahoma,sans-serif;
+    font-size:15px;
+    outline:none;
+}
+
+.input-box textarea:focus{
+    border-color:#16804f;
+}
+
+.send-btn{
+    border:none;
+    background:#0b5d3b;
+    color:white;
+    padding:0 20px;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.send-btn:hover{
+    background:#084a2f;
+}
+
+/* Suggestions */
+
+.suggestions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:12px;
+}
+
+.suggestion{
+    border:1px solid #b9d8c6;
+    background:#f5faf7;
+    color:#0b5d3b;
+    padding:7px 11px;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:12px;
+}
+
+.suggestion:hover{
+    background:#e8f5ed;
+}
+
+/* Notice */
+
+.notice{
+    margin-top:20px;
+    background:white;
+    border-right:5px solid #0b5d3b;
+    border-radius:12px;
+    padding:16px;
+    color:#555;
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* Footer */
+
+footer{
+    background:#083f29;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+    margin-top:50px;
+    line-height:1.8;
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:26px;
+    }
+
+    .chat-area{
+        height:400px;
+    }
+
+    .message-content{
+        max-width:88%;
+    }
+
+    .input-box{
+        flex-direction:column;
+    }
+
+    .send-btn{
+        height:45px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="ai-icon">
+🤖
+</div>
+
+<h1>
+مساعد أساس التمريض AI
+</h1>
+
+<p>
+مساعدك التعليمي لفهم ومراجعة مواد التمريض
+</p>
+
+</header>
+
+
+<div class="container">
+
+
+<a href="index.html" class="back">
+← العودة للصفحة الرئيسية
+</a>
+
+
+<div class="ai-box">
+
+
+<div class="chat-header">
+
+<h2>
+🤖 أهلًا بيك في مساعد أساس التمريض
+</h2>
+
+<p>
+اكتب سؤالك في الأسفل وسنساعدك في فهمه.
+</p>
+
+</div>
+
+
+<div class="chat-area" id="chatArea">
+
+
+<!-- رسالة المساعد -->
+
+<div class="message ai">
+
+<div class="message-content">
+
+👋 أهلًا بيك في <strong>مساعد أساس التمريض</strong>.
+
+<br>
+
+أنا موجود لمساعدتك في فهم ومراجعة المواد الدراسية بطريقة بسيطة.
+
+<br><br>
+
+اكتب سؤالك هنا 👇
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="input-area">
+
+
+<div class="input-box">
+
+<textarea
+id="userInput"
+placeholder="اكتب سؤالك هنا..."
+></textarea>
+
+<button
+class="send-btn"
+onclick="sendMessage()"
+>
+إرسال
+</button>
+
+</div>
+
+
+<div class="suggestions">
+
+<button
+class="suggestion"
+onclick="quickQuestion('اشرح لي هذا الدرس بطريقة بسيطة')"
+>
+📚 شرح درس
+</button>
+
+<button
+class="suggestion"
+onclick="quickQuestion('اعمل لي ملخص للشابتر')"
+>
+📝 تلخيص
+</button>
+
+<button
+class="suggestion"
+onclick="quickQuestion('اعمل لي أسئلة للمراجعة')"
+>
+❓ أسئلة مراجعة
+</button>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="notice">
+
+<strong>
+💡 ملاحظة:
+</strong>
+
+<br>
+
+المساعد مخصص للمساعدة في المذاكرة والفهم والمراجعة،
+ويجب الرجوع إلى المصادر الدراسية والمحاضر عند الحاجة.
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+<strong>
+🩺 أساس التمريض
+</strong>
+
+<br>
+
+منصتك التعليمية لطلاب التمريض
+
+<br>
+
+© 2026 أساس التمريض
+
+</footer>
+
+
+<script>
+
+/* إضافة رسالة */
+
+function addMessage(text,type){
+
+    const chatArea = document.getElementById("chatArea");
+
+    const message = document.createElement("div");
+
+    message.className = "message " + type;
+
+    const content = document.createElement("div");
+
+    content.className = "message-content";
+
+    content.textContent = text;
+
+    message.appendChild(content);
+
+    chatArea.appendChild(message);
+
+    chatArea.scrollTop = chatArea.scrollHeight;
+
+}
+
+
+/* إرسال السؤال */
+
+function sendMessage(){
+
+    const input = document.getElementById("userInput");
+
+    const text = input.value.trim();
+
+    if(text === ""){
+        return;
+    }
+
+    addMessage(text,"user");
+
+    input.value = "";
+
+    /*
+    النسخة الحالية تجريبية.
+    سيتم هنا لاحقًا ربط المساعد بالذكاء الاصطناعي الحقيقي.
+    */
+
+    setTimeout(function(){
+
+        addMessage(
+            "🤖 المساعد جاهز لاستقبال سؤالك. سيتم تفعيل الذكاء الاصطناعي الحقيقي في المرحلة القادمة.",
+            "ai"
+        );
+
+    },700);
+
+}
+
+
+/* الأسئلة الجاهزة */
+
+function quickQuestion(question){
+
+    const input = document.getElementById("userInput");
+
+    input.value = question;
+
+    input.focus();
+
+}
+
+
+/* إرسال بالضغط على Ctrl + Enter */
+
+document.getElementById("userInput").addEventListener("keydown",function(event){
+
+    if(event.ctrlKey && event.key === "Enter"){
+
+        sendMessage();
+
+    }
+
+});
+
+</script>
+
+
+</body>
+
+  </html>
