@@ -69,7 +69,6 @@ header{
     align-items:center;
     justify-content:center;
     font-size:38px;
-    box-shadow:inset 0 0 0 1px rgba(255,255,255,.15);
 }
 
 .brand h1{
@@ -317,8 +316,12 @@ header{
 }
 
 @keyframes blink{
-    0%,80%,100%{opacity:.2}
-    40%{opacity:1}
+    0%,80%,100%{
+        opacity:.2;
+    }
+    40%{
+        opacity:1;
+    }
 }
 
 /* ================= INPUT ================= */
@@ -519,11 +522,7 @@ footer strong{
 
 </head>
 
-
 <body>
-
-
-<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -559,10 +558,7 @@ footer strong{
 </header>
 
 
-<!-- ================= MAIN ================= -->
-
 <div class="container">
-
 
 <a href="index.html" class="back">
 ← العودة للصفحة الرئيسية
@@ -571,8 +567,6 @@ footer strong{
 
 <div class="ai-box">
 
-
-<!-- CHAT HEADER -->
 
 <div class="chat-top">
 
@@ -599,10 +593,7 @@ footer strong{
 </div>
 
 
-<!-- CHAT -->
-
 <div class="chat-area" id="chatArea">
-
 
 <div class="welcome-card">
 
@@ -637,13 +628,8 @@ footer strong{
 
 </div>
 
-
-<!-- الرسائل تظهر هنا -->
-
 </div>
 
-
-<!-- TYPING -->
 
 <div class="typing" id="typing">
 
@@ -660,8 +646,6 @@ footer strong{
 
 </div>
 
-
-<!-- INPUT -->
 
 <div class="input-area">
 
@@ -688,7 +672,6 @@ title="إرسال"
 <div class="suggestions-title">
 ✨ جرّب أحد الخيارات:
 </div>
-
 
 <div class="suggestions">
 
@@ -724,7 +707,6 @@ onclick="quickQuestion('وضح لي أهم النقاط التي يجب أن أ�
 
 </div>
 
-
 </div>
 
 
@@ -739,11 +721,8 @@ onclick="quickQuestion('وضح لي أهم النقاط التي يجب أن أ�
 
 </div>
 
-
 </div>
 
-
-<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -764,165 +743,12 @@ onclick="quickQuestion('وضح لي أهم النقاط التي يجب أن أ�
 
 <script>
 
-/* =========================================
-   إضافة رسالة للشات
-========================================= */
-
-function addMessage(text,type){
-
-    const chatArea = document.getElementById("chatArea");
-
-    const message = document.createElement("div");
-
-    message.className = "message " + type;
-
-    const wrap = document.createElement("div");
-
-    wrap.className = "message-wrap";
-
-    const avatar = document.createElement("div");
-
-    avatar.className = "avatar";
-
-    avatar.textContent = type === "ai" ? "🤖" : "👤";
-
-    const content = document.createElement("div");
-
-    content.className = "message-content";
-
-    content.textContent = text;
-
-    wrap.appendChild(avatar);
-
-    wrap.appendChild(content);
-
-    message.appendChild(wrap);
-
-    chatArea.appendChild(message);
-
-    chatArea.scrollTop = chatArea.scrollHeight;
-
-}
-
-
-/* =========================================
-   إظهار / إخفاء الكتابة
-========================================= */
-
-function showTyping(){
-
-    document.getElementById("typing").style.display = "block";
-
-    const chatArea = document.getElementById("chatArea");
-
-    chatArea.scrollTop = chatArea.scrollHeight;
-
-}
-
-
-function hideTyping(){
-
-    document.getElementById("typing").style.display = "none";
-
-}
-
-
-/* =========================================
-   إرسال الرسالة
-========================================= */
-
-function sendMessage(){
-
-    const input = document.getElementById("userInput");
-
-    const sendBtn = document.getElementById("sendBtn");
-
-    const text = input.value.trim();
-
-    if(text === ""){
-        return;
-    }
-
-    addMessage(text,"user");
-
-    input.value = "";
-
-    sendBtn.disabled = true;
-
-    showTyping();
-
-
-    /*
-       AI الحقيقي سيتم ربطه هنا لاحقًا.
-       حاليًا هذه رسالة تجريبية فقط.
-    */
-
-    setTimeout(function(){
-
-        hideTyping();
-
-        addMessage(
-            "🤖 المساعد جاهز. الخطوة التالية هي ربط هذه الصفحة بخدمة الذكاء الاصطناعي حتى أقدر أشرح وألخص وأجاوب على أسئلتك فعليًا.",
-            "ai"
-        );
-
-        sendBtn.disabled = false;
-
-    },900);
-
-}
-
-
-/* =========================================
-   الأسئلة السريعة
-========================================= */
-
-function quickQuestion(question){
-
-    const input = document.getElementById("userInput");
-
-    input.value = question;
-
-    input.focus();
-
-}
-
-
-/* =========================================
-   تغيير ارتفاع مربع الكتابة تلقائيًا
-========================================= */
-
-const textarea = document.getElementById("userInput");
-
-textarea.addEventListener("input",function(){
-
-    this.style.height = "auto";
-
-    this.style.height = Math.min(this.scrollHeight,130) + "px";
-
-});
-
-
-/* =========================================
-   Ctrl + Enter للإرسال
-========================================= */
-
-textarea.addEventListener("keydown",function(event){
-
-    if(event.ctrlKey && event.key === "Enter"){
-
-        event.preventDefault();
-
-        sendMessage();
-
-    }
-
-});
-
-
-</script>
-
-
-</body>
-
-    </html>
+/* =================================================
+   رابط Cloudflare Worker
+   ================================================= */
+
+/*
+   مهم:
+   استبدل الرابط الموجود هنا برابط الـWorker
+   الذي ظهر فيه TEST
+*/
