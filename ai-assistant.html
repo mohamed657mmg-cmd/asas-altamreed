@@ -16,51 +16,98 @@
     box-sizing:border-box;
 }
 
+:root{
+    --green:#0b5d3b;
+    --green2:#16804f;
+    --dark:#083f29;
+    --light:#eef8f2;
+    --bg:#f4f7f5;
+    --border:#dfece4;
+    --text:#222;
+    --muted:#6b7771;
+}
+
 body{
     font-family:Arial,Tahoma,sans-serif;
-    background:#f4f7f5;
-    color:#222;
+    background:
+        radial-gradient(circle at top right,#e8f5ed 0,transparent 30%),
+        var(--bg);
+    color:var(--text);
     min-height:100vh;
 }
 
-/* Header */
+/* ================= HEADER ================= */
 
 header{
-    background:linear-gradient(135deg,#0b5d3b,#16804f);
+    background:linear-gradient(135deg,var(--green),var(--green2));
     color:white;
-    text-align:center;
-    padding:30px 15px;
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
+    padding:25px 18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
 }
 
-.ai-icon{
-    font-size:55px;
-    margin-bottom:8px;
+.header-content{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
-header h1{
-    font-size:30px;
-    margin-bottom:8px;
+.brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
 }
 
-header p{
-    font-size:15px;
-    line-height:1.7;
+.ai-logo{
+    width:65px;
+    height:65px;
+    border-radius:20px;
+    background:rgba(255,255,255,.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.15);
 }
 
-/* Container */
+.brand h1{
+    font-size:27px;
+    margin-bottom:5px;
+}
+
+.brand p{
+    font-size:14px;
+    opacity:.9;
+}
+
+.status{
+    background:rgba(255,255,255,.13);
+    padding:9px 14px;
+    border-radius:20px;
+    font-size:13px;
+    white-space:nowrap;
+}
+
+.status-dot{
+    color:#b9ffd2;
+    margin-left:5px;
+}
+
+/* ================= CONTAINER ================= */
 
 .container{
-    max-width:850px;
+    max-width:1000px;
     margin:30px auto;
     padding:0 15px;
 }
 
-/* Back */
-
 .back{
-    display:inline-block;
-    color:#0b5d3b;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    color:var(--green);
     text-decoration:none;
     font-weight:bold;
     margin-bottom:20px;
@@ -70,50 +117,114 @@ header p{
     text-decoration:underline;
 }
 
-/* AI Card */
+/* ================= AI BOX ================= */
 
 .ai-box{
     background:white;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    border-radius:24px;
     overflow:hidden;
-    border:1px solid #e5eee8;
+    border:1px solid var(--border);
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
 }
 
-/* Chat Header */
+/* ================= CHAT TOP ================= */
 
-.chat-header{
-    background:#eef8f2;
-    padding:18px;
-    text-align:center;
-    border-bottom:1px solid #dcebe2;
+.chat-top{
+    padding:22px;
+    background:linear-gradient(180deg,#f4fbf7,#eef8f2);
+    border-bottom:1px solid var(--border);
 }
 
-.chat-header h2{
-    color:#0b5d3b;
-    font-size:22px;
-    margin-bottom:6px;
+.chat-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-.chat-header p{
-    color:#666;
+.chat-avatar{
+    width:50px;
+    height:50px;
+    border-radius:16px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    box-shadow:0 3px 10px rgba(0,0,0,.07);
+}
+
+.chat-title h2{
+    color:var(--green);
+    font-size:20px;
+    margin-bottom:4px;
+}
+
+.chat-title p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* ================= CHAT AREA ================= */
+
+.chat-area{
+    height:500px;
+    padding:25px;
+    overflow-y:auto;
+    background:#fbfdfc;
+}
+
+.welcome-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:22px;
+    margin-bottom:25px;
+    box-shadow:0 3px 12px rgba(0,0,0,.04);
+}
+
+.welcome-card h3{
+    color:var(--green);
+    font-size:19px;
+    margin-bottom:10px;
+}
+
+.welcome-card p{
+    color:#5f6964;
+    line-height:1.8;
     font-size:14px;
 }
 
-/* Chat Area */
-
-.chat-area{
-    height:430px;
-    padding:20px;
-    overflow-y:auto;
-    background:#fafcfb;
+.welcome-list{
+    margin-top:15px;
+    display:grid;
+    gap:8px;
 }
 
-/* Messages */
+.welcome-item{
+    background:#f3faf6;
+    border-radius:10px;
+    padding:9px 12px;
+    color:#405049;
+    font-size:13px;
+}
+
+/* ================= MESSAGES ================= */
 
 .message{
     display:flex;
-    margin-bottom:15px;
+    margin-bottom:18px;
+    animation:messageIn .25s ease;
+}
+
+@keyframes messageIn{
+    from{
+        opacity:0;
+        transform:translateY(5px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .message.ai{
@@ -124,139 +235,282 @@ header p{
     justify-content:flex-end;
 }
 
+.message-wrap{
+    display:flex;
+    align-items:flex-end;
+    gap:9px;
+    max-width:82%;
+}
+
+.message.user .message-wrap{
+    flex-direction:row-reverse;
+}
+
+.avatar{
+    width:36px;
+    height:36px;
+    min-width:36px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+}
+
+.message.ai .avatar{
+    background:#e4f4eb;
+}
+
+.message.user .avatar{
+    background:var(--green);
+    color:white;
+}
+
 .message-content{
-    max-width:75%;
     padding:13px 16px;
-    border-radius:15px;
-    line-height:1.7;
-    font-size:15px;
+    border-radius:17px;
+    line-height:1.8;
+    font-size:14px;
+    white-space:pre-wrap;
+    word-wrap:break-word;
 }
 
 .message.ai .message-content{
-    background:#e8f5ed;
-    color:#234;
-    border-bottom-right-radius:4px;
+    background:#eaf6ef;
+    color:#25362e;
+    border-bottom-right-radius:5px;
 }
 
 .message.user .message-content{
-    background:#0b5d3b;
+    background:var(--green);
     color:white;
-    border-bottom-left-radius:4px;
+    border-bottom-left-radius:5px;
 }
 
-/* Input */
+/* ================= TYPING ================= */
+
+.typing{
+    display:none;
+    margin-bottom:15px;
+}
+
+.typing-box{
+    background:#eaf6ef;
+    padding:12px 16px;
+    border-radius:16px;
+    color:var(--green);
+    font-size:13px;
+}
+
+.dots span{
+    display:inline-block;
+    animation:blink 1.3s infinite;
+    font-weight:bold;
+}
+
+.dots span:nth-child(2){
+    animation-delay:.2s;
+}
+
+.dots span:nth-child(3){
+    animation-delay:.4s;
+}
+
+@keyframes blink{
+    0%,80%,100%{opacity:.2}
+    40%{opacity:1}
+}
+
+/* ================= INPUT ================= */
 
 .input-area{
-    padding:15px;
+    padding:18px;
     background:white;
-    border-top:1px solid #e5eee8;
+    border-top:1px solid var(--border);
 }
 
 .input-box{
     display:flex;
+    align-items:flex-end;
     gap:10px;
+    background:#f7faf8;
+    border:1px solid #d7e5dc;
+    border-radius:16px;
+    padding:8px;
 }
 
 .input-box textarea{
     flex:1;
     resize:none;
-    height:50px;
-    border:1px solid #ccdcd3;
-    border-radius:12px;
-    padding:13px;
-    font-family:Arial,Tahoma,sans-serif;
-    font-size:15px;
+    min-height:48px;
+    max-height:130px;
+    border:none;
+    background:transparent;
     outline:none;
+    padding:11px 10px;
+    font-family:Arial,Tahoma,sans-serif;
+    font-size:14px;
+    line-height:1.6;
 }
 
-.input-box textarea:focus{
-    border-color:#16804f;
+.input-box textarea::placeholder{
+    color:#89958f;
 }
 
 .send-btn{
+    width:50px;
+    height:48px;
     border:none;
-    background:#0b5d3b;
+    border-radius:13px;
+    background:linear-gradient(135deg,var(--green),var(--green2));
     color:white;
-    padding:0 20px;
-    border-radius:12px;
-    font-weight:bold;
     cursor:pointer;
-    font-size:15px;
+    font-size:20px;
+    transition:.2s;
 }
 
 .send-btn:hover{
-    background:#084a2f;
+    transform:translateY(-2px);
+    box-shadow:0 5px 12px rgba(11,93,59,.25);
 }
 
-/* Suggestions */
+.send-btn:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+    transform:none;
+}
+
+/* ================= SUGGESTIONS ================= */
+
+.suggestions-title{
+    margin:15px 2px 9px;
+    color:#66736c;
+    font-size:12px;
+}
 
 .suggestions{
     display:flex;
     flex-wrap:wrap;
     gap:8px;
-    margin-top:12px;
 }
 
 .suggestion{
-    border:1px solid #b9d8c6;
+    border:1px solid #c7ded0;
     background:#f5faf7;
-    color:#0b5d3b;
-    padding:7px 11px;
-    border-radius:20px;
+    color:var(--green);
+    padding:9px 13px;
+    border-radius:22px;
     cursor:pointer;
     font-size:12px;
+    transition:.2s;
 }
 
 .suggestion:hover{
-    background:#e8f5ed;
+    background:#e4f4eb;
+    transform:translateY(-1px);
 }
 
-/* Notice */
+/* ================= NOTICE ================= */
 
 .notice{
-    margin-top:20px;
+    margin-top:18px;
     background:white;
-    border-right:5px solid #0b5d3b;
-    border-radius:12px;
-    padding:16px;
-    color:#555;
+    border:1px solid var(--border);
+    border-right:5px solid var(--green);
+    border-radius:16px;
+    padding:17px;
+    color:#59655f;
     line-height:1.8;
-    font-size:14px;
+    font-size:13px;
 }
 
-/* Footer */
+.notice strong{
+    color:var(--green);
+}
+
+/* ================= FOOTER ================= */
 
 footer{
-    background:#083f29;
+    background:var(--dark);
     color:white;
     text-align:center;
     padding:25px 15px;
-    margin-top:50px;
+    margin-top:45px;
     line-height:1.8;
 }
 
-/* Mobile */
+footer strong{
+    font-size:17px;
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
-    header h1{
-        font-size:26px;
+    header{
+        padding:20px 15px;
+    }
+
+    .header-content{
+        align-items:flex-start;
+    }
+
+    .ai-logo{
+        width:55px;
+        height:55px;
+        font-size:32px;
+        border-radius:17px;
+    }
+
+    .brand h1{
+        font-size:21px;
+    }
+
+    .brand p{
+        font-size:12px;
+    }
+
+    .status{
+        display:none;
+    }
+
+    .container{
+        margin:20px auto;
+    }
+
+    .ai-box{
+        border-radius:18px;
     }
 
     .chat-area{
-        height:400px;
+        height:430px;
+        padding:17px;
     }
 
-    .message-content{
-        max-width:88%;
+    .chat-top{
+        padding:17px;
     }
 
-    .input-box{
-        flex-direction:column;
+    .chat-title h2{
+        font-size:18px;
     }
 
-    .send-btn{
-        height:45px;
+    .message-wrap{
+        max-width:92%;
+    }
+
+    .welcome-card{
+        padding:17px;
+    }
+
+    .input-area{
+        padding:12px;
+    }
+
+    .suggestion{
+        flex:1;
+        text-align:center;
+        min-width:100px;
     }
 
 }
@@ -269,11 +523,19 @@ footer{
 <body>
 
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
-<div class="ai-icon">
+<div class="header-content">
+
+<div class="brand">
+
+<div class="ai-logo">
 🤖
 </div>
+
+<div>
 
 <h1>
 مساعد أساس التمريض AI
@@ -283,8 +545,21 @@ footer{
 مساعدك التعليمي لفهم ومراجعة مواد التمريض
 </p>
 
+</div>
+
+</div>
+
+<div class="status">
+<span class="status-dot">●</span>
+المساعد جاهز
+</div>
+
+</div>
+
 </header>
 
+
+<!-- ================= MAIN ================= -->
 
 <div class="container">
 
@@ -297,63 +572,121 @@ footer{
 <div class="ai-box">
 
 
-<div class="chat-header">
+<!-- CHAT HEADER -->
+
+<div class="chat-top">
+
+<div class="chat-title">
+
+<div class="chat-avatar">
+🩺
+</div>
+
+<div>
 
 <h2>
-🤖 أهلًا بيك في مساعد أساس التمريض
+أهلًا بيك في مساعد أساس التمريض
 </h2>
 
 <p>
-اكتب سؤالك في الأسفل وسنساعدك في فهمه.
+اسأل، لخص، أو اطلب شرحًا مبسطًا للدرس.
 </p>
 
 </div>
 
+</div>
+
+</div>
+
+
+<!-- CHAT -->
 
 <div class="chat-area" id="chatArea">
 
 
-<!-- رسالة المساعد -->
+<div class="welcome-card">
 
-<div class="message ai">
+<h3>
+👋 أهلًا بيك!
+</h3>
 
-<div class="message-content">
+<p>
+أنا مساعد أساس التمريض، ومهمتي أساعدك في
+<strong>فهم ومراجعة</strong> المحتوى الدراسي بطريقة بسيطة ومنظمة.
+</p>
 
-👋 أهلًا بيك في <strong>مساعد أساس التمريض</strong>.
+<div class="welcome-list">
 
-<br>
+<div class="welcome-item">
+📚 شرح الدروس بطريقة مبسطة
+</div>
 
-أنا موجود لمساعدتك في فهم ومراجعة المواد الدراسية بطريقة بسيطة.
+<div class="welcome-item">
+📝 تلخيص الشابترات والمذكرات
+</div>
 
-<br><br>
+<div class="welcome-item">
+❓ إنشاء أسئلة للمراجعة
+</div>
 
-اكتب سؤالك هنا 👇
+<div class="welcome-item">
+💡 توضيح النقاط الصعبة
+</div>
+
+</div>
+
+</div>
+
+
+<!-- الرسائل تظهر هنا -->
+
+</div>
+
+
+<!-- TYPING -->
+
+<div class="typing" id="typing">
+
+<div class="typing-box">
+
+🤖 جاري التفكير
+<span class="dots">
+<span>.</span>
+<span>.</span>
+<span>.</span>
+</span>
 
 </div>
 
 </div>
 
 
-</div>
-
+<!-- INPUT -->
 
 <div class="input-area">
-
 
 <div class="input-box">
 
 <textarea
 id="userInput"
-placeholder="اكتب سؤالك هنا..."
+placeholder="اكتب سؤالك أو اطلب شرح درس..."
+rows="1"
 ></textarea>
 
 <button
 class="send-btn"
+id="sendBtn"
 onclick="sendMessage()"
+title="إرسال"
 >
-إرسال
+➤
 </button>
 
+</div>
+
+
+<div class="suggestions-title">
+✨ جرّب أحد الخيارات:
 </div>
 
 
@@ -368,20 +701,26 @@ onclick="quickQuestion('اشرح لي هذا الدرس بطريقة بسيطة'
 
 <button
 class="suggestion"
-onclick="quickQuestion('اعمل لي ملخص للشابتر')"
+onclick="quickQuestion('لخص لي هذا الشابتر في نقاط مهمة للمذاكرة')"
 >
 📝 تلخيص
 </button>
 
 <button
 class="suggestion"
-onclick="quickQuestion('اعمل لي أسئلة للمراجعة')"
+onclick="quickQuestion('اعمل لي أسئلة مراجعة على هذا الدرس مع الإجابات')"
 >
 ❓ أسئلة مراجعة
 </button>
 
-</div>
+<button
+class="suggestion"
+onclick="quickQuestion('وضح لي أهم النقاط التي يجب أن أحفظها')"
+>
+💡 أهم النقاط
+</button>
 
+</div>
 
 </div>
 
@@ -391,20 +730,20 @@ onclick="quickQuestion('اعمل لي أسئلة للمراجعة')"
 
 <div class="notice">
 
-<strong>
-💡 ملاحظة:
-</strong>
+<strong>💡 ملاحظة:</strong>
 
 <br>
 
-المساعد مخصص للمساعدة في المذاكرة والفهم والمراجعة،
-ويجب الرجوع إلى المصادر الدراسية والمحاضر عند الحاجة.
+المساعد مخصص للمساعدة في المذاكرة والفهم والمراجعة.
+استخدمه كأداة مساعدة بجانب المحاضرات والمصادر الدراسية.
 
 </div>
 
 
 </div>
 
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -425,7 +764,9 @@ onclick="quickQuestion('اعمل لي أسئلة للمراجعة')"
 
 <script>
 
-/* إضافة رسالة */
+/* =========================================
+   إضافة رسالة للشات
+========================================= */
 
 function addMessage(text,type){
 
@@ -435,13 +776,27 @@ function addMessage(text,type){
 
     message.className = "message " + type;
 
+    const wrap = document.createElement("div");
+
+    wrap.className = "message-wrap";
+
+    const avatar = document.createElement("div");
+
+    avatar.className = "avatar";
+
+    avatar.textContent = type === "ai" ? "🤖" : "👤";
+
     const content = document.createElement("div");
 
     content.className = "message-content";
 
     content.textContent = text;
 
-    message.appendChild(content);
+    wrap.appendChild(avatar);
+
+    wrap.appendChild(content);
+
+    message.appendChild(wrap);
 
     chatArea.appendChild(message);
 
@@ -450,11 +805,37 @@ function addMessage(text,type){
 }
 
 
-/* إرسال السؤال */
+/* =========================================
+   إظهار / إخفاء الكتابة
+========================================= */
+
+function showTyping(){
+
+    document.getElementById("typing").style.display = "block";
+
+    const chatArea = document.getElementById("chatArea");
+
+    chatArea.scrollTop = chatArea.scrollHeight;
+
+}
+
+
+function hideTyping(){
+
+    document.getElementById("typing").style.display = "none";
+
+}
+
+
+/* =========================================
+   إرسال الرسالة
+========================================= */
 
 function sendMessage(){
 
     const input = document.getElementById("userInput");
+
+    const sendBtn = document.getElementById("sendBtn");
 
     const text = input.value.trim();
 
@@ -466,24 +847,35 @@ function sendMessage(){
 
     input.value = "";
 
+    sendBtn.disabled = true;
+
+    showTyping();
+
+
     /*
-    النسخة الحالية تجريبية.
-    سيتم هنا لاحقًا ربط المساعد بالذكاء الاصطناعي الحقيقي.
+       AI الحقيقي سيتم ربطه هنا لاحقًا.
+       حاليًا هذه رسالة تجريبية فقط.
     */
 
     setTimeout(function(){
 
+        hideTyping();
+
         addMessage(
-            "🤖 المساعد جاهز لاستقبال سؤالك. سيتم تفعيل الذكاء الاصطناعي الحقيقي في المرحلة القادمة.",
+            "🤖 المساعد جاهز. الخطوة التالية هي ربط هذه الصفحة بخدمة الذكاء الاصطناعي حتى أقدر أشرح وألخص وأجاوب على أسئلتك فعليًا.",
             "ai"
         );
 
-    },700);
+        sendBtn.disabled = false;
+
+    },900);
 
 }
 
 
-/* الأسئلة الجاهزة */
+/* =========================================
+   الأسئلة السريعة
+========================================= */
 
 function quickQuestion(question){
 
@@ -496,11 +888,30 @@ function quickQuestion(question){
 }
 
 
-/* إرسال بالضغط على Ctrl + Enter */
+/* =========================================
+   تغيير ارتفاع مربع الكتابة تلقائيًا
+========================================= */
 
-document.getElementById("userInput").addEventListener("keydown",function(event){
+const textarea = document.getElementById("userInput");
+
+textarea.addEventListener("input",function(){
+
+    this.style.height = "auto";
+
+    this.style.height = Math.min(this.scrollHeight,130) + "px";
+
+});
+
+
+/* =========================================
+   Ctrl + Enter للإرسال
+========================================= */
+
+textarea.addEventListener("keydown",function(event){
 
     if(event.ctrlKey && event.key === "Enter"){
+
+        event.preventDefault();
 
         sendMessage();
 
@@ -508,9 +919,10 @@ document.getElementById("userInput").addEventListener("keydown",function(event){
 
 });
 
+
 </script>
 
 
 </body>
 
-  </html>
+    </html>
