@@ -34,6 +34,8 @@ body{
     min-height:100vh;
 }
 
+/* HEADER */
+
 header{
     background:linear-gradient(135deg,var(--green),var(--green2));
     color:white;
@@ -89,6 +91,8 @@ header{
     margin-left:5px;
 }
 
+/* CONTAINER */
+
 .container{
     max-width:1000px;
     margin:30px auto;
@@ -105,6 +109,8 @@ header{
     margin-bottom:20px;
 }
 
+/* AI BOX */
+
 .ai-box{
     background:white;
     border-radius:24px;
@@ -112,6 +118,8 @@ header{
     border:1px solid var(--border);
     box-shadow:0 8px 30px rgba(0,0,0,.08);
 }
+
+/* CHAT TOP */
 
 .chat-top{
     padding:22px;
@@ -147,6 +155,8 @@ header{
     color:var(--muted);
     font-size:13px;
 }
+
+/* CHAT */
 
 .chat-area{
     height:500px;
@@ -188,6 +198,8 @@ header{
     color:#405049;
     font-size:13px;
 }
+
+/* MESSAGES */
 
 .message{
     display:flex;
@@ -254,6 +266,8 @@ header{
     border-bottom-left-radius:5px;
 }
 
+/* TYPING */
+
 .typing{
     display:none;
     margin:0 18px 15px;
@@ -281,9 +295,16 @@ header{
 }
 
 @keyframes blink{
-    0%,80%,100%{opacity:.2}
-    40%{opacity:1}
+    0%,80%,100%{
+        opacity:.2;
+    }
+
+    40%{
+        opacity:1;
+    }
 }
+
+/* INPUT */
 
 .input-area{
     padding:18px;
@@ -331,6 +352,8 @@ header{
     cursor:not-allowed;
 }
 
+/* SUGGESTIONS */
+
 .suggestions-title{
     margin:15px 2px 9px;
     color:#66736c;
@@ -353,6 +376,8 @@ header{
     font-size:12px;
 }
 
+/* NOTICE */
+
 .notice{
     margin-top:18px;
     background:white;
@@ -369,6 +394,8 @@ header{
     color:var(--green);
 }
 
+/* FOOTER */
+
 footer{
     background:var(--dark);
     color:white;
@@ -377,6 +404,8 @@ footer{
     margin-top:45px;
     line-height:1.8;
 }
+
+/* MOBILE */
 
 @media(max-width:600px){
 
@@ -420,9 +449,11 @@ footer{
         text-align:center;
         min-width:100px;
     }
+
 }
 
 </style>
+
 </head>
 
 <body>
@@ -433,21 +464,30 @@ footer{
 
 <div class="brand">
 
-<div class="ai-logo">🤖</div>
+<div class="ai-logo">
+🤖
+</div>
 
 <div>
 
-<h1>مساعد أساس التمريض AI</h1>
+<h1>
+مساعد أساس التمريض AI
+</h1>
 
-<p>مساعدك التعليمي لفهم ومراجعة مواد التمريض</p>
+<p>
+مساعدك التعليمي لفهم ومراجعة مواد التمريض
+</p>
 
 </div>
 
 </div>
 
 <div class="status">
+
 <span class="status-dot">●</span>
+
 المساعد جاهز
+
 </div>
 
 </div>
@@ -461,19 +501,27 @@ footer{
 ← العودة للصفحة الرئيسية
 </a>
 
+
 <div class="ai-box">
+
 
 <div class="chat-top">
 
 <div class="chat-title">
 
-<div class="chat-avatar">🩺</div>
+<div class="chat-avatar">
+🩺
+</div>
 
 <div>
 
-<h2>أهلًا بيك في مساعد أساس التمريض</h2>
+<h2>
+أهلًا بيك في مساعد أساس التمريض
+</h2>
 
-<p>اسأل، لخص، أو اطلب شرحًا مبسطًا للدرس.</p>
+<p>
+اسأل، لخص، أو اطلب شرحًا مبسطًا للدرس.
+</p>
 
 </div>
 
@@ -486,22 +534,40 @@ footer{
 
 <div class="welcome-card">
 
-<h3>👋 أهلًا بيك!</h3>
+<h3>
+👋 أهلًا بيك!
+</h3>
 
 <p>
+
 أنا مساعد أساس التمريض، ومهمتي أساعدك في
-<strong>فهم ومراجعة</strong> المحتوى الدراسي بطريقة بسيطة ومنظمة.
+
+<strong>
+فهم ومراجعة
+</strong>
+
+المحتوى الدراسي بطريقة بسيطة ومنظمة.
+
 </p>
+
 
 <div class="welcome-list">
 
-<div class="welcome-item">📚 شرح الدروس بطريقة مبسطة</div>
+<div class="welcome-item">
+📚 شرح الدروس بطريقة مبسطة
+</div>
 
-<div class="welcome-item">📝 تلخيص الشابترات والمذكرات</div>
+<div class="welcome-item">
+📝 تلخيص الشابترات والمذكرات
+</div>
 
-<div class="welcome-item">❓ إنشاء أسئلة للمراجعة</div>
+<div class="welcome-item">
+❓ إنشاء أسئلة للمراجعة
+</div>
 
-<div class="welcome-item">💡 توضيح النقاط الصعبة</div>
+<div class="welcome-item">
+💡 توضيح النقاط الصعبة
+</div>
 
 </div>
 
@@ -515,10 +581,13 @@ footer{
 <div class="typing-box">
 
 🤖 جاري التفكير
+
 <span class="dots">
+
 <span>.</span>
 <span>.</span>
 <span>.</span>
+
 </span>
 
 </div>
@@ -536,10 +605,12 @@ placeholder="اكتب سؤالك أو اطلب شرح درس..."
 rows="1"
 ></textarea>
 
+
 <button
+type="button"
 class="send-btn"
 id="sendBtn"
-onclick="sendMessage()"
+title="إرسال"
 >
 ➤
 </button>
@@ -551,32 +622,40 @@ onclick="sendMessage()"
 ✨ جرّب أحد الخيارات:
 </div>
 
+
 <div class="suggestions">
 
 <button
+type="button"
 class="suggestion"
-onclick="quickQuestion('اشرح لي هذا الدرس بطريقة بسيطة')"
+data-question="اشرح لي هذا الدرس بطريقة بسيطة"
 >
 📚 شرح درس
 </button>
 
+
 <button
+type="button"
 class="suggestion"
-onclick="quickQuestion('لخص لي هذا الشابتر في نقاط مهمة للمذاكرة')"
+data-question="لخص لي هذا الشابتر في نقاط مهمة للمذاكرة"
 >
 📝 تلخيص
 </button>
 
+
 <button
+type="button"
 class="suggestion"
-onclick="quickQuestion('اعمل لي أسئلة مراجعة على هذا الدرس مع الإجابات')"
+data-question="اعمل لي أسئلة مراجعة على هذا الدرس مع الإجابات"
 >
 ❓ أسئلة مراجعة
 </button>
 
+
 <button
+type="button"
 class="suggestion"
-onclick="quickQuestion('وضح لي أهم النقاط التي يجب أن أحفظها')"
+data-question="وضح لي أهم النقاط التي يجب أن أحفظها"
 >
 💡 أهم النقاط
 </button>
@@ -590,7 +669,9 @@ onclick="quickQuestion('وضح لي أهم النقاط التي يجب أن أ�
 
 <div class="notice">
 
-<strong>💡 ملاحظة:</strong>
+<strong>
+💡 ملاحظة:
+</strong>
 
 <br>
 
@@ -604,7 +685,9 @@ onclick="quickQuestion('وضح لي أهم النقاط التي يجب أن أ�
 
 <footer>
 
-<strong>🩺 أساس التمريض</strong>
+<strong>
+🩺 أساس التمريض
+</strong>
 
 <br>
 
@@ -619,130 +702,180 @@ onclick="quickQuestion('وضح لي أهم النقاط التي يجب أن أ�
 
 <script>
 
-/* رابط الـWorker بتاعك */
+/* ==========================================
+   رابط Cloudflare Worker
+========================================== */
 
 const WORKER_URL =
 "https://withered-shape-dfc0.mirnaemam93.workers.dev/";
 
 
-/* إضافة رسالة */
+/* ==========================================
+   عناصر الصفحة
+========================================== */
+
+const chatArea =
+document.getElementById("chatArea");
+
+const userInput =
+document.getElementById("userInput");
+
+const sendBtn =
+document.getElementById("sendBtn");
+
+const typing =
+document.getElementById("typing");
+
+
+/* ==========================================
+   إضافة رسالة
+========================================== */
 
 function addMessage(text,type){
 
-    const chatArea =
-        document.getElementById("chatArea");
-
     const message =
-        document.createElement("div");
+    document.createElement("div");
 
     message.className =
-        "message " + type;
+    "message " + type;
+
 
     const wrap =
-        document.createElement("div");
+    document.createElement("div");
 
     wrap.className =
-        "message-wrap";
+    "message-wrap";
+
 
     const avatar =
-        document.createElement("div");
+    document.createElement("div");
 
     avatar.className =
-        "avatar";
+    "avatar";
 
-    avatar.textContent =
-        type === "ai" ? "🤖" : "👤";
+
+    if(type === "ai"){
+
+        avatar.textContent = "🤖";
+
+    }else{
+
+        avatar.textContent = "👤";
+
+    }
+
 
     const content =
-        document.createElement("div");
+    document.createElement("div");
 
     content.className =
-        "message-content";
+    "message-content";
+
 
     content.textContent = text;
 
+
     wrap.appendChild(avatar);
+
     wrap.appendChild(content);
 
     message.appendChild(wrap);
 
     chatArea.appendChild(message);
 
+
     chatArea.scrollTop =
-        chatArea.scrollHeight;
+    chatArea.scrollHeight;
 }
 
 
-/* جاري التفكير */
+/* ==========================================
+   جاري التفكير
+========================================== */
 
 function showTyping(){
 
-    document.getElementById("typing")
-        .style.display = "block";
-
-    const chatArea =
-        document.getElementById("chatArea");
+    typing.style.display =
+    "block";
 
     chatArea.scrollTop =
-        chatArea.scrollHeight;
+    chatArea.scrollHeight;
 }
 
 
 function hideTyping(){
 
-    document.getElementById("typing")
-        .style.display = "none";
+    typing.style.display =
+    "none";
 }
 
 
-/* إرسال السؤال للـWorker */
+/* ==========================================
+   إرسال الرسالة
+========================================== */
 
 async function sendMessage(){
 
-    const input =
-        document.getElementById("userInput");
-
-    const sendBtn =
-        document.getElementById("sendBtn");
-
     const text =
-        input.value.trim();
+    userInput.value.trim();
+
 
     if(!text){
+
         return;
+
     }
 
-    addMessage(text,"user");
 
-    input.value = "";
+    /* أظهر رسالة المستخدم فورًا */
 
-    input.style.height = "48px";
+    addMessage(
+        text,
+        "user"
+    );
+
+
+    /* امسح مربع الكتابة */
+
+    userInput.value = "";
+
+    userInput.style.height = "48px";
+
+
+    /* عطّل الزر مؤقتًا */
 
     sendBtn.disabled = true;
 
+
+    /* أظهر جاري التفكير */
+
     showTyping();
+
 
     try{
 
         const response =
-            await fetch(WORKER_URL,{
-
+        await fetch(
+            WORKER_URL,
+            {
                 method:"POST",
 
                 headers:{
                     "Content-Type":
-                        "application/json"
+                    "application/json"
                 },
 
-                body:JSON.stringify({
+                body:
+                JSON.stringify({
                     message:text
                 })
-
-            });
+            }
+        );
 
 
         const data =
-            await response.json();
+        await response.json();
+
 
         hideTyping();
 
@@ -751,7 +884,7 @@ async function sendMessage(){
 
             addMessage(
                 data.answer ||
-                "لم تصل إجابة من المساعد.",
+                "🤖 لم تصل إجابة من المساعد.",
                 "ai"
             );
 
@@ -759,74 +892,116 @@ async function sendMessage(){
 
             addMessage(
                 "❌ حدث خطأ:\n" +
-                (data.error ||
-                "خطأ غير معروف"),
+                (
+                    data.error ||
+                    "خطأ غير معروف"
+                ),
                 "ai"
             );
 
         }
 
+
     }catch(error){
 
         hideTyping();
 
+
         addMessage(
-            "❌ تعذر الاتصال بمساعد أساس التمريض.\n\n" +
-            "تأكد من اتصال الإنترنت ومن أن الـWorker يعمل.",
+            "❌ لم أستطع الاتصال بمساعد أساس التمريض.\n\n" +
+            "تأكد أن الـWorker يعمل وأن رابط الاتصال صحيح.",
             "ai"
         );
 
-        console.error(error);
+
+        console.error(
+            "Worker Error:",
+            error
+        );
 
     }
+
 
     sendBtn.disabled = false;
 }
 
 
-/* الأسئلة الجاهزة */
+/* ==========================================
+   زر الإرسال
+   ========================================== */
 
-function quickQuestion(question){
-
-    const input =
-        document.getElementById("userInput");
-
-    input.value = question;
-
-    input.focus();
-}
-
-
-/* تغيير حجم مربع الكتابة */
-
-const textarea =
-    document.getElementById("userInput");
-
-textarea.addEventListener(
-    "input",
+sendBtn.addEventListener(
+    "click",
     function(){
 
-        this.style.height = "auto";
-
-        this.style.height =
-            Math.min(
-                this.scrollHeight,
-                130
-            ) + "px";
+        sendMessage();
 
     }
 );
 
 
-/* Ctrl + Enter */
+/* ==========================================
+   الأسئلة السريعة
+========================================== */
 
-textarea.addEventListener(
+const suggestionButtons =
+document.querySelectorAll(
+    ".suggestion"
+);
+
+
+suggestionButtons.forEach(
+    function(button){
+
+        button.addEventListener(
+            "click",
+            function(){
+
+                userInput.value =
+                button.dataset.question;
+
+                userInput.focus();
+
+            }
+        );
+
+    }
+);
+
+
+/* ==========================================
+   تغيير ارتفاع مربع الكتابة
+========================================== */
+
+userInput.addEventListener(
+    "input",
+    function(){
+
+        this.style.height =
+        "auto";
+
+
+        this.style.height =
+        Math.min(
+            this.scrollHeight,
+            130
+        ) + "px";
+
+    }
+);
+
+
+/* ==========================================
+   Enter للإرسال
+========================================== */
+
+userInput.addEventListener(
     "keydown",
     function(event){
 
         if(
-            event.ctrlKey &&
-            event.key === "Enter"
+            event.key === "Enter" &&
+            !event.shiftKey
         ){
 
             event.preventDefault();
