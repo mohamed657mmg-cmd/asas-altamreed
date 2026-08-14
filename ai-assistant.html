@@ -2,1082 +2,914 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>مساعد أساس التمريض AI</title>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Tahoma, sans-serif;
-            background: #f4f7f5;
-            color: #222;
-            min-height: 100vh;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            background: linear-gradient(
-                135deg,
-                #0b5d3b,
-                #16804f
-            );
-
-            color: white;
-
-            padding: 18px 20px;
-
-            box-shadow:
-                0 4px 15px rgba(0, 0, 0, .15);
-
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-inner {
-            max-width: 1050px;
-            margin: auto;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 15px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .brand-icon {
-            width: 48px;
-            height: 48px;
-
-            border-radius: 14px;
-
-            background: rgba(255,255,255,.16);
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 25px;
-        }
-
-        .brand-text h1 {
-            font-size: 19px;
-            margin-bottom: 3px;
-        }
-
-        .brand-text p {
-            font-size: 11px;
-            opacity: .9;
-        }
-
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 9px 14px;
-
-            border-radius: 10px;
-
-            background: rgba(255,255,255,.15);
-
-            color: white;
-
-            text-decoration: none;
-
-            border: 1px solid rgba(255,255,255,.25);
-
-            font-size: 12px;
-            font-weight: bold;
-
-            transition: .2s;
-        }
-
-        .back-btn:hover {
-            background: white;
-            color: #0b5d3b;
-        }
-
-        /* =========================
-           MAIN
-        ========================= */
-
-        .page {
-            width: 100%;
-            max-width: 1050px;
-
-            margin: auto;
-
-            padding: 25px 15px 160px;
-        }
-
-        /* =========================
-           WELCOME
-        ========================= */
-
-        .welcome {
-            background: white;
-
-            border-radius: 18px;
-
-            padding: 25px 20px;
-
-            text-align: center;
-
-            border: 1px solid #e5eee8;
-
-            box-shadow:
-                0 4px 15px rgba(0,0,0,.06);
-
-            margin-bottom: 20px;
-        }
-
-        .welcome-icon {
-            width: 70px;
-            height: 70px;
-
-            margin: 0 auto 12px;
-
-            border-radius: 20px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #0b5d3b,
-                    #16804f
-                );
-
-            color: white;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 34px;
-        }
-
-        .welcome h2 {
-            color: #0b5d3b;
-
-            font-size: 23px;
-
-            margin-bottom: 8px;
-        }
-
-        .welcome p {
-            color: #666;
-
-            font-size: 14px;
-
-            line-height: 1.9;
-        }
-
-        /* =========================
-           SUGGESTIONS
-        ========================= */
-
-        .suggestions-title {
-            color: #0b5d3b;
-
-            font-size: 16px;
-
-            font-weight: bold;
-
-            margin: 20px 0 12px;
-        }
-
-        .suggestions {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 10px;
-
-            margin-bottom: 20px;
-        }
-
-        .suggestion {
-            background: white;
-
-            border: 1px solid #e5eee8;
-
-            border-radius: 13px;
-
-            padding: 13px 10px;
-
-            color: #333;
-
-            font-size: 12px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: .2s;
-        }
-
-        .suggestion:hover {
-            border-color: #16804f;
-
-            color: #0b5d3b;
-
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 5px 14px rgba(11,93,59,.08);
-        }
-
-        /* =========================
-           CHAT
-        ========================= */
-
-        #chat {
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 15px;
-        }
-
-        .message {
-            display: flex;
-
-            align-items: flex-start;
-
-            gap: 9px;
-
-            width: 100%;
-        }
-
-        .message.user {
-            flex-direction: row-reverse;
-        }
-
-        .avatar {
-            width: 38px;
-            height: 38px;
-
-            flex: 0 0 38px;
-
-            border-radius: 13px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 18px;
-
-            background: #e8f4ed;
-
-            color: #0b5d3b;
-        }
-
-        .message.user .avatar {
-            background:
-                linear-gradient(
-                    135deg,
-                    #0b5d3b,
-                    #16804f
-                );
-
-            color: white;
-        }
-
-        .bubble {
-            max-width: 78%;
-
-            padding: 13px 15px;
-
-            border-radius: 16px;
-
-            line-height: 1.9;
-
-            font-size: 14px;
-
-            white-space: pre-wrap;
-
-            overflow-wrap: anywhere;
-        }
-
-        .message.ai .bubble {
-            background: white;
-
-            color: #333;
-
-            border: 1px solid #e5eee8;
-
-            border-top-right-radius: 5px;
-
-            box-shadow:
-                0 4px 13px rgba(0,0,0,.05);
-        }
-
-        .message.user .bubble {
-            background:
-                linear-gradient(
-                    135deg,
-                    #0b5d3b,
-                    #16804f
-                );
-
-            color: white;
-
-            border-top-left-radius: 5px;
-        }
-
-        .bubble strong {
-            color: #0b5d3b;
-        }
-
-        /* =========================
-           TYPING
-        ========================= */
-
-        .typing {
-            display: none;
-
-            align-items: center;
-
-            gap: 5px;
-
-            width: fit-content;
-
-            background: white;
-
-            border: 1px solid #e5eee8;
-
-            border-radius: 15px;
-
-            padding: 12px 15px;
-
-            margin-right: 47px;
-        }
-
-        .typing.show {
-            display: flex;
-        }
-
-        .typing span {
-            width: 7px;
-            height: 7px;
-
-            border-radius: 50%;
-
-            background: #16804f;
-
-            animation: typing 1.2s infinite;
-        }
-
-        .typing span:nth-child(2) {
-            animation-delay: .15s;
-        }
-
-        .typing span:nth-child(3) {
-            animation-delay: .3s;
-        }
-
-        @keyframes typing {
-
-            0%, 60%, 100% {
-                transform: translateY(0);
-                opacity: .35;
-            }
-
-            30% {
-                transform: translateY(-5px);
-                opacity: 1;
-            }
-        }
-
-        /* =========================
-           INPUT AREA
-        ========================= */
-
-        .input-area {
-            position: fixed;
-
-            left: 0;
-            right: 0;
-            bottom: 0;
-
-            z-index: 90;
-
-            padding: 12px 15px 10px;
-
-            background:
-                linear-gradient(
-                    to top,
-                    #f4f7f5 75%,
-                    rgba(244,247,245,0)
-                );
-        }
-
-        .input-box {
-            width: 100%;
-
-            max-width: 950px;
-
-            margin: auto;
-
-            background: white;
-
-            border: 1px solid #dce9e1;
-
-            border-radius: 18px;
-
-            padding: 7px;
-
-            display: flex;
-
-            align-items: flex-end;
-
-            gap: 7px;
-
-            box-shadow:
-                0 8px 25px rgba(11,93,59,.12);
-        }
-
-        #questionInput {
-            flex: 1;
-
-            min-height: 45px;
-
-            max-height: 140px;
-
-            resize: none;
-
-            border: none;
-
-            outline: none;
-
-            background: transparent;
-
-            padding: 10px;
-
-            font-family:
-                Arial,
-                Tahoma,
-                sans-serif;
-
-            font-size: 14px;
-
-            color: #222;
-
-            line-height: 1.7;
-        }
-
-        #questionInput::placeholder {
-            color: #999;
-        }
-
-        .send-btn {
-            width: 45px;
-            height: 45px;
-
-            flex: 0 0 45px;
-
-            border: none;
-
-            border-radius: 13px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #0b5d3b,
-                    #16804f
-                );
-
-            color: white;
-
-            font-size: 19px;
-
-            cursor: pointer;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            transition: .2s;
-        }
-
-        .send-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .send-btn:disabled {
-            opacity: .5;
-
-            cursor: not-allowed;
-
-            transform: none;
-        }
-
-        .input-note {
-            width: 100%;
-
-            max-width: 950px;
-
-            margin: 5px auto 0;
-
-            padding: 0 4px;
-
-            color: #999;
-
-            font-size: 9px;
-
-            text-align: center;
-        }
-
-        /* =========================
-           ERROR
-        ========================= */
-
-        .error-message {
-            color: #b42318 !important;
-
-            background: #fff1f0 !important;
-
-            border-color: #ffd6d2 !important;
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 700px) {
-
-            .header-inner {
-                gap: 8px;
-            }
-
-            .brand-icon {
-                width: 42px;
-                height: 42px;
-                font-size: 21px;
-            }
-
-            .brand-text h1 {
-                font-size: 15px;
-            }
-
-            .brand-text p {
-                font-size: 9px;
-            }
-
-            .back-btn {
-                padding: 8px 9px;
-                font-size: 10px;
-            }
-
-            .page {
-                padding:
-                    18px 10px 150px;
-            }
-
-            .welcome {
-                padding: 20px 14px;
-            }
-
-            .welcome-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 29px;
-            }
-
-            .welcome h2 {
-                font-size: 19px;
-            }
-
-            .welcome p {
-                font-size: 12px;
-            }
-
-            .suggestions {
-                grid-template-columns: 1fr;
-            }
-
-            .suggestion {
-                font-size: 11px;
-                padding: 11px;
-            }
-
-            .bubble {
-                max-width:
-                    calc(100% - 45px);
-
-                font-size: 13px;
-
-                padding: 11px 12px;
-            }
-
-            .avatar {
-                width: 34px;
-                height: 34px;
-                flex-basis: 34px;
-                font-size: 16px;
-            }
-
-            .typing {
-                margin-right: 43px;
-            }
-
-            .input-area {
-                padding:
-                    8px 8px 7px;
-            }
-
-            .input-box {
-                border-radius: 16px;
-            }
-
-            #questionInput {
-                font-size: 13px;
-            }
-
-            .send-btn {
-                width: 42px;
-                height: 42px;
-                flex-basis: 42px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مساعد أساس التمريض AI</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Tahoma,sans-serif;
+    background:#f4f7f5;
+    color:#222;
+    min-height:100vh;
+}
+
+header{
+    background:linear-gradient(135deg,#0b5d3b,#16804f);
+    color:white;
+    padding:18px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.header-inner{
+    max-width:1050px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand-icon{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:rgba(255,255,255,.16);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+}
+
+.brand-text h1{
+    font-size:19px;
+    margin-bottom:3px;
+}
+
+.brand-text p{
+    font-size:11px;
+    opacity:.9;
+}
+
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:9px 14px;
+    border-radius:10px;
+    background:rgba(255,255,255,.15);
+    color:white;
+    text-decoration:none;
+    border:1px solid rgba(255,255,255,.25);
+    font-size:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.back-btn:hover{
+    background:white;
+    color:#0b5d3b;
+}
+
+.page{
+    width:100%;
+    max-width:1050px;
+    margin:auto;
+    padding:25px 15px 160px;
+}
+
+.welcome{
+    background:white;
+    border-radius:18px;
+    padding:25px 20px;
+    text-align:center;
+    border:1px solid #e5eee8;
+    box-shadow:0 4px 15px rgba(0,0,0,.06);
+    margin-bottom:20px;
+}
+
+.welcome-icon{
+    width:70px;
+    height:70px;
+    margin:0 auto 12px;
+    border-radius:20px;
+    background:linear-gradient(135deg,#0b5d3b,#16804f);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+}
+
+.welcome h2{
+    color:#0b5d3b;
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+.welcome p{
+    color:#666;
+    font-size:14px;
+    line-height:1.9;
+}
+
+.suggestions-title{
+    color:#0b5d3b;
+    font-size:16px;
+    font-weight:bold;
+    margin:20px 0 12px;
+}
+
+.suggestions{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.suggestion{
+    background:white;
+    border:1px solid #e5eee8;
+    border-radius:13px;
+    padding:13px 10px;
+    color:#333;
+    font-size:12px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.suggestion:hover{
+    border-color:#16804f;
+    color:#0b5d3b;
+    transform:translateY(-2px);
+    box-shadow:0 5px 14px rgba(11,93,59,.08);
+}
+
+#chat{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.message{
+    display:flex;
+    align-items:flex-start;
+    gap:9px;
+    width:100%;
+}
+
+.message.user{
+    flex-direction:row-reverse;
+}
+
+.avatar{
+    width:38px;
+    height:38px;
+    flex:0 0 38px;
+    border-radius:13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    background:#e8f4ed;
+    color:#0b5d3b;
+}
+
+.message.user .avatar{
+    background:linear-gradient(135deg,#0b5d3b,#16804f);
+    color:white;
+}
+
+.bubble{
+    max-width:78%;
+    padding:13px 15px;
+    border-radius:16px;
+    line-height:1.9;
+    font-size:14px;
+    white-space:pre-wrap;
+    overflow-wrap:anywhere;
+}
+
+.message.ai .bubble{
+    background:white;
+    color:#333;
+    border:1px solid #e5eee8;
+    border-top-right-radius:5px;
+    box-shadow:0 4px 13px rgba(0,0,0,.05);
+}
+
+.message.user .bubble{
+    background:linear-gradient(135deg,#0b5d3b,#16804f);
+    color:white;
+    border-top-left-radius:5px;
+}
+
+.bubble strong{
+    color:#0b5d3b;
+}
+
+.typing{
+    display:none;
+    align-items:center;
+    gap:5px;
+    width:fit-content;
+    background:white;
+    border:1px solid #e5eee8;
+    border-radius:15px;
+    padding:12px 15px;
+    margin-right:47px;
+}
+
+.typing.show{
+    display:flex;
+}
+
+.typing span{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#16804f;
+    animation:typing 1.2s infinite;
+}
+
+.typing span:nth-child(2){
+    animation-delay:.15s;
+}
+
+.typing span:nth-child(3){
+    animation-delay:.3s;
+}
+
+@keyframes typing{
+    0%,60%,100%{
+        transform:translateY(0);
+        opacity:.35;
+    }
+    30%{
+        transform:translateY(-5px);
+        opacity:1;
+    }
+}
+
+.input-area{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:90;
+    padding:12px 15px 10px;
+    background:linear-gradient(to top,#f4f7f5 75%,rgba(244,247,245,0));
+}
+
+.input-box{
+    width:100%;
+    max-width:950px;
+    margin:auto;
+    background:white;
+    border:1px solid #dce9e1;
+    border-radius:18px;
+    padding:7px;
+    display:flex;
+    align-items:flex-end;
+    gap:7px;
+    box-shadow:0 8px 25px rgba(11,93,59,.12);
+}
+
+#questionInput{
+    flex:1;
+    min-height:45px;
+    max-height:140px;
+    resize:none;
+    border:none;
+    outline:none;
+    background:transparent;
+    padding:10px;
+    font-family:Arial,Tahoma,sans-serif;
+    font-size:14px;
+    color:#222;
+    line-height:1.7;
+}
+
+#questionInput::placeholder{
+    color:#999;
+}
+
+.send-btn{
+    width:45px;
+    height:45px;
+    flex:0 0 45px;
+    border:none;
+    border-radius:13px;
+    background:linear-gradient(135deg,#0b5d3b,#16804f);
+    color:white;
+    font-size:19px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.2s;
+}
+
+.send-btn:hover{
+    transform:translateY(-2px);
+}
+
+.send-btn:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+    transform:none;
+}
+
+.input-note{
+    width:100%;
+    max-width:950px;
+    margin:5px auto 0;
+    padding:0 4px;
+    color:#999;
+    font-size:9px;
+    text-align:center;
+}
+
+.error-message{
+    color:#b42318 !important;
+    background:#fff1f0 !important;
+    border-color:#ffd6d2 !important;
+}
+
+@media(max-width:700px){
+
+    .header-inner{
+        gap:8px;
+    }
+
+    .brand-icon{
+        width:42px;
+        height:42px;
+        font-size:21px;
+    }
+
+    .brand-text h1{
+        font-size:15px;
+    }
+
+    .brand-text p{
+        font-size:9px;
+    }
+
+    .back-btn{
+        padding:8px 9px;
+        font-size:10px;
+    }
+
+    .page{
+        padding:18px 10px 150px;
+    }
+
+    .welcome{
+        padding:20px 14px;
+    }
+
+    .welcome-icon{
+        width:60px;
+        height:60px;
+        font-size:29px;
+    }
+
+    .welcome h2{
+        font-size:19px;
+    }
+
+    .welcome p{
+        font-size:12px;
+    }
+
+    .suggestions{
+        grid-template-columns:1fr;
+    }
+
+    .suggestion{
+        font-size:11px;
+        padding:11px;
+    }
+
+    .bubble{
+        max-width:calc(100% - 45px);
+        font-size:13px;
+        padding:11px 12px;
+    }
+
+    .avatar{
+        width:34px;
+        height:34px;
+        flex-basis:34px;
+        font-size:16px;
+    }
+
+    .typing{
+        margin-right:43px;
+    }
+
+    .input-area{
+        padding:8px 8px 7px;
+    }
+
+    .input-box{
+        border-radius:16px;
+    }
+
+    #questionInput{
+        font-size:13px;
+    }
+
+    .send-btn{
+        width:42px;
+        height:42px;
+        flex-basis:42px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
 
-    <div class="header-inner">
+<div class="header-inner">
 
-        <div class="brand">
+<div class="brand">
 
-            <div class="brand-icon">
-                🤖
-            </div>
+<div class="brand-icon">
+🤖
+</div>
 
-            <div class="brand-text">
+<div class="brand-text">
 
-                <h1>
-                    مساعد أساس التمريض AI
-                </h1>
+<h1>
+مساعد أساس التمريض AI
+</h1>
 
-                <p>
-                    مساعدك التعليمي في التمريض
-                </p>
+<p>
+مساعدك التعليمي في التمريض
+</p>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-        <a href="index.html" class="back-btn">
-            🏠 الرئيسية
-        </a>
+<a href="index.html" class="back-btn">
+🏠 الرئيسية
+</a>
 
-    </div>
+</div>
 
 </header>
 
 
 <main class="page">
 
-    <section class="welcome">
+<section class="welcome">
 
-        <div class="welcome-icon">
-            🤖
-        </div>
+<div class="welcome-icon">
+🤖
+</div>
 
-        <h2>
-            أهلًا بيك في مساعد أساس التمريض
-        </h2>
+<h2>
+أهلًا بيك في مساعد أساس التمريض
+</h2>
 
-        <p>
-            اسأل عن أي موضوع دراسي في التمريض،
-            وسأساعدك في الفهم والمراجعة بطريقة بسيطة ومنظمة.
-        </p>
+<p>
+اسأل عن أي موضوع دراسي في التمريض،
+وسأساعدك في الفهم والمراجعة بطريقة بسيطة ومنظمة.
+</p>
 
-    </section>
-
-
-    <div class="suggestions-title">
-        💡 أمثلة لأسئلة يمكنك طرحها
-    </div>
+</section>
 
 
-    <div class="suggestions">
-
-        <button
-            class="suggestion"
-            onclick="askSuggestion('ما هي وظائف القلب؟')">
-            ❤️ ما هي وظائف القلب؟
-        </button>
-
-        <button
-            class="suggestion"
-            onclick="askSuggestion('ما هي وظائف الجهاز التنفسي؟')">
-            🫁 وظائف الجهاز التنفسي
-        </button>
-
-        <button
-            class="suggestion"
-            onclick="askSuggestion('ما هي مكونات الجهاز الهضمي؟')">
-            🥗 مكونات الجهاز الهضمي
-        </button>
-
-        <button
-            class="suggestion"
-            onclick="askSuggestion('ما هو تعريف Nursing؟')">
-            👩‍⚕️ تعريف Nursing
-        </button>
-
-        <button
-            class="suggestion"
-            onclick="askSuggestion('ما هي علامات الحيوية؟')">
-            🌡️ علامات الحيوية
-        </button>
-
-        <button
-            class="suggestion"
-            onclick="askSuggestion('ما هو ضغط الدم؟')">
-            🩺 ما هو ضغط الدم؟
-        </button>
-
-    </div>
+<div class="suggestions-title">
+💡 أمثلة لأسئلة يمكنك طرحها
+</div>
 
 
-    <section id="chat">
+<div class="suggestions">
 
-        <div class="message ai">
+<button class="suggestion"
+onclick="askSuggestion('ما هي وظائف القلب؟')">
+❤️ ما هي وظائف القلب؟
+</button>
 
-            <div class="avatar">
-                🤖
-            </div>
+<button class="suggestion"
+onclick="askSuggestion('ما هي وظائف الجهاز التنفسي؟')">
+🫁 وظائف الجهاز التنفسي
+</button>
 
-            <div class="bubble">
+<button class="suggestion"
+onclick="askSuggestion('ما هي مكونات الجهاز الهضمي؟')">
+🥗 مكونات الجهاز الهضمي
+</button>
 
-                👋 أهلًا بيك!
+<button class="suggestion"
+onclick="askSuggestion('ما هو تعريف Nursing؟')">
+👩‍⚕️ تعريف Nursing
+</button>
 
-                <br>
+<button class="suggestion"
+onclick="askSuggestion('ما هي علامات الحيوية؟')">
+🌡️ علامات الحيوية
+</button>
 
-                أنا مساعد أساس التمريض AI.
+<button class="suggestion"
+onclick="askSuggestion('ما هو ضغط الدم؟')">
+🩺 ما هو ضغط الدم؟
+</button>
 
-                <br>
-
-                اكتب سؤالك في الأسفل وسأحاول مساعدتك في فهمه.
-
-            </div>
-
-        </div>
-
-    </section>
+</div>
 
 
-    <div class="typing" id="typing">
+<section id="chat">
 
-        <span></span>
-        <span></span>
-        <span></span>
+<div class="message ai">
 
-    </div>
+<div class="avatar">
+🤖
+</div>
+
+<div class="bubble">
+
+👋 أهلًا بيك!
+
+<br>
+
+أنا مساعد أساس التمريض AI.
+
+<br>
+
+اكتب سؤالك في الأسفل وسأحاول مساعدتك في فهمه.
+
+</div>
+
+</div>
+
+</section>
+
+
+<div class="typing" id="typing">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
 
 </main>
 
 
 <div class="input-area">
 
-    <div class="input-box">
+<div class="input-box">
 
-        <textarea
-            id="questionInput"
-            placeholder="اكتب سؤالك هنا..."
-            rows="1"
-            autocomplete="off"></textarea>
+<textarea
+id="questionInput"
+placeholder="اكتب سؤالك هنا..."
+rows="1"
+autocomplete="off"></textarea>
 
-        <button
-            class="send-btn"
-            id="sendButton"
-            onclick="sendQuestion()"
-            title="إرسال">
+<button
+class="send-btn"
+id="sendButton"
+onclick="sendQuestion()"
+title="إرسال">
 
-            ➤
+➤
 
-        </button>
+</button>
 
-    </div>
+</div>
 
-    <div class="input-note">
-        مساعد تعليمي للتمريض — راجع المعلومات المهمة مع مصادر دراسية موثوقة.
-    </div>
+<div class="input-note">
+مساعد تعليمي للتمريض — راجع المعلومات المهمة مع مصادر دراسية موثوقة.
+</div>
 
 </div>
 
 
 <script>
 
-    /*
-    =====================================================
-    رابط Cloudflare Worker
-    =====================================================
+/* رابط Cloudflare Worker */
 
-    IMPORTANT:
-    ضع هنا رابط الـ Worker الخاص بك.
+const WORKER_URL =
+"https://asas-altamreed-ai.mohamed657mmg.workers.dev";
 
-    مثال:
-    https://nursing-ai.xxxxx.workers.dev
 
-    لا تضع / في نهاية الرابط.
-    =====================================================
-    */
+const questionInput =
+document.getElementById("questionInput");
 
-    const WORKER_URL = "ضع-رابط-الـWorker-هنا";
+const sendButton =
+document.getElementById("sendButton");
 
+const chat =
+document.getElementById("chat");
 
-    const questionInput =
-        document.getElementById("questionInput");
+const typing =
+document.getElementById("typing");
 
-    const sendButton =
-        document.getElementById("sendButton");
 
-    const chat =
-        document.getElementById("chat");
+/* إرسال السؤال */
 
-    const typing =
-        document.getElementById("typing");
+async function sendQuestion(){
 
+const question =
+questionInput.value.trim();
 
-    /*
-    =====================================================
-    إرسال السؤال
-    =====================================================
-    */
+if(!question){
+return;
+}
 
-    async function sendQuestion() {
+addMessage(
+question,
+"user"
+);
 
-        const question =
-            questionInput.value.trim();
+questionInput.value="";
 
-        if (!question) {
-            return;
-        }
+questionInput.style.height="auto";
 
+sendButton.disabled=true;
 
-        // إضافة سؤال المستخدم
-        addMessage(
-            question,
-            "user"
-        );
+typing.classList.add("show");
 
+try{
 
-        questionInput.value = "";
+const response =
+await fetch(
+WORKER_URL,
+{
+method:"POST",
 
-        questionInput.style.height = "auto";
+headers:{
+"Content-Type":
+"application/json"
+},
 
-        sendButton.disabled = true;
+body:JSON.stringify({
+question:question
+})
+}
+);
 
-        typing.classList.add("show");
 
+const data =
+await response.json();
 
-        try {
 
-            if (
-                !WORKER_URL ||
-                WORKER_URL ===
-                "ضع-رابط-الـWorker-هنا"
-            ) {
+typing.classList.remove("show");
 
-                throw new Error(
-                    "لم يتم وضع رابط Cloudflare Worker."
-                );
-            }
 
+if(
+data &&
+data.success===true &&
+typeof data.answer==="string"
+){
 
-            const response =
-                await fetch(
-                    WORKER_URL,
-                    {
-                        method: "POST",
+addMessage(
+data.answer,
+"ai"
+);
 
-                        headers: {
-                            "Content-Type":
-                                "application/json"
-                        },
+}else{
 
-                        body:
-                            JSON.stringify({
-                                question:
-                                    question
-                            })
-                    }
-                );
+addMessage(
+data && data.message
+? data.message
+: "حدث خطأ أثناء الحصول على الإجابة.",
+"ai",
+true
+);
 
+}
 
-            const data =
-                await response.json();
+}catch(error){
 
+typing.classList.remove("show");
 
-            typing.classList.remove("show");
+addMessage(
+"تعذر الاتصال بمساعد أساس التمريض. تأكد من اتصال الإنترنت ورابط المساعد.",
+"ai",
+true
+);
 
+console.error(
+"AI ERROR:",
+error
+);
 
-            if (
-                data &&
-                data.success === true &&
-                typeof data.answer === "string"
-            ) {
+}
 
-                addMessage(
-                    data.answer,
-                    "ai"
-                );
+sendButton.disabled=false;
 
-            } else {
+questionInput.focus();
 
-                addMessage(
-                    data &&
-                    data.message
-                        ? data.message
-                        : "حدث خطأ أثناء الحصول على الإجابة.",
-                    "ai",
-                    true
-                );
+}
 
-            }
 
+/* إضافة رسالة */
 
-        } catch (error) {
+function addMessage(
+text,
+type,
+isError=false
+){
 
-            typing.classList.remove("show");
+const message =
+document.createElement("div");
 
-            addMessage(
-                "تعذر الاتصال بمساعد أساس التمريض. تأكد من اتصال الإنترنت ورابط المساعد.",
-                "ai",
-                true
-            );
+message.className =
+"message "+type;
 
-            console.error(
-                "AI ERROR:",
-                error
-            );
 
-        }
+const avatar =
+document.createElement("div");
 
+avatar.className="avatar";
 
-        sendButton.disabled = false;
+avatar.textContent =
+type==="user"
+? "👤"
+: "🤖";
 
-        questionInput.focus();
 
-    }
+const bubble =
+document.createElement("div");
 
+bubble.className="bubble";
 
-    /*
-    =====================================================
-    إضافة رسالة
-    =====================================================
-    */
 
-    function addMessage(
-        text,
-        type,
-        isError = false
-    ) {
+if(isError){
 
-        const message =
-            document.createElement("div");
+bubble.classList.add(
+"error-message"
+);
 
-        message.className =
-            "message " + type;
+}
 
 
-        const avatar =
-            document.createElement("div");
+bubble.innerHTML =
+formatAnswer(text);
 
-        avatar.className =
-            "avatar";
 
-        avatar.textContent =
-            type === "user"
-                ? "👤"
-                : "🤖";
+message.appendChild(avatar);
 
+message.appendChild(bubble);
 
-        const bubble =
-            document.createElement("div");
+chat.appendChild(message);
 
-        bubble.className =
-            "bubble";
+scrollToBottom();
 
+}
 
-        if (isError) {
 
-            bubble.classList.add(
-                "error-message"
-            );
+/* تنسيق الإجابة */
 
-        }
+function formatAnswer(text){
 
+let safe =
+escapeHtml(
+String(text)
+);
 
-        /*
-        تحويل Markdown البسيط
-        إلى HTML آمن نسبيًا
-        */
 
-        bubble.innerHTML =
-            formatAnswer(
-                text
-            );
+safe =
+safe.replace(
+/\*\*(.*?)\*\*/g,
+"<strong>$1</strong>"
+);
 
 
-        message.appendChild(
-            avatar
-        );
+safe =
+safe.replace(
+/^### (.*)$/gm,
+"<strong>$1</strong>"
+);
 
-        message.appendChild(
-            bubble
-        );
 
+safe =
+safe.replace(
+/\n/g,
+"<br>"
+);
 
-        chat.appendChild(
-            message
-        );
 
+safe =
+safe.replace(
+/(^|<br>)\s*[-•]\s+/g,
+"$1• "
+);
 
-        scrollToBottom();
 
-    }
+return safe;
 
+}
 
-    /*
-    =====================================================
-    تنسيق الإجابة
-    =====================================================
-    */
 
-    function formatAnswer(text) {
+/* حماية النص */
 
-        let safe =
-            escapeHtml(
-                String(text)
-            );
+function escapeHtml(text){
 
+return text
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
 
-        // Bold
-        safe =
-            safe.re
+}
+
+
+/* الأسئلة الجاهزة */
+
+function askSuggestion(question){
+
+questionInput.value=question;
+
+sendQuestion();
+
+}
+
+
+/* Enter للإرسال */
+
+questionInput.addEventListener(
+"keydown",
+function(event){
+
+if(
+event.key==="Enter" &&
+!event.shiftKey
+){
+
+event.preventDefault();
+
+sendQuestion();
+
+}
+
+}
+);
+
+
+/* تكبير مربع الكتابة */
+
+questionInput.addEventListener(
+"input",
+function(){
+
+this.style.height="auto";
+
+this.style.height =
+Math.min(
+this.scrollHeight,
+140
+)+"px";
+
+}
+);
+
+
+/* النزول لآخر رسالة */
+
+function scrollToBottom(){
+
+setTimeout(
+function(){
+
+window.scrollTo({
+top:
+document.body.scrollHeight,
+behavior:"smooth"
+});
+
+},
+50
+);
+
+}
+
+</script>
+
+</body>
+    </html>
