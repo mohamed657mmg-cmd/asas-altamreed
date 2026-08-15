@@ -19,21 +19,24 @@ body{
     font-family:Arial,Tahoma,sans-serif;
     background:#f4f7f5;
     color:#222;
+    line-height:1.9;
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
 
 header{
     background:linear-gradient(135deg,#0b5d3b,#16804f);
     color:white;
     text-align:center;
-    padding:35px 15px;
+    padding:38px 15px;
     box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
-.icon{
-    font-size:55px;
-    margin-bottom:10px;
+.header-icon{
+    font-size:58px;
+    margin-bottom:8px;
 }
 
 header h1{
@@ -45,15 +48,15 @@ header p{
     font-size:16px;
 }
 
-/* Container */
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
-    max-width:1000px;
+    max-width:1050px;
     margin:35px auto;
     padding:0 15px;
 }
-
-/* Back */
 
 .back{
     display:inline-block;
@@ -61,132 +64,254 @@ header p{
     text-decoration:none;
     font-weight:bold;
     margin-bottom:25px;
-    font-size:16px;
 }
 
 .back:hover{
     text-decoration:underline;
 }
 
-/* Title */
-
-.title{
+.page-title{
     text-align:center;
     color:#0b5d3b;
-    font-size:30px;
-    margin-bottom:10px;
+    font-size:29px;
+    margin-bottom:8px;
 }
 
-.subtitle{
+.page-subtitle{
     text-align:center;
     color:#666;
     margin-bottom:30px;
-    font-size:16px;
 }
 
-/* Lessons */
+/* =========================
+   LESSONS ENVELOPES
+========================= */
 
 .lessons{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+    gap:22px;
 }
 
-/* Lesson Card */
-
-.lesson{
+.lesson-card{
     background:white;
     border-radius:20px;
     padding:28px 20px;
     text-align:center;
+    border:1px solid #e1ece5;
     box-shadow:0 5px 18px rgba(0,0,0,.08);
-    border:1px solid #e2eee7;
+    cursor:pointer;
     transition:.25s;
+    position:relative;
+    overflow:hidden;
 }
 
-.lesson:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 22px rgba(0,0,0,.12);
-}
-
-.lesson-number{
-    width:55px;
-    height:55px;
-    margin:0 auto 15px;
-    border-radius:50%;
+.lesson-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    height:5px;
     background:#0b5d3b;
-    color:white;
+}
+
+.lesson-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,.13);
+}
+
+.envelope{
+    width:90px;
+    height:68px;
+    margin:5px auto 18px;
+    background:#e9f3ed;
+    border:2px solid #0b5d3b;
+    border-radius:10px;
+    position:relative;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:22px;
+    font-size:42px;
+}
+
+.lesson-number{
+    position:absolute;
+    top:-10px;
+    left:-10px;
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    background:#0b5d3b;
+    color:white;
+    font-size:15px;
     font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.lesson-icon{
-    font-size:45px;
-    margin-bottom:12px;
-}
-
-.lesson h2{
+.lesson-card h2{
     color:#0b5d3b;
     font-size:20px;
     line-height:1.6;
-    margin-bottom:12px;
+    margin-bottom:8px;
 }
 
-.lesson p{
+.lesson-card p{
     color:#666;
-    line-height:1.8;
-    margin-bottom:18px;
+    font-size:14px;
+    margin-bottom:16px;
 }
 
-/* Buttons */
+.open-text{
+    display:inline-block;
+    background:#0b5d3b;
+    color:white;
+    padding:9px 22px;
+    border-radius:10px;
+    font-weight:bold;
+}
 
-.btn{
+/* =========================
+   LESSON CONTENT
+========================= */
+
+.lesson-content{
+    display:none;
+}
+
+.lesson-content.active{
+    display:block;
+}
+
+.lesson-header{
+    background:white;
+    border-radius:20px;
+    padding:25px 20px;
+    margin-bottom:25px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    border-right:6px solid #0b5d3b;
+}
+
+.lesson-header h2{
+    color:#0b5d3b;
+    font-size:27px;
+    margin-bottom:5px;
+}
+
+.lesson-header p{
+    color:#666;
+}
+
+/* =========================
+   CONTENT BOXES
+========================= */
+
+.content-box{
+    background:white;
+    border-radius:16px;
+    padding:22px;
+    margin-bottom:18px;
+    box-shadow:0 3px 12px rgba(0,0,0,.06);
+    border:1px solid #e5eee8;
+}
+
+.content-box h3{
+    color:#0b5d3b;
+    margin-bottom:12px;
+    font-size:21px;
+}
+
+.content-box h4{
+    color:#145a32;
+    margin:18px 0 8px;
+    font-size:18px;
+}
+
+.question{
+    background:#e9f3ed;
+    border-right:4px solid #0b5d3b;
+    padding:14px;
+    border-radius:10px;
+    margin:12px 0;
+}
+
+.answer{
+    background:#f8faf9;
+    padding:15px;
+    border-radius:10px;
+    margin:12px 0;
+}
+
+.english{
+    direction:ltr;
+    text-align:left;
+    background:#f5f7f6;
+    border:1px solid #dfe8e2;
+    padding:15px;
+    border-radius:10px;
+    margin:12px 0;
+    font-family:Arial,sans-serif;
+}
+
+.highlight{
+    background:#e9f3ed;
+    border-right:5px solid #0b5d3b;
+    padding:16px;
+    border-radius:10px;
+    margin:15px 0;
+    font-weight:bold;
+}
+
+ul{
+    padding-right:25px;
+}
+
+li{
+    margin:5px 0;
+}
+
+.keywords{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:10px;
+    margin-top:12px;
+}
+
+.keyword{
+    background:#e9f3ed;
+    color:#0b5d3b;
+    padding:10px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+/* =========================
+   BACK TO LESSONS
+========================= */
+
+.lesson-back{
     display:block;
     width:100%;
     background:#0b5d3b;
     color:white;
-    text-decoration:none;
-    padding:13px 15px;
+    border:none;
+    padding:13px;
     border-radius:11px;
+    font-size:16px;
     font-weight:bold;
-    font-size:15px;
-    transition:.2s;
+    cursor:pointer;
+    margin:25px 0;
 }
 
-.btn:hover{
+.lesson-back:hover{
     background:#084a2f;
 }
 
-.quiz-btn{
-    display:block;
-    width:100%;
-    background:#e9f3ed;
-    color:#0b5d3b;
-    padding:12px 15px;
-    border-radius:11px;
-    font-weight:bold;
-    margin-top:10px;
-    border:1px solid #0b5d3b;
-    cursor:not-allowed;
-    font-size:14px;
-}
-
-/* Chapter Info */
-
-.chapter-info{
-    background:#e9f3ed;
-    border-right:5px solid #0b5d3b;
-    border-radius:12px;
-    padding:18px;
-    margin-bottom:30px;
-    line-height:1.9;
-    color:#174d37;
-}
-
-/* Footer */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     background:#083f29;
@@ -197,7 +322,9 @@ footer{
     line-height:1.8;
 }
 
-/* Mobile */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px){
 
@@ -205,16 +332,16 @@ footer{
         font-size:26px;
     }
 
-    .title{
-        font-size:26px;
+    .page-title{
+        font-size:25px;
     }
 
-    .lessons{
-        grid-template-columns:1fr;
+    .lesson-header h2{
+        font-size:23px;
     }
 
-    .lesson{
-        padding:25px 18px;
+    .content-box{
+        padding:17px;
     }
 
 }
@@ -225,9 +352,10 @@ footer{
 
 <body>
 
+
 <header>
 
-<div class="icon">
+<div class="header-icon">
 📖
 </div>
 
@@ -244,43 +372,37 @@ Foundation of Nursing Practice
 
 <div class="container">
 
+
 <a href="foundations-of-nursing-theory.html" class="back">
 ← العودة إلى Chapters
 </a>
 
-<h2 class="title">
+
+<!-- =========================
+     LESSONS PAGE
+========================= -->
+
+<div id="lessonsPage">
+
+<h2 class="page-title">
 🩺 Foundation of Nursing Practice
 </h2>
 
-<p class="subtitle">
+<p class="page-subtitle">
 الصف الأول - Foundations of Nursing - النظري
 </p>
-
-
-<div class="chapter-info">
-
-<strong>📚 محتوى الشابتر:</strong>
-
-<br>
-
-يحتوي هذا الشابتر على 6 دروس أساسية في Foundation of Nursing Practice.
-
-</div>
 
 
 <div class="lessons">
 
 
-<!-- Lesson One -->
+<!-- LESSON 1 -->
 
-<div class="lesson">
+<div class="lesson-card" onclick="openLesson('lesson1')">
 
-<div class="lesson-number">
-1
-</div>
-
-<div class="lesson-icon">
-🩺
+<div class="envelope">
+<span class="lesson-number">1</span>
+✉️
 </div>
 
 <h2>
@@ -288,30 +410,23 @@ Introduction to Nursing
 </h2>
 
 <p>
-مقدمة عن التمريض، تعريف التمريض، تعريف الممرض، وأهداف التمريض.
+مقدمة عن التمريض
 </p>
 
-<a href="lesson-one-introduction-to-nursing.html" class="btn">
-دخول الدرس
-</a>
-
-<button class="quiz-btn" disabled>
-📝 اختبار الدرس — قريبًا
-</button>
+<span class="open-text">
+فتح الدرس
+</span>
 
 </div>
 
 
-<!-- Lesson Two -->
+<!-- LESSON 2 -->
 
-<div class="lesson">
+<div class="lesson-card" onclick="openLesson('lesson2')">
 
-<div class="lesson-number">
-2
-</div>
-
-<div class="lesson-icon">
-📋
+<div class="envelope">
+<span class="lesson-number">2</span>
+✉️
 </div>
 
 <h2>
@@ -319,30 +434,23 @@ Nursing Profession & Nursing Process
 </h2>
 
 <p>
-مهنة التمريض وعملية التمريض ومعايير ممارسة التمريض.
+مهنة التمريض وعملية التمريض
 </p>
 
-<a href="lesson-two-nursing-profession-process.html" class="btn">
-دخول الدرس
-</a>
-
-<button class="quiz-btn" disabled>
-📝 اختبار الدرس — قريبًا
-</button>
+<span class="open-text">
+فتح الدرس
+</span>
 
 </div>
 
 
-<!-- Lesson Three -->
+<!-- LESSON 3 -->
 
-<div class="lesson">
+<div class="lesson-card" onclick="openLesson('lesson3')">
 
-<div class="lesson-number">
-3
-</div>
-
-<div class="lesson-icon">
-👩‍⚕️
+<div class="envelope">
+<span class="lesson-number">3</span>
+✉️
 </div>
 
 <h2>
@@ -350,30 +458,23 @@ Standards of Professional Performance & The Role of the Nurse
 </h2>
 
 <p>
-معايير الأداء المهني وأدوار الممرض ووظائفه.
+معايير الأداء المهني ودور الممرض ووظائفه
 </p>
 
-<a href="lesson-three-professional-performance.html" class="btn">
-دخول الدرس
-</a>
-
-<button class="quiz-btn" disabled>
-📝 اختبار الدرس — قريبًا
-</button>
+<span class="open-text">
+فتح الدرس
+</span>
 
 </div>
 
 
-<!-- Lesson Four -->
+<!-- LESSON 4 -->
 
-<div class="lesson">
+<div class="lesson-card" onclick="openLesson('lesson4')">
 
-<div class="lesson-number">
-4
-</div>
-
-<div class="lesson-icon">
-⚖️
+<div class="envelope">
+<span class="lesson-number">4</span>
+✉️
 </div>
 
 <h2>
@@ -381,30 +482,23 @@ Ethics in Nursing Profession
 </h2>
 
 <p>
-أخلاقيات مهنة التمريض والقيم والمبادئ الأخلاقية وكود أخلاقيات التمريض الدولي.
+أخلاقيات مهنة التمريض
 </p>
 
-<a href="lesson-four-ethics-nursing.html" class="btn">
-دخول الدرس
-</a>
-
-<button class="quiz-btn" disabled>
-📝 اختبار الدرس — قريبًا
-</button>
+<span class="open-text">
+فتح الدرس
+</span>
 
 </div>
 
 
-<!-- Lesson Five -->
+<!-- LESSON 5 -->
 
-<div class="lesson">
+<div class="lesson-card" onclick="openLesson('lesson5')">
 
-<div class="lesson-number">
-5
-</div>
-
-<div class="lesson-icon">
-🛡️
+<div class="envelope">
+<span class="lesson-number">5</span>
+✉️
 </div>
 
 <h2>
@@ -412,30 +506,23 @@ Patient Safety
 </h2>
 
 <p>
-مفهوم السلامة، سلامة المريض، أهميتها، والعوامل المؤثرة عليها.
+سلامة المريض
 </p>
 
-<a href="lesson-five-patient-safety.html" class="btn">
-دخول الدرس
-</a>
-
-<button class="quiz-btn" disabled>
-📝 اختبار الدرس — قريبًا
-</button>
+<span class="open-text">
+فتح الدرس
+</span>
 
 </div>
 
 
-<!-- Lesson Six -->
+<!-- LESSON 6 -->
 
-<div class="lesson">
+<div class="lesson-card" onclick="openLesson('lesson6')">
 
-<div class="lesson-number">
-6
-</div>
-
-<div class="lesson-icon">
-❤️
+<div class="envelope">
+<span class="lesson-number">6</span>
+✉️
 </div>
 
 <h2>
@@ -443,41 +530,748 @@ Health and Illness Concept
 </h2>
 
 <p>
-مفهوم الصحة والمرض، والمرض الحاد والمزمن، والعوامل المؤثرة على الصحة والمرض.
+مفهوم الصحة والمرض
 </p>
 
-<a href="lesson-six-health-illness.html" class="btn">
-دخول الدرس
-</a>
+<span class="open-text">
+فتح الدرس
+</span>
 
-<button class="quiz-btn" disabled>
-📝 اختبار الدرس — قريبًا
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     LESSON 1
+===================================================== -->
+
+<div id="lesson1" class="lesson-content">
+
+<div class="lesson-header">
+
+<h2>
+🩺 الدرس الأول: Introduction to Nursing
+</h2>
+
+<p>
+مقدمة عن التمريض
+</p>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+1️⃣ Introduction to Nursing
+</h3>
+
+<h4>
+مقدمة عن التمريض
+</h4>
+
+<p>
+التمريض يعتبر:
+</p>
+
+<div class="english">
+Nursing is an Art and a Science.
+</div>
+
+<p>
+التمريض هو فن وعلم.
+</p>
+
+
+<h4>
+🔹 Nursing as an Art — التمريض كفن
+</h4>
+
+<p>
+الممرض يتعلم كيفية تقديم الرعاية للمريض بطريقة تتصف بـ:
+</p>
+
+<ul>
+<li>Compassion → التعاطف.</li>
+<li>Caring → الاهتمام والرعاية.</li>
+<li>Respect for patient's dignity and personhood → احترام كرامة المريض وشخصيته.</li>
+</ul>
+
+<div class="highlight">
+يعني الممرض مش بيهتم بالمرض فقط، لكن كمان بطريقة تعامله مع المريض واحترامه له.
+</div>
+
+
+<h4>
+🔹 Nursing as a Science — التمريض كعلم
+</h4>
+
+<p>
+ممارسة التمريض تعتمد على Body of knowledge يعني مجموعة من المعارف العلمية، وهذه المعرفة تتغير باستمرار مع ظهور:
+</p>
+
+<ul>
+<li>New discoveries → الاكتشافات الجديدة.</li>
+<li>Innovations → الابتكارات.</li>
+</ul>
+
+
+<div class="highlight">
+⭐ الخلاصة:<br>
+Nursing = Art + Science<br>
+Art: Compassion + Caring + Respect<br>
+Science: Knowledge + New discoveries + Innovations
+</div>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+2️⃣ Definition of Nursing
+</h3>
+
+<h4>
+تعريف التمريض
+</h4>
+
+<div class="english">
+Nursing is the protection, promotion, and optimization of health and abilities; prevention of illness and injury; alleviation of suffering through the diagnosis and treatment of human responses; and advocacy in health care for individuals, families, communities, and populations.
+</div>
+
+<h4>
+🇪🇬 الترجمة
+</h4>
+
+<p>
+التمريض هو حماية وتعزيز وتحسين الصحة والقدرات، والوقاية من المرض والإصابة، وتخفيف المعاناة من خلال تشخيص وعلاج استجابات الإنسان، والدفاع عن الرعاية الصحية للأفراد والأسر والمجتمعات والسكان.
+</p>
+
+<h4>
+🧠 نفهم التعريف إزاي؟
+</h4>
+
+<ul>
+<li>Protection → حماية الصحة.</li>
+<li>Promotion & Optimization → تعزيز وتحسين الصحة والقدرات.</li>
+<li>Prevention → الوقاية من المرض والإصابة.</li>
+<li>Alleviation of suffering → تخفيف معاناة المريض.</li>
+<li>Advocacy → الدفاع عن المريض ومساعدته في الحصول على الرعاية الصحية.</li>
+</ul>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+3️⃣ Definition of Nurse
+</h3>
+
+<h4>
+تعريف الممرض
+</h4>
+
+<div class="english">
+The nurse is a person who has completed a program of basic, generalized nursing education and is authorized by the appropriate regulatory authority to practice nursing in his/her country.
+</div>
+
+<h4>
+🇪🇬 الترجمة
+</h4>
+
+<p>
+الممرض هو الشخص الذي أكمل برنامجًا أساسيًا وعامًا في تعليم التمريض، وحصل على تصريح من الجهة التنظيمية المختصة لممارسة التمريض في بلده.
+</p>
+
+<h4>
+🧠 ببساطة:</h4>
+
+<p>
+عشان الشخص يكون Nurse حسب التعريف الموجود في الشابتر، لازم:
+</p>
+
+<div class="highlight">
+Nursing Education
+<br>
+⬇️
+<br>
+يكمل تعليم التمريض الأساسي.
+<br><br>
+Authorization
+<br>
+⬇️
+<br>
+يحصل على التصريح المناسب لممارسة المهنة.
+</div>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+4️⃣ Aim of Nursing
+</h3>
+
+<h4>
+أهداف التمريض
+</h4>
+
+<p>
+الكتاب بيحدد 4 أهداف أساسية للتمريض.
+</p>
+
+<h4>
+1. To promote health</h4>
+<p>تعزيز الصحة<br>يعني مساعدة الشخص على الحفاظ على صحته وتحسينها.</p>
+
+<h4>
+2. To prevent illness</h4>
+<p>الوقاية من المرض<br>يعني اتخاذ الإجراءات التي تساعد على منع حدوث المرض.</p>
+
+<h4>
+3. To restore health</h4>
+<p>استعادة الصحة<br>يعني مساعدة المريض على استعادة صحته قدر الإمكان.</p>
+
+<h4>
+4. To facilitate coping with disability or death</h4>
+<p>مساعدة المريض على التكيف مع الإعاقة أو الوفاة<br>يعني مساعدة المريض على التعامل والتكيف مع الإعاقة أو مرحلة الوفاة.</p>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+🧠 ملخص الدرس الأول
+</h3>
+
+<h4>
+Definition of Nursing
+</h4>
+
+<p>
+تعريف التمريض
+</p>
+
+<div class="keywords">
+<div class="keyword">Protection → الحماية</div>
+<div class="keyword">Promotion → التعزيز</div>
+<div class="keyword">Optimization → التحسين</div>
+<div class="keyword">Prevention → الوقاية</div>
+<div class="keyword">Alleviation → تخفيف المعاناة</div>
+<div class="keyword">Advocacy → الدفاع عن المريض</div>
+</div>
+
+<h4>
+Definition of Nurse
+</h4>
+
+<p>
+Completed nursing education + Authorized to practice
+<br>
+أكمل تعليم التمريض + حاصل على تصريح لممارسة المهنة
+</p>
+
+<h4>
+Aims of Nursing
+</h4>
+
+<p>
+احفظ الأربعة بالترتيب:
+</p>
+
+<div class="highlight">
+Promote → Prevent → Restore → Cope
+<br><br>
+To promote health<br>
+تعزيز الصحة
+<br><br>
+To prevent illness<br>
+الوقاية من المرض
+<br><br>
+To restore health<br>
+استعادة الصحة
+<br><br>
+To facilitate coping with disability or death<br>
+مساعدة المريض على التكيف مع الإعاقة أو الوفاة
+</div>
+
+<h4>
+⭐ أهم كلمات الدرس
+</h4>
+
+<p>
+Nursing = Art + Science
+<br>
+التمريض = فن + علم
+<br><br>
+Art = Compassion + Caring + Respect
+<br>
+الفن = التعاطف + الاهتمام + الاحترام
+<br><br>
+Science = Knowledge + New discoveries + Innovations
+<br>
+العلم = المعرفة + الاكتشافات الجديدة + الابتكارات
+<br><br>
+Nursing Aims = Promote + Prevent + Restore + Cope
+<br>
+أهداف التمريض = تعزيز + وقاية + استعادة + تكيف
+</p>
+
+</div>
+
+
+<button class="lesson-back" onclick="backToLessons()">
+← العودة إلى دروس Chapter One
 </button>
 
 </div>
 
 
+<!-- =====================================================
+     LESSON 2
+===================================================== -->
+
+<div id="lesson2" class="lesson-content">
+
+<div class="lesson-header">
+
+<h2>
+📋 الدرس الثاني: Nursing Profession & Nursing Process
+</h2>
+
+<p>
+مهنة التمريض وعملية التمريض
+</p>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+1️⃣ The Nursing Profession
+</h3>
+
+<h4>
+مهنة التمريض
+</h4>
+
+<div class="question">
+❓ Question:<br>
+What is the nursing profession?<br>
+ما هي مهنة التمريض؟
+</div>
+
+<p>
+التمريض مهنة لها مجالات عمل متعددة، ومش مقتصرة على العمل داخل المستشفى فقط.
+</p>
+
+<h4>
+أهم مجالات العمل في التمريض:</h4>
+
+<ul>
+<li>Clinical Practice → الممارسة السريرية.</li>
+<li>Education → التعليم.</li>
+<li>Research → البحث العلمي.</li>
+<li>Management → الإدارة.</li>
+<li>Administration → إدارة وتنظيم الخدمات.</li>
+<li>Entrepreneurship → ريادة الأعمال.</li>
+</ul>
+
+<p>
+كما أن التمريض يؤثر في حياة:
+</p>
+
+<ul>
+<li>Patients → المرضى.</li>
+<li>Families → الأسر.</li>
+<li>Communities → المجتمعات.</li>
+</ul>
+
+<div class="highlight">
+The patient is the center of your practice.<br>
+المريض هو محور ممارسة التمريض.
+</div>
+
+<p>
+يعني كل الرعاية والخدمات التمريضية في النهاية هدفها الأساسي هو المريض واحتياجاته.
+</p>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+2️⃣ Standards of Nursing Practice
+</h3>
+
+<h4>
+معايير ممارسة التمريض
+</h4>
+
+<p>
+من أهم معايير ممارسة التمريض Nursing Process.
+</p>
+
+<div class="english">
+The nursing process is the foundation of clinical decision making and includes all significant actions taken by nurses in providing care to patients.
+</div>
+
+<p>
+عملية التمريض هي أساس اتخاذ القرارات السريرية، وتشمل جميع الإجراءات المهمة التي يقوم بها الممرض أثناء تقديم الرعاية للمرضى.
+</p>
+
+<h4>
+🔄 Nursing Process</h4>
+
+<p>
+خطوات عملية التمريض
+</p>
+
+<div class="highlight">
+Assessment → Diagnosis → Outcomes Identification → Planning → Implementation → Evaluation
+<br><br>
+A → D → O → P → I → E
 </div>
 
 </div>
 
 
-<footer>
+<div class="content-box">
 
-<strong>
-🩺 أساس التمريض
-</strong>
+<h3>
+1️⃣ Assessment
+</h3>
 
+<p>
+التقييم / جمع البيانات
+</p>
+
+<div class="english">
+The registered nurse collects comprehensive data pertinent to the patient’s health and/or the situation.
+</div>
+
+<p>
+الممرض يقوم بجمع بيانات شاملة مرتبطة بصحة المريض أو حالته.
+</p>
+
+<p>
+ببساطة:<br>
+أول حاجة نعرف حالة المريض ونجمع المعلومات عنه.
+</p>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+2️⃣ Diagnosis
+</h3>
+
+<p>
+التشخيص
+</p>
+
+<div class="english">
+The registered nurse analyzes the assessment data to determine the diagnoses or issues.
+</div>
+
+<p>
+يقوم الممرض بتحليل بيانات الـAssessment لتحديد التشخيص أو المشكلات الموجودة لدى المريض.
+</p>
+
+<p>
+ببساطة:<br>
+بعد ما نجمع البيانات، نحدد إيه المشكلة؟
+</p>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+3️⃣ Outcomes Identification
+</h3>
+
+<p>
+تحديد النتائج المتوقعة
+</p>
+
+<div class="english">
+The registered nurse identifies expected outcomes for a plan individualized to the patient or the situation.
+</div>
+
+<p>
+يحدد الممرض النتائج المتوقعة التي تناسب المريض وحالته بشكل فردي.
+</p>
+
+<p>
+ببساطة:<br>
+نحدد إحنا عايزين نوصل لإيه؟
+</p>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+4️⃣ Planning
+</h3>
+
+<p>
+التخطيط
+</p>
+
+<div class="english">
+The registered nurse develops a plan that prescribes strategies and alternatives to attain expected outcomes.
+</div>
+
+<p>
+يضع الممرض خطة تتضمن الاستراتيجيات والبدائل اللازمة للوصول إلى النتائج المتوقعة.
+</p>
+
+<p>
+ببساطة:<br>
+نحدد هنوصل للهدف إزاي؟
+</p>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+5️⃣ Implementation
+</h3>
+
+<p>
+التنفيذ
+</p>
+
+<div class="english">
+The registered nurse implements the identified plan.
+</div>
+
+<p>
+يقوم الممرض بتنفيذ الخطة المحددة.
+</p>
+
+<p>
+ببساطة:<br>
+ننـفذ اللي خططنا له.
+</p>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+6️⃣ Evaluation
+</h3>
+
+<p>
+التقييم
+</p>
+
+<div class="english">
+The nurse evaluates progress toward attainment of outcomes.
+</div>
+
+<p>
+يقوم الممرض بتقييم مدى التقدم نحو تحقيق النتائج المطلوبة.
+</p>
+
+<p>
+ببساطة:<br>
+نشوف هل الخطة نجحت ووصلنا للهدف ولا لأ؟
+</p>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+📌 ملخص الدرس الثاني
+</h3>
+
+<h4>
+Nursing Profession
+</h4>
+
+<ul>
+<li>Clinical Practice → الممارسة السريرية.</li>
+<li>Education → التعليم.</li>
+<li>Research → البحث.</li>
+<li>Management → الإدارة.</li>
+<li>Administration → الإدارة والتنظيم.</li>
+<li>Entrepreneurship → ريادة الأعمال.</li>
+</ul>
+
+<div class="highlight">
+The patient is the center of your practice.
 <br>
+المريض هو محور ممارسة التمريض.
+</div>
 
-منصتك التعليمية لطلاب التمريض
+<h4>
+Nursing Process</h4>
 
-<br>
+<p>
+عملية التمريض هي أساس اتخاذ القرارات السريرية في ممارسة التمريض.
+</p>
 
-© 2026 أساس التمريض
+<div class="highlight">
+Assessment → Diagnosis → Outcomes → Planning → Implementation → Evaluation
+<br><br>
+A → D → O → P → I → E
+</div>
 
-</footer>
+</div>
 
-</body>
 
-  </html>
+<button class="lesson-back" onclick="backToLessons()">
+← العودة إلى دروس Chapter One
+</button>
+
+</div>
+
+
+<!-- =====================================================
+     LESSON 3
+===================================================== -->
+
+<div id="lesson3" class="lesson-content">
+
+<div class="lesson-header">
+
+<h2>
+👩‍⚕️ الدرس الثالث: Standards of Professional Performance & The Role of the Nurse
+</h2>
+
+<p>
+معايير الأداء المهني ودور الممرض ووظائفه
+</p>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+1️⃣ Standards of Professional Performance
+</h3>
+
+<h4>
+معايير الأداء المهني
+</h4>
+
+<div class="question">
+❓ Question:<br>
+What are the Standards of Professional Performance?<br>
+ما هي معايير الأداء المهني؟
+</div>
+
+<div class="english">
+The American Nurses Association (ANA) Standards of Professional Performance describe a competent level of behavior in the professional role.
+</div>
+
+<p>
+تصف معايير الأداء المهني لجمعية الممرضين الأمريكية ANA مستوى كفء من السلوك في الدور المهني للممرض.
+</p>
+
+<p>
+يعني المعايير دي بتحدد المستوى المهني المتوقع من الممرض أثناء ممارسة عمله، وبتساعد على تقديم رعاية آمنة وجيدة للمريض.
+</p>
+
+<h4>
+🔹 Standards of Professional Performance
+</h4>
+
+<ul>
+<li>Ethics → الأخلاقيات</li>
+<li>Education → التعليم</li>
+<li>Evidence-Based Practice and Research → الممارسة القائمة على الأدلة والبحث العلمي</li>
+<li>Quality of Practice → جودة الممارسة</li>
+<li>Communication → التواصل</li>
+<li>Leadership → القيادة</li>
+<li>Collaboration → التعاون</li>
+<li>Professional Practice Evaluation → تقييم الممارسة المهنية</li>
+<li>Resources → الموارد</li>
+<li>Environmental Health → الصحة البيئية</li>
+</ul>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+1️⃣ Ethics
+</h3>
+
+<p>
+الأخلاقيات
+</p>
+
+<div class="english">
+The registered nurse practices ethically.
+</div>
+
+<p>
+يمارس الممرض المسجل عمله بطريقة أخلاقية.
+</p>
+
+<p>
+يعني الممرض لازم يلتزم بأخلاقيات مهنة التمريض، ويحترم المريض وحقوقه وخصوصيته، ويتعامل معه بطريقة صحيحة ومحترمة.
+</p>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+2️⃣ Education
+</h3>
+
+<p>
+التعليم
+</p>
+
+<div class="english">
+The registered nurse attains knowledge and competency that reflects current nursing practice.
+</div>
+
+<p>
+يكتسب الممرض المسجل المعرفة والكفاءة التي تعكس الممارسة التمريضية الحالية.
+</p>
+
+<p>
+يعني الممرض لازم يطور نفسه باستمرار، ويتعلم المعلومات والمهارات الجديدة في مجال التمريض علشان يقدر يقدم رعاية جيدة.
+</p>
+
+</div>
+
+
+<div class="content-box">
+
+<h3>
+3️⃣ Evidence-Based Practice and Research
+</h3>
+
+<p>
+المما
