@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lesson Five - Patient Safety</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Tahoma,sans-serif;
+    background:#f4f7f5;
+    color:#222;
+    line-height:1.9;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#0b5d3b,#16804f);
+    color:white;
+    text-align:center;
+    padding:35px 15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+header .icon{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+header h1{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+header p{
+    font-size:18px;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1000px;
+    margin:30px auto;
+    padding:0 15px;
+}
+
+.back{
+    display:inline-block;
+    color:#0b5d3b;
+    text-decoration:none;
+    font-weight:bold;
+    margin-bottom:25px;
+    font-size:17px;
+}
+
+.lesson{
+    background:white;
+    border-radius:22px;
+    padding:30px;
+    box-shadow:0 7px 25px rgba(0,0,0,.08);
+    border-top:7px solid #0b5d3b;
+}
+
+/* TITLE */
+
+.lesson-title{
+    text-align:center;
+    color:#0b5d3b;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.lesson-subtitle{
+    text-align:center;
+    color:#777;
+    margin-bottom:30px;
+}
+
+/* SECTIONS */
+
+.section{
+    margin-top:30px;
+}
+
+.section h2{
+    color:#0b5d3b;
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.section h3{
+    color:#16804f;
+    font-size:22px;
+    margin-top:25px;
+    margin-bottom:8px;
+}
+
+/* QUESTION */
+
+.question{
+    background:#eaf6ef;
+    border-right:5px solid #0b5d3b;
+    padding:15px;
+    border-radius:10px;
+    margin:12px 0;
+    font-weight:bold;
+}
+
+/* ANSWER */
+
+.answer{
+    background:#f5f8f6;
+    border-right:5px solid #16804f;
+    padding:15px;
+    border-radius:10px;
+    margin:12px 0;
+}
+
+/* ENGLISH */
+
+.english{
+    direction:ltr;
+    text-align:left;
+    background:#f3f8f5;
+    border-left:4px solid #0b5d3b;
+    padding:16px;
+    border-radius:10px;
+    margin:12px 0;
+    font-weight:bold;
+}
+
+/* TRANSLATION */
+
+.translation{
+    background:#f8faf9;
+    padding:14px;
+    border-radius:10px;
+    margin:12px 0;
+}
+
+/* EXPLANATION */
+
+.explanation{
+    background:#fff8df;
+    border-right:5px solid #d9a900;
+    padding:15px;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+/* LIST */
+
+ul{
+    padding-right:25px;
+    margin:12px 0;
+}
+
+li{
+    margin:7px 0;
+}
+
+/* DIVIDER */
+
+.divider{
+    border:none;
+    border-top:1px solid #ddd;
+    margin:30px 0;
+}
+
+/* IMPORTANT */
+
+.important{
+    background:#fff8df;
+    border:1px solid #e4c65a;
+    border-right:6px solid #d9a900;
+    padding:18px;
+    border-radius:12px;
+    margin:20px 0;
+}
+
+/* SUMMARY */
+
+.summary{
+    background:#eaf6ef;
+    border-right:6px solid #0b5d3b;
+    padding:20px;
+    border-radius:14px;
+    margin-top:30px;
+}
+
+.summary h2{
+    color:#0b5d3b;
+    margin-bottom:15px;
+}
+
+.summary h3{
+    color:#16804f;
+    margin-top:18px;
+    margin-bottom:8px;
+}
+
+/* BACK BUTTON */
+
+.back-bottom{
+    display:block;
+    width:max-content;
+    margin:30px auto 0;
+    background:#0b5d3b;
+    color:white;
+    text-decoration:none;
+    padding:12px 28px;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+.back-bottom:hover{
+    background:#084a2f;
+}
+
+/* FOOTER */
+
+footer{
+    background:#083f29;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+    margin-top:50px;
+    line-height:1.8;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:25px;
+    }
+
+    header p{
+        font-size:16px;
+    }
+
+    .lesson{
+        padding:20px 15px;
+    }
+
+    .lesson-title{
+        font-size:24px;
+    }
+
+    .section h2{
+        font-size:22px;
+    }
+
+    .section h3{
+        font-size:20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
+
+<header>
+
+<div class="icon">
+🛡️
+</div>
+
+<h1>
+Chapter One: Foundation of Nursing Practice
+</h1>
+
+<p>
+Lesson Five: Patient Safety
+</p>
+
+</header>
+
+
+<!-- ========================= -->
+<!-- CONTAINER -->
+<!-- ========================= -->
+
+<div class="container">
+
+
+<a href="chapter-one-foundation-nursing.html" class="back">
+← العودة إلى Chapter One
+</a>
+
+
+<div class="lesson">
+
+
+<!-- ========================= -->
+<!-- TITLE -->
+<!-- ========================= -->
+
+<h1 class="lesson-title">
+🩺 الدرس الخامس: Patient Safety
+</h1>
+
+<p class="lesson-subtitle">
+سلامة المريض
+</p>
+
+
+<!-- ========================= -->
+<!-- INTRODUCTION -->
+<!-- ========================= -->
+
+<div class="section">
+
+<p>
+الدرس الخامس بيتكلم عن مفهوم السلامة، وتعريف سلامة المريض، وأهمية سلامة المريض، والعوامل المؤثرة على سلامة المريض، وأهداف سلامة المرضى الدولية.
+</p>
+
+</div>
+
+
+<hr class="divider">
+
+
+<!-- ========================= -->
+<!-- 1 SAFETY -->
+<!-- ========================= -->
+
+<div class="section">
+
+<h2>
+1️⃣ Safety
+</h2>
+
+<h3>
+السلامة
+</h3>
+
+<div class="question">
+
+❓ Question:<br>
+
+What is Safety?
+
+<br>
+
+ما هي السلامة؟
+
+</div>
+
+
+<div class="answer">
+
+✅ Answer:
+
+</div>
+
+
+<div class="english">
+
+Safety is often defined as freedom from psychological and physical injury.
+
+</div>
+
+
+<div class="translation">
+
+🇪🇬 الترجمة:
+
+<br>
+
+غالبًا ما تُعرَّف السلامة بأنها التحرر من الإصابة النفسية والجسدية.
+
+</div>
+
+
+<div class="explanation">
+
+🧠 الشرح:
+
+<br>
+
+يعني السلامة معناها إن الشخص يكون محمي من أي أذى جسدي أو نفسي، وده شيء أساسي جدًا لاحتياجات الإنسان.
+
+</div>
+
+</div>
+
+
+<hr class="divider">
+
+
+<!-- ========================= -->
+<!-- 2 PATIENT SAFETY -->
+<!-- ========================= -->
+
+<div class="section">
+
+<h2>
+2️⃣ Definition of Patient Safety
+</h2>
+
+<h3>
+تعريف سلامة المريض
+</h3>
+
+
+<div class="question">
+
+❓ Question:<br>
+
+What is Patient Safety?
+
+<br>
+
+ما هي سلامة المريض؟
+
+</div>
+
+
+<div class="answer">
+
+✅ Answer:
+
+</div>
+
+
+<div class="english">
+
+The World Health Organization (WHO) defined patient safety as the prevention of errors and adverse effects to patients associated with health care.
+
+</div>
+
+
+<div class="translation">
+
+🇪🇬 الترجمة:
+
+<br>
+
+عرّفت منظمة الصحة العالمية WHO سلامة المريض بأنها الوقاية من الأخطاء والآثار الضارة التي قد تحدث للمرضى والمرتبطة بالرعاية الصحية.
+
+</div>
+
+
+<div class="explanation">
+
+🧠 الشرح:
+
+<br>
+
+ببساطة، سلامة المريض معناها إننا نحاول نمنع الأخطاء والأضرار اللي ممكن تحصل للمريض أثناء حصوله على الرعاية الصحية.
+
+</div>
+
+</div>
+
+
+<hr class="divider">
+
+
+<!-- ========================= -->
+<!-- 3 PURPOSE -->
+<!-- ========================= -->
+
+<div class="section">
+
+<h2>
+3️⃣ Purpose of Patient Safety
+</h2>
+
+<h3>
+هدف سلامة المريض
+</h3>
+
+
+<div class="question">
+
+❓ Question:<br>
+
+What is the purpose of Patient Safety?
+
+<br>
+
+ما هو الهدف من سلامة المريض؟
+
+</div>
+
+
+<div class="answer">
+
+✅ Answer:
+
+</div>
+
+
+<div class="english">
+
+It aims to prevent and reduce risks, errors and harm that occur to patients during provision of health care.
+
+</div>
+
+
+<div class="translation">
+
+🇪🇬 الترجمة:
+
+<br>
+
+تهدف سلامة المريض إلى منع وتقليل المخاطر والأخطاء والأضرار التي تحدث للمرضى أثناء تقديم الرعاية الصحية.
+
+</div>
+
+
+<div class="explanation">
+
+🧠 الشرح:
+
+<br>
+
+الهدف الأساسي هو إننا نقلل أي حاجة ممكن تضر المريض أثناء الرعاية، سواء كانت مخاطر أو أخطاء أو أضرار.
+
+<br><br>
+
+وكمان من أساسيات سلامة المريض التحسين المستمر من خلال التعلم من الأخطاء والأحداث الضارة وعدم تكرارها.
+
+</div>
+
+</div>
+
+
+<hr class="divider">
+
+
+<!-- ========================= -->
+<!-- 4 FACTORS -->
+<!-- ========================= -->
+
+<div class="section">
+
+<h2>
+4️⃣ Factors Influencing Patient Safety
+</h2>
+
+<h3>
+العوامل المؤثرة على سلامة المريض
+</h3>
+
+
+<div class="question">
+
+❓ Question:<br>
+
+What are the factors influencing patient safety?
+
+<br>
+
+ما هي العوامل المؤثرة على سلامة المريض؟
+
+</div>
+
+
+<div class="answer">
+
+✅ Answer:
+
+</div>
+
+
+<ul>
+
+<li>
+Age and Development
+<br>
+العمر والتطور
+</li>
+
+<li>
+Lifestyle Factors
+<br>
+عوامل نمط الحياة
+</li>
+
+<li>
+Mobility and Health Status
+<br>
+الحركة والحالة الصحية
+</li>
+
+<li>
+Sensory Perceptual Alterations
+<br>
+التغيرات في الإدراك الحسي
+</li>
+
+</ul>
+
+
+<!-- FACTOR 1 -->
+
+<h3>
+1. Age and Development
+</h3>
+
+<h3>
+العمر والتطور
+</h3>
+
+
+<div class="explanation">
+
+🧠 الشرح:
+
+<br>
+
+عمر المريض ومستوى نموه وتطوره ممكن يؤثروا على مستوى السلامة، لأن احتياجات ومخاطر السلامة بتختلف من مرحلة عمرية لأخرى.
+
+</div>
+
+
+<!-- FACTOR 2 -->
+
+<h3>
+2. Lifestyle Factors
+</h3>
+
+<h3>
+عوامل نمط الحياة
+</h3>
+
+
+<div class="explanation">
+
+بعض أنماط الحياة ممكن تعرض الشخص للإصابة، خصوصًا عند وجود بيئة غير آمنة.
+
+<br><br>
+
+🧠 الشرح:
+
+<br>
+
+يعني طريقة حياة الشخص والبيئة اللي بيعيش أو يتحرك فيها ممكن تزود احتمالية حدوث إصابات.
+
+</div>
+
+
+<!-- FACTOR 3 -->
+
+<h3>
+3. Mobility and Health Status
+</h3>
+
+<h3>
+الحركة والحالة الصحية
+</h3>
+
+
+<div class="english">
+
+Alterations in mobility related to paralysis, muscle weakness, diminished balance, and lack of coordination place clients at risk for injury.
+
+</div>
+
+
+<div class="translation">
+
+🇪🇬 الترجمة:
+
+<br>
+
+التغيرات في الحركة الناتجة عن الشلل أو ضعف العضلات أو انخفاض التوازن أو نقص التناسق الحركي تعرض المرضى لخطر الإصابة.
+
+</div>
+
+
+<div class="explanation">
+
+🧠 الشرح:
+
+<br>
+
+لو المريض عنده مشكلة في الحركة أو توازن ضعيف أو ضعف في العضلات، ممكن يكون أكثر عرضة للسقوط أو الإصابة، وبالتالي يحتاج إلى اهتمام أكبر بالسلامة.
+
+</div>
+
+
+<!-- FACTOR 4 -->
+
+<h3>
+4. Sensory Perceptual Alterations
+</h3>
+
+<h3>
+التغيرات في الإدراك الحسي
+</h3>
+
+
+<div class="english">
+
+Accurate sensory perception of environmental stimuli is vital to safety.
+
+</div>
+
+
+<div class="translation">
+
+🇪🇬 الترجمة:
+
+<br>
+
+الإدراك الحسي الدقيق للمؤثرات الموجودة في البيئة أمر ضروري للسلامة.
+
+</div>
+
+
+<div class="explanation">
+
+🧠 الشرح:
+
+<br>
+
+يعني قدرة المريض على الرؤية والسمع والإحساس بالمؤثرات المحيطة به مهمة جدًا؛ لأن أي مشكلة في الإدراك الحسي ممكن تزود خطر الإصابة.
+
+</div>
+
+</div>
+
+
+<hr class="divider">
+
+
+<!-- ========================= -->
+<!-- 5 INTERNATIONAL GOALS -->
+<!-- ========================= -->
+
+<div class="section">
+
+<h2>
+5️⃣ International Patient Safety Goals
+</h2>
+
+<h3>
+أهداف سلامة المرضى الدولية
+</h3>
+
+
+<div class="question">
+
+❓ Question:<br>
+
+What are the International Patient Safety Goals?
+
+<br>
+
+ما هي أهداف سلامة المرضى الدولية؟
+
+</div>
+
+
+<div class="explanation">
+
+🧠 الشرح:
+
+<br>
+
+الملف يذكر أن من أهداف الفصل أن يكون الطالب قادرًا على توضيح أهداف سلامة المرضى الدولية، لكن الجزء المتاح من المصدر هنا لا يعرض قائمة هذه الأهداف بالتفصيل.
+
+<br><br>
+
+لذلك مش هضيف قائمة من مصدر خارجي وأقول إنها من نفس الدرس.
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- SUMMARY -->
+<!-- ========================= -->
+
+<div class="summary">
+
+<h2>
+🧠 ملخص الدرس الخامس
+</h2>
+
+
+<h3>
+Patient Safety
+</h3>
+
+<p>
+سلامة المريض
+</p>
+
+
+<h3>
+Safety
+</h3>
+
+<p>
+→ Freedom from psychological and physical injury.
+</p>
+
+<p>
+→ التحرر من الإصابة النفسية والجسدية.
+</p>
+
+
+<h3>
+Patient Safety
+</h3>
+
+<p>
+→ Prevention of errors and adverse effects associated with health care.
+</p>
+
+<p>
+→ الوقاية من الأخطاء والآثار الضارة المرتبطة بالرعاية الصحية.
+</p>
+
+
+<h3>
+Purpose of Patient Safety
+</h3>
+
+<p>
+الهدف من سلامة المريض
+</p>
+
+<ul>
+
+<li>
+→ Prevent and reduce risks
+<br>
+منع وتقليل المخاطر.
+</li>
+
+<li>
+→ Prevent and reduce errors
+<br>
+منع وتقليل الأخطاء.
+</li>
+
+<li>
+→ Prevent and reduce harm
+<br>
+منع وتقليل الأضرار.
+</li>
+
+<li>
+→ Continuous improvement by learning from errors
+<br>
+التحسين المستمر من خلال التعلم من الأخطاء.
+</li>
+
+</ul>
+
+
+<h3>
+Factors Influencing Patient Safety
+</h3>
+
+<p>
+العوامل المؤثرة على سلامة المريض
+</p>
+
+<ul>
+
+<li>
+Age and Development → العمر والتطور
+</li>
+
+<li>
+Lifestyle Factors → عوامل نمط الحياة
+</li>
+
+<li>
+Mobility and Health Status → الحركة والحالة الصحية
+</li>
+
+<li>
+Sensory Perceptual Alterations → التغيرات في الإدراك الحسي
+</li>
+
+</ul>
+
+
+<h3>
+⭐ للحفظ:
+</h3>
+
+<p>
+<strong>
+Patient Safety = Prevent Errors + Reduce Harm
+</strong>
+</p>
+
+<p>
+Age → Lifestyle → Mobility → Sensory
+</p>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- BACK -->
+<!-- ========================= -->
+
+<a href="chapter-one-foundation-nursing.html" class="back-bottom">
+
+← العودة إلى دروس Chapter One
+
+</a>
+
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+<strong>
+🩺 أساس التمريض
+</strong>
+
+<br>
+
+منصتك التعليمية لطلاب التمريض
+
+<br>
+
+© 2026 أساس التمريض
+
+</footer>
+
+
+</body>
+
+  </html>
