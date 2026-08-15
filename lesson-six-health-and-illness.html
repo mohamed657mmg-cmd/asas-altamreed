@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lesson Six - Health and Illness Concept</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Tahoma,sans-serif;
+    background:#f4f7f5;
+    color:#222;
+    line-height:1.9;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#0b5d3b,#16804f);
+    color:white;
+    text-align:center;
+    padding:35px 15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+header h1{
+    font-size:31px;
+    margin-bottom:8px;
+}
+
+header p{
+    font-size:18px;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1000px;
+    margin:30px auto;
+    padding:0 15px;
+}
+
+.back{
+    display:inline-block;
+    color:#0b5d3b;
+    text-decoration:none;
+    font-weight:bold;
+    margin-bottom:25px;
+    font-size:18px;
+}
+
+.back:hover{
+    color:#16804f;
+}
+
+.lesson-header{
+    background:white;
+    border-radius:24px;
+    padding:28px 20px;
+    text-align:center;
+    border-top:7px solid #0b5d3b;
+    box-shadow:0 7px 25px rgba(0,0,0,.08);
+    margin-bottom:25px;
+}
+
+.lesson-icon{
+    width:100px;
+    height:100px;
+    margin:0 auto 15px;
+    background:#e9f5ef;
+    border:3px solid #0b5d3b;
+    border-radius:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:52px;
+}
+
+.lesson-header h1{
+    color:#0b5d3b;
+    font-size:29px;
+    margin-bottom:5px;
+}
+
+.lesson-header p{
+    color:#777;
+    font-size:17px;
+}
+
+/* CONTENT */
+
+.content{
+    background:white;
+    border-radius:24px;
+    padding:30px 25px;
+    box-shadow:0 7px 25px rgba(0,0,0,.08);
+}
+
+.section{
+    margin-bottom:35px;
+}
+
+.section-title{
+    color:#0b5d3b;
+    font-size:25px;
+    margin-bottom:10px;
+    padding-bottom:8px;
+    border-bottom:2px solid #e5eee9;
+}
+
+.section-subtitle{
+    color:#16804f;
+    font-size:21px;
+    margin:20px 0 8px;
+}
+
+.question{
+    background:#eaf6ef;
+    border-right:5px solid #0b5d3b;
+    padding:14px 16px;
+    border-radius:12px;
+    margin:15px 0;
+    font-weight:bold;
+}
+
+.answer{
+    background:#f5f9f7;
+    border-right:5px solid #16804f;
+    padding:16px;
+    border-radius:12px;
+    margin:15px 0;
+}
+
+.english{
+    direction:ltr;
+    text-align:left;
+    background:#f3f8f5;
+    border-left:4px solid #0b5d3b;
+    padding:16px;
+    border-radius:12px;
+    margin:12px 0;
+    font-weight:bold;
+    line-height:1.8;
+}
+
+.translation{
+    background:#fafafa;
+    border-right:4px solid #777;
+    padding:14px;
+    border-radius:10px;
+    margin:12px 0;
+}
+
+.explanation{
+    background:#fff8df;
+    border-right:5px solid #d9a900;
+    padding:16px;
+    border-radius:12px;
+    margin:15px 0;
+}
+
+ul,ol{
+    padding-right:28px;
+    margin:12px 0;
+}
+
+li{
+    margin:7px 0;
+}
+
+.term{
+    background:#f4faf7;
+    border:1px solid #dcece3;
+    border-radius:12px;
+    padding:13px 15px;
+    margin:9px 0;
+}
+
+.term strong{
+    color:#0b5d3b;
+}
+
+.compare{
+    width:100%;
+    border-collapse:collapse;
+    margin:20px 0;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.compare th{
+    background:#0b5d3b;
+    color:white;
+    padding:13px;
+}
+
+.compare td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+.compare tr:nth-child(even){
+    background:#f5f9f7;
+}
+
+.summary{
+    background:#eaf6ef;
+    border-right:6px solid #0b5d3b;
+    padding:20px;
+    border-radius:14px;
+    margin-top:20px;
+}
+
+.memory{
+    background:linear-gradient(135deg,#fff8df,#fffdf2);
+    border-right:6px solid #d9a900;
+    padding:20px;
+    border-radius:14px;
+    margin-top:20px;
+}
+
+.divider{
+    height:1px;
+    background:#e3e3e3;
+    margin:30px 0;
+}
+
+/* BACK BUTTON */
+
+.bottom-back{
+    display:block;
+    width:max-content;
+    margin:30px auto 0;
+    background:#0b5d3b;
+    color:white;
+    text-decoration:none;
+    padding:13px 28px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.bottom-back:hover{
+    background:#084a2f;
+    transform:scale(1.03);
+}
+
+/* FOOTER */
+
+footer{
+    background:#083f29;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+    margin-top:50px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:26px;
+    }
+
+    header p{
+        font-size:16px;
+    }
+
+    .content{
+        padding:20px 15px;
+    }
+
+    .lesson-header h1{
+        font-size:24px;
+    }
+
+    .section-title{
+        font-size:22px;
+    }
+
+    .section-subtitle{
+        font-size:19px;
+    }
+
+    .compare{
+        font-size:14px;
+    }
+
+    .compare th,
+    .compare td{
+        padding:8px 5px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Chapter One</h1>
+
+<p>Foundation of Nursing Practice</p>
+
+</header>
+
+
+<div class="container">
+
+<a href="chapter-one-foundation-nursing.html" class="back">
+← العودة إلى Chapter One
+</a>
+
+
+<!-- LESSON HEADER -->
+
+<div class="lesson-header">
+
+<div class="lesson-icon">
+🩺
+</div>
+
+<h1>
+الدرس السادس: Health and Illness Concept
+</h1>
+
+<p>
+مفهوم الصحة والمرض
+</p>
+
+</div>
+
+
+<!-- CONTENT -->
+
+<div class="content">
+
+
+<!-- ========================= -->
+<!-- INTRODUCTION -->
+<!-- ========================= -->
+
+<div class="section">
+
+<h2 class="section-title">
+🩺 Health and Illness Concept
+</h2>
+
+<p>
+الدرس السادس بيتكلم عن مفهوم الصحة والمرض، وتعريف الصحة، وتعريف المرض، والفرق بين المرض الحاد والمزمن، والعوامل المؤثرة على الصحة والمرض.
+</p>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- 1 HEALTH -->
+<!-- ========================= -->
+
+<div class="section">
+
+<h2 class="section-title">
+1️⃣ Definition of Health
+</h2>
+
+<p>
+<strong>تعريف الصحة</strong>
+</p>
+
+<div class="question">
+
+❓ Question:<br>
+
+What is Health?<br>
+
+ما هي الصحة؟
+
+</div>
+
+<div class="answer">
+
+<strong>✅ Answer:</strong>
+
+<div class="english">
+
+Health is a state of complete physical, mental, and social wellbeing, not merely the absence of disease or infirmity.
+
+</div>
+
+</div>
+
+<div class="translation">
+
+<strong>🇪🇬 الترجمة:</strong>
+
+<br>
+
+الصحة هي حالة من اكتمال السلامة الجسدية والعقلية والاجتماعية، وليست مجرد غياب المرض أو العجز.
+
+</div>
+
+<div class="explanation">
+
+<strong>🧠 الشرح:</strong>
+
+<br>
+
+يعني الصحة مش معناها إن الشخص مش مريض بس، لكن لازم يكون في حالة جيدة من الناحية الجسدية والنفسية والاجتماعية.
+
+</div>
+
+</div>
+
+
+<div class="divider"></div>
+
+
+<!-- ========================= -->
+<!-- 2 ILLNESS -->
+<!-- ========================= -->
+
+<div class="section">
+
+<h2 class="section-title">
+2️⃣ Definition of Illness
+</h2>
+
+<p>
+<strong>تعريف المرض</strong>
+</p>
+
+<div class="question">
+
+❓ Question:<br>
+
+What is Illness?<br>
+
+ما هو المرض؟
+
+</div>
+
+<div class="answer">
+
+<strong>✅ Answer:</strong>
+
+<div class="english">
+
+Illness is a state in which a person’s physical, emotional, intellectual, social, developmental, or spiritual functioning is diminished or impaired.
+
+</div>
+
+</div>
+
+<div class="translation">
+
+<strong>🇪🇬 الترجمة:</strong>
+
+<br>
+
+المرض هو حالة يحدث فيها انخفاض أو ضعف في الأداء الجسدي أو العاطفي أو الفكري أو الاجتماعي أو النمائي أو الروحي للشخص.
+
+</div>
+
+<div class="explanation">
+
+<strong>🧠 الشرح:</strong>
+
+<br>
+
+يعني المرض مش لازم يأثر على الجسم فقط، ممكن يأثر كمان على الحالة النفسية أو الفكرية أو الاجتماعية أو الروحية للشخص.
+
+</div>
+
+</div>
+
+
+<div class="divider"></div>
+
+
+<!-- ========================= -->
+<!-- 3 ACUTE -->
+<!-- ========================= -->
+
+<div class="section">
+
+<h2 class="section-title">
+3️⃣ Acute Illness
+</h2>
+
+<p>
+<strong>المرض الحاد</strong>
+</p>
+
+<div class="question">
+
+❓ Question:<br>
+
+What is Acute Illness?<br>
+
+ما هو المرض الحاد؟
+
+</div>
+
+<div class="answer">
+
+<strong>✅ Answer:</strong>
+
+<div class="english">
+
+An acute illness is usually reversible, has a short duration, and is often severe. The symptoms appear abruptly, are intense, and often subside after a relatively short period.
+
+</div>
+
+</div>
+
+<div class="translation">
+
+<strong>🇪🇬 الترجمة:</strong>
+
+<br>
+
+المرض الحاد عادةً يكون قابلًا للشفاء أو الرجوع للحالة السابقة، وتكون مدته قصيرة، وغالبًا يكون شديدًا. تظهر الأعراض فجأة وتكون قوية، وغالبًا تختفي بعد فترة قصيرة نسبيًا.
+
+</div>
+
+<div class="explanation">
+
+<strong>🧠 الشرح:</strong>
+
+<br>
+
+يعني المرض الحاد بيظهر بشكل سريع ومفاجئ، ومدته غالبًا قصيرة، وبعد العلاج ممكن المريض يرجع لمستواه الطبيعي السابق.
+
+</div>
+
+
+<h3 class="section-subtitle">
+📌 Characteristics of Acute Illness
+</h3>
+
+<div class="term">
+<strong>Rapid onset</strong> → بداية سريعة.
+</div>
+
+<div class="term">
+<strong>Short duration</strong> → مدة قصيرة.
+</div>
+
+<div class="term">
+<strong>Usually self-limiting</strong> → غالبًا ينتهي من تلقاء نفسه.
+</div>
+
+<div class="term">
+<strong>Responds readily to treatment</strong> → يستجيب للعلاج بسهولة.
+</div>
+
+<div class="term">
+<strong>Complications infrequent</strong> → المضاعفات غير شائعة.
+</div>
+
+<div class="term">
+<strong>Return to previous level of functioning</strong> → العودة لمستوى الأداء السابق.
+</div>
+
+
+<h3 class="section-subtitle">
+📚 Examples
+</h3>
+
+<ul>
+
+<li>
+Colds → نزلات البرد
+</li>
+
+<li>
+Influenza → الإنفلونزا
+</li>
+
+<li>
+Acute gastroenteritis → التهاب المعدة والأمعاء الحاد
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="divider"></div>
+
+
+<!-- ========================= -->
+<!-- 4 CHRONIC -->
+<!-- ========================= -->
+
+<div class="section">
+
+<h2 class="section-title">
+4️⃣ Chronic Illness
+</h2>
+
+<p>
+<strong>المرض المزمن</strong>
+</p>
+
+<div class="question">
+
+❓ Question:<br>
+
+What is Chronic Illness?<br>
+
+ما هو المرض المزمن؟
+
+</div>
+
+<div class="answer">
+
+<strong>✅ Answer:</strong>
+
+<div class="english">
+
+A chronic illness persists, usually longer than 6 months, is irreversible, and affects functioning in one or more systems.
+
+</div>
+
+</div>
+
+<div class="translation">
+
+<strong>🇪🇬 الترجمة:</strong>
+
+<br>
+
+المرض المزمن يستمر عادةً لأكثر من 6 أشهر، ويكون غير قابل للعكس، ويؤثر على وظيفة جهاز واحد أو أكثر من أجهزة الجسم.
+
+</div>
+
+<div class="explanation">
+
+<strong>🧠 الشرح:</strong>
+
+<br>
+
+يعني المرض المزمن بيستمر لفترة طويلة، وغالبًا يحتاج المريض إلى متابعة ورعاية طبية وتمريضية لفترات طويلة.
+
+</div>
+
+
+<h3 class="section-subtitle">
+📌 Characteristics of Chronic Illness
+</h3>
+
+<div class="term">
+<strong>Prolonged</strong> → طويل المدة.
+</div>
+
+<div class="term">
+<strong>Does not resolve spontaneously</strong> → لا يختفي تلقائيًا.
+</div>
+
+<div class="term">
+<strong>Rarely cured completely</strong> → نادرًا ما يُشفى تمامًا.
+</div>
+
+<div class="term">
+<strong>Permanent impairments</strong> → قد يسبب عجزًا دائمًا.
+</div>
+
+<div class="term">
+<strong>Irreversible pathologic changes</strong> → تغيرات مرضية غير قابلة للعكس.
+</div>
+
+<div class="term">
+<strong>Residual disability</strong> → قد يترك إعاقة متبقية.
+</div>
+
+<div class="term">
+<strong>Special rehabilitation required</strong> → قد يحتاج إلى إعادة تأهيل خاصة.
+</div>
+
+<div class="term">
+<strong>Long-term medical and/or nursing management</strong>
+→ يحتاج إلى إدارة ورعاية طبية وتمريضية طويلة المدى.
+</div>
+
+
+<h3 class="section-subtitle">
+📚 Examples
+</h3>
+
+<ul>
+
+<li>
+Alzheimer’s disease → مرض الزهايمر
+</li>
+
+<li>
+Arthritis → التهاب المفاصل
+</li>
+
+<li>
+Cancer → السرطان
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="divider"></div>
+
+
+<!-- ========================= -->
+<!-- 5 COMPARISON -->
+<!-- ========================= -->
+
+<div class="section">
+
+<h2 class="section-title">
+5️⃣ Acute vs. Chronic Illness
+</h2>
+
+<p>
+<strong>مقارنة بين المرض الحاد والمزمن</strong>
+</p>
+
+<table class="compare">
+
+<tr>
+
+<th>
+Acute Illness<br>
+المرض الحاد
+</th>
+
+<th>
+Chronic Illness<br>
+المرض المزمن
+</th>
+
+</tr>
+
+<tr>
+
+<td>
+Rapid onset<br>
+بداية سريعة
+</td>
+
+<td>
+Prolonged<br>
+طويل المدة
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Short duration<br>
+مدة قصيرة
+</td>
+
+<td>
+Usually &gt; 6 months<br>
+عادة أكثر من 6 أشهر
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Often reversible<br>
+غالبًا قابل للعكس
+</td>
+
+<td>
+Irreversible<br>
+غير قابل للعكس
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Usually responds to treatment<br>
+يستجيب للعلاج
+</td>
+
+<td>
+Requires long-term management<br>
+يحتاج لرعاية طويلة المدى
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Return to previous functioning<br>
+العودة للأداء السابق
+</td>
+
+<td>
+May cause permanent impairment<br>
+قد يسبب عجزًا دائمًا
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="divider"></div>
+
+
+<!-- ========================= -->
+<!-- 6 VARIABLES -->
+<!-- ========================= -->
+
+<div class="section">
+
+<h2 class="section-title">
+6️⃣ Variables Influencing Health and Illness
+</h2>
+
+<p>
+<strong>العوامل المؤثرة على الصحة والمرض</strong>
+</p>
+
+<p>
+تنقسم العوامل المؤثرة على الصحة والمرض إلى:
+</p>
+
+<div class="term">
+
+<strong>Internal Variables</strong>
+→ العوامل الداخلية.
+
+</div>
+
+<div class="term">
+
+<strong>External Variables</strong>
+→ العوامل الخارجية.
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- INTERNAL VARIABLES -->
+<!-- ========================= -->
+
+<div class="section">
+
+<h2 class="section-title">
+1️⃣ Internal Variables
+</h2>
+
+<p>
+<strong>العوامل الداخلية</strong>
+</p>
+
+
+<h3 class="section-subtitle">
+A. Developmental Stage
+</h3>
+
+<p>
+<strong>مرحلة النمو والتطور</strong>
+</p>
+
+<div class="english">
+
+A person’s thought and behavior patterns change throughout life.
+
+</div>
+
+<div class="translation">
+
+<strong>الترجمة:</strong>
+
+<br>
+
+تتغير أنماط تفكير الشخص وسلوكه طوال مراحل حياته.
+
+</div>
+
+<div class="explanation">
+
+<strong>🧠 الشرح:</strong>
+
+<br>
+
+العمر ومرحلة النمو بتأثر على طريقة تفكير الشخص وسلوكه، وبالتالي بتأثر على نظرته للصحة والمرض.
+
+</div>
+
+
+<h3 class="section-subtitle">
+B. Intellectual Background
+</h3>
+
+<p>
+<strong>الخلفية الفكرية والتعليمية</strong>
+</p>
+
+<div class="english">
+
+A person’s beliefs, knowledge, or incorrect information about body functions and illnesses, educational background, traditions, and past experiences.
+
+</div>
+
+<div class="translation">
+
+<strong>الترجمة:</strong>
+
+<br>
+
+معتقدات الشخص ومعرفته أو معلوماته غير الصحيحة عن وظائف الجسم والأمراض، بالإضافة إلى خلفيته التعليمية وتقاليده وخبراته السابقة.
+
+</div>
+
+<div class="explanation">
+
+<strong>🧠 الشرح:</strong>
+
+<br>
+
+معلومات الشخص وتعليمه وخبراته السابقة ممكن تؤثر على فهمه للمرض وطريقة تعامله مع حالته الصحية.
+
+</div>
+
+
+<h3 class="section-subtitle">
+C. Perception of Functioning
+</h3>
+
+<p>
+<strong>الإدراك الوظيفي</strong>
+</p>
+
+<div class="english">
+
+The way people perceive their physical functioning affects health beliefs and practices.
+
+</div>
+
+<div class="translation">
+
+<strong>الترجمة:</strong>
+
+<br>
+
+الطريقة التي يدرك بها الأشخاص وظائفهم الجسدية تؤثر على معتقداتهم وممارساتهم الصحية.
+
+</div>
+
+<div class="explanation">
+
+<strong>🧠 الشرح:</strong>
+
+<br>
+
+يعني نظرة الشخص لقدرات جسمه ووظائفه ممكن تؤثر على اهتمامه بصحته وطريقة تعامله معها.
+
+</div>
+
+
+<h3 class="section-subtitle">
+D. Emotional Factors
+</h3>
+
+<p>
+<strong>العوامل العاطفية</strong>
+</p>
+
+<div class="english">
+
+The patient’s degree of stress, depression, or fear can influence health beliefs and practices.
+
+</div>
+
+<div class="translation">
+
+<strong>الترجمة:</strong>
+
+<br>
+
+درجة التوتر أو الاكتئاب أو الخوف لدى المريض يمكن أن تؤثر على معتقداته وممارساته الصحية.
+
+</div>
+
+<div class="explanation">
+
+<strong>🧠 الشرح:</strong>
+
+<br>
+
+الحالة النفسية للمريض ممكن تأثر على طريقة تفكيره في المرض وعلى تصرفاته تجاه صحته.
+
+</div>
+
+
+<h3 class="section-subtitle">
+E. Spiritual Factors
+</h3>
+
+<p>
+<strong>العوامل الروحية</strong>
+</p>
+
+<div class="english">
+
+Spirituality including the values and beliefs exercised, the relationships established with family and friends, and the ability to find hope and meaning in life.
+
+</div>
+
+<div class="translation">
+
+<strong>الترجمة:</strong>
+
+<br>
+
+تشمل الروحانية القيم والمعتقدات التي يؤمن بها الشخص، والعلاقات التي يكونها مع الأسرة والأصدقاء، والقدرة على إيجاد الأمل والمعنى في الحياة.
+
+</div>
+
+<div class="explanation">
+
+<strong>🧠 الشرح:</strong>
+
+<br>
+
+العوامل الروحية والمعتقدات والعلاقات الاجتماعية ممكن يكون لها تأثير على نظرة الشخص للصحة والمرض وعلى قدرته على التعامل مع المرض.
+
+</div>
+
+</div>
+
+
+<div class="divider"></div>
+
+
+<!-- ========================= -->
+<!-- SUMMARY -->
+<!-- ========================= -->
+
+<div class="section">
+
+<h2 class="section-title">
+🧠 ملخص الدرس السادس
+</h2>
+
+
+<div class="summary">
+
+<h3>
+Health
+</h3>
+
+<p>
+<strong>Health → الصحة</strong>
+</p>
+
+<p>
+A state of complete physical, mental, and social wellbeing.
+</p>
+
+<p>
+حالة من اكتمال السلامة الجسدية والعقلية والاجتماعية.
+</p>
+
+</div>
+
+
+<div class="summary">
+
+<h3>
+Illness
+</h3>
+
+<p>
+<strong>Illness → المرض</strong>
+</p>
+
+<p>
+A state in which physical, emotional, intellectual, social, developmental, or spiritual functioning is diminished or impaired.
+</p>
+
+<p>
+حالة يحدث فيها ضعف أو انخفاض في الأداء الجسدي أو العاطفي أو الفكري أو الاجتماعي أو النمائي أو الروحي.
+</p>
+
+</div>
+
+
+<div class="summary">
+
+<h3>
+Acute Illness
+</h3>
+
+<p>
+<strong>Acute → سريع وقصير المدة</strong>
+</p>
+
+<ul>
+
+<li>Rapid onset → بداية سريعة.</li>
+
+<li>Short duration → مدة قصيرة.</li>
+
+<li>Often reversible → غالبًا قابل للعكس.</li>
+
+<li>Responds to treatment → يستجيب للعلاج.</li>
+
+</ul>
+
+</div>
+
+
+<div class="summary">
+
+<h3>
+Chronic Illness
+</h3>
+
+<p>
+<strong>Chronic → طويل المدة</strong>
+</p>
+
+<ul>
+
+<li>Usually longer than 6 months → عادة أكثر من 6 أشهر.</li>
+
+<li>Irreversible → غير قابل للعكس.</li>
+
+<li>Permanent impairments may occur → قد يحدث عجز دائم.</li>
+
+<li>Long-term care → يحتاج رعاية طويلة المدى.</li>
+
+</ul>
+
+</div>
+
+
+<div class="summary">
+
+<h3>
+Internal Variables
+</h3>
+
+<ul>
+
+<li>
+Developmental Stage → مرحلة النمو والتطور
+</li>
+
+<li>
+Intellectual Background → الخلفية الفكرية
+</li>
+
+<li>
+Perception of Functioning → الإدراك الوظيفي
+</li>
+
+<li>
+Emotional Factors → العوامل العاطفية
+</li>
+
+<li>
+Spiritual Factors → العوامل الروحية
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="memory">
+
+<h3>
+⭐ للحفظ
+</h3>
+
+<p>
+<strong>Health = Physical + Mental + Social Wellbeing</strong>
+</p>
+
+<p>
+<strong>Acute = Rapid + Short</strong>
+</p>
+
+<p>
+<strong>Chronic = Long + Usually &gt; 6 Months + Irreversible</strong>
+</p>
+
+</div>
+
+</div>
+
+
+<a href="chapter-one-foundation-nursing.html" class="bottom-back">
+← العودة إلى Chapter One
+</a>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<p>
+🩺 منصة أساس التمريض
+</p>
+
+<p>
+Foundation of Nursing
+</p>
+
+<p>
+© 2026 جميع الحقوق محفوظة
+</p>
+
+</footer>
+
+</body>
+
+  </html>
