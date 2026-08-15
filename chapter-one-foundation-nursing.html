@@ -15,14 +15,17 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial,Tahoma,sans-serif;
     background:#f4f7f5;
     color:#222;
-    line-height:1.8;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
     background:linear-gradient(135deg,#0b5d3b,#16804f);
@@ -32,46 +35,68 @@ header{
     box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
+header .icon{
+    font-size:50px;
+    margin-bottom:8px;
+}
+
 header h1{
-    font-size:32px;
+    font-size:30px;
     margin-bottom:8px;
 }
 
 header p{
-    font-size:19px;
+    font-size:17px;
 }
 
-/* CONTAINER */
+/* ================= CONTAINER ================= */
 
 .container{
     max-width:1000px;
-    margin:30px auto;
+    margin:35px auto;
     padding:0 15px;
 }
+
+/* ================= BACK ================= */
 
 .back{
     display:inline-block;
     color:#0b5d3b;
     text-decoration:none;
     font-weight:bold;
-    margin-bottom:25px;
     font-size:18px;
-}
-
-.page-title{
-    text-align:center;
-    color:#0b5d3b;
-    font-size:30px;
-    margin-bottom:10px;
-}
-
-.subtitle{
-    text-align:center;
-    color:#777;
     margin-bottom:30px;
 }
 
-/* LESSON CARDS */
+.back:hover{
+    color:#084a2f;
+}
+
+/* ================= TITLE ================= */
+
+.main-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.main-title h2{
+    color:#0b5d3b;
+    font-size:32px;
+    line-height:1.4;
+    margin-bottom:12px;
+}
+
+.main-title .stethoscope{
+    font-size:38px;
+}
+
+.main-title p{
+    color:#777;
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* ================= LESSONS ================= */
 
 .lessons{
     display:grid;
@@ -79,200 +104,239 @@ header p{
     gap:22px;
 }
 
-.lesson-card{
+/* ================= LESSON CARD ================= */
+
+.lesson{
+    display:block;
+    text-decoration:none;
+    color:inherit;
+
     background:white;
+
     border-radius:24px;
-    padding:28px 20px;
+
+    padding:25px 20px 28px;
+
     text-align:center;
-    border:1px solid #e2ece6;
-    border-top:8px solid #0b5d3b;
-    box-shadow:0 7px 22px rgba(0,0,0,.08);
+
+    border:1px solid #e3ebe6;
+
+    border-top:7px solid #0b5d3b;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
     transition:.25s;
-}
 
-.lesson-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 28px rgba(0,0,0,.12);
-}
+    cursor:pointer;
 
-/* ICON */
-
-.lesson-icon{
-    width:105px;
-    height:105px;
-    margin:0 auto 18px;
-    background:#e9f5ef;
-    border:3px solid #0b5d3b;
-    border-radius:20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:55px;
     position:relative;
+
+    overflow:hidden;
 }
+
+.lesson::before{
+    content:"";
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    background:#e9f5ef;
+
+    border-radius:50%;
+
+    top:-45px;
+    left:-35px;
+
+    z-index:0;
+}
+
+.lesson:hover{
+    transform:translateY(-7px);
+
+    box-shadow:0 14px 30px rgba(0,0,0,.13);
+
+    border-top-color:#16804f;
+}
+
+.lesson:active{
+    transform:scale(.98);
+}
+
+/* ================= NUMBER ================= */
 
 .lesson-number{
     position:absolute;
-    top:-18px;
-    right:-18px;
+
+    top:14px;
+    right:15px;
+
     width:42px;
     height:42px;
+
     border-radius:50%;
+
     background:#0b5d3b;
     color:white;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
+    font-size:19px;
     font-weight:bold;
-    font-size:20px;
-    border:4px solid white;
+
+    z-index:2;
 }
 
-.lesson-card h2{
+/* ================= ICON ================= */
+
+.lesson-icon{
+    width:110px;
+    height:110px;
+
+    margin:10px auto 20px;
+
+    border-radius:24px;
+
+    background:#e9f5ef;
+
+    border:3px solid #0b5d3b;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:58px;
+
+    position:relative;
+    z-index:1;
+}
+
+/* ================= LESSON TEXT ================= */
+
+.lesson h3{
     color:#0b5d3b;
-    font-size:22px;
+
+    font-size:23px;
+
     line-height:1.5;
-    margin-bottom:8px;
-}
 
-.lesson-card p{
-    color:#777;
-    margin-bottom:18px;
-}
-
-.open-btn{
-    border:none;
-    background:#0b5d3b;
-    color:white;
-    padding:13px 30px;
-    border-radius:12px;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.open-btn:hover{
-    background:#084a2f;
-    transform:scale(1.03);
-}
-
-/* LESSON CONTENT */
-
-.lesson-content{
-    display:none;
-    margin-top:30px;
-    background:white;
-    border-radius:22px;
-    padding:25px;
-    box-shadow:0 6px 25px rgba(0,0,0,.08);
-    border-top:7px solid #0b5d3b;
-}
-
-.lesson-content.active{
-    display:block;
-}
-
-.lesson-content h2{
-    color:#0b5d3b;
-    font-size:27px;
-    margin-bottom:20px;
-}
-
-.lesson-content h3{
-    color:#0b5d3b;
-    margin-top:25px;
     margin-bottom:10px;
-    font-size:21px;
+
+    position:relative;
+    z-index:1;
 }
 
-.lesson-content h4{
-    color:#16804f;
-    margin-top:18px;
+.lesson p{
+    color:#777;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    position:relative;
+    z-index:1;
 }
 
-.lesson-content p{
-    margin:8px 0;
-}
-
-.lesson-content ul{
-    padding-right:25px;
-    margin:10px 0;
-}
-
-.lesson-content li{
-    margin:5px 0;
-}
-
-.english{
-    direction:ltr;
-    text-align:left;
-    background:#f3f8f5;
-    border-right:4px solid #0b5d3b;
-    padding:14px;
-    border-radius:10px;
-    margin:12px 0;
-    font-weight:bold;
-}
-
-.note{
-    background:#fff8df;
-    border-right:5px solid #d9a900;
-    padding:14px;
-    border-radius:10px;
-    margin:15px 0;
-}
-
-.summary{
-    background:#eaf6ef;
-    border-right:5px solid #0b5d3b;
-    padding:18px;
-    border-radius:12px;
-    margin-top:20px;
-}
-
-.close-btn{
-    display:block;
-    margin:25px auto 0;
-    border:none;
-    background:#555;
-    color:white;
-    padding:11px 25px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     background:#083f29;
+
     color:white;
+
     text-align:center;
+
     padding:25px 15px;
-    margin-top:50px;
+
+    margin-top:60px;
+
+    line-height:1.9;
 }
 
-/* MOBILE */
+footer strong{
+    font-size:18px;
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
+
+    header{
+        padding:30px 12px;
+    }
 
     header h1{
         font-size:27px;
     }
 
-    .page-title{
-        font-size:25px;
+    header p{
+        font-size:15px;
     }
 
-    .lesson-card{
-        padding:25px 15px;
+    .container{
+        margin-top:25px;
     }
 
-    .lesson-content{
-        padding:18px;
+    .main-title h2{
+        font-size:28px;
     }
 
+    .main-title p{
+        font-size:16px;
+    }
+
+    .lessons{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .lesson{
+        padding:24px 18px 27px;
+    }
+
+    .lesson-icon{
+        width:105px;
+        height:105px;
+    }
+
+}
+
+/* ================= LESSON VIEW ================= */
+
+#lessonView{
+    display:none;
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:30px 22px;
+
+    margin-top:25px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    border-top:7px solid #0b5d3b;
+}
+
+#lessonView h2{
+    color:#0b5d3b;
+
+    text-align:center;
+
+    font-size:28px;
+
+    margin-bottom:20px;
+}
+
+#lessonView p{
+    color:#555;
+
+    font-size:18px;
+
+    line-height:2;
 }
 
 </style>
@@ -283,9 +347,17 @@ footer{
 <body>
 
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
-<h1>Chapter One</h1>
+<div class="icon">
+📖
+</div>
+
+<h1>
+Chapter One
+</h1>
 
 <p>
 Foundation of Nursing Practice
@@ -294,852 +366,257 @@ Foundation of Nursing Practice
 </header>
 
 
+<!-- ================= MAIN ================= -->
+
 <div class="container">
 
 
-<a href="foundations-of-nursing-theory.html" class="back">
+<a href="foundations-of-nursing-theoretical.html" class="back">
 ← العودة إلى Chapters
 </a>
 
 
-<h1 class="page-title">
-Foundation of Nursing Practice 🩺
-</h1>
+<div class="main-title">
 
-<p class="subtitle">
+<h2>
+Foundation of Nursing
+<span class="stethoscope">🩺</span>
+<br>
+Practice
+</h2>
+
+<p>
 الصف الأول - Foundations of Nursing - النظري
 </p>
 
+</div>
 
-<!-- ========================= -->
-<!-- LESSON CARDS -->
-<!-- ========================= -->
+
+<!-- ================= LESSONS ================= -->
 
 <div class="lessons">
 
 
 <!-- LESSON 1 -->
 
-<div class="lesson-card">
+<a class="lesson"
+   href="#lesson1"
+   onclick="openLesson('Introduction to Nursing','مقدمة عن التمريض','📚')">
 
-<div class="lesson-icon">
-
-<span class="lesson-number">1</span>
-
-📩
-
+<div class="lesson-number">
+1
 </div>
 
-<h2>
+<div class="lesson-icon">
+📚
+</div>
+
+<h3>
 Introduction to Nursing
-</h2>
+</h3>
 
 <p>
 مقدمة عن التمريض
 </p>
 
-<button class="open-btn" onclick="openLesson('lesson1')">
-فتح الدرس
-</button>
-
-</div>
+</a>
 
 
 <!-- LESSON 2 -->
 
-<div class="lesson-card">
+<a class="lesson"
+   href="#lesson2"
+   onclick="openLesson('Definitions of Nursing','تعريفات التمريض','🩺')">
+
+<div class="lesson-number">
+2
+</div>
 
 <div class="lesson-icon">
-
-<span class="lesson-number">2</span>
-
-📩
-
+🩺
 </div>
 
-<h2>
-Nursing Profession & Nursing Process
-</h2>
+<h3>
+Definitions of Nursing
+</h3>
 
 <p>
-مهنة التمريض وعملية التمريض
+تعريفات التمريض
 </p>
 
-<button class="open-btn" onclick="openLesson('lesson2')">
-فتح الدرس
-</button>
-
-</div>
+</a>
 
 
 <!-- LESSON 3 -->
 
-<div class="lesson-card">
+<a class="lesson"
+   href="#lesson3"
+   onclick="openLesson('Nursing as a Profession','التمريض كمهنة','👩‍⚕️')">
+
+<div class="lesson-number">
+3
+</div>
 
 <div class="lesson-icon">
-
-<span class="lesson-number">3</span>
-
-📩
-
+👩‍⚕️
 </div>
 
-<h2>
-Standards of Professional Performance & The Role of the Nurse
-</h2>
+<h3>
+Nursing as a Profession
+</h3>
 
 <p>
-معايير الأداء المهني ودور الممرض ووظائفه
+التمريض كمهنة
 </p>
 
-<button class="open-btn" onclick="openLesson('lesson3')">
-فتح الدرس
-</button>
-
-</div>
+</a>
 
 
 <!-- LESSON 4 -->
 
-<div class="lesson-card">
+<a class="lesson"
+   href="#lesson4"
+   onclick="openLesson('Roles of the Nurse','أدوار الممرض / الممرضة','🏥')">
+
+<div class="lesson-number">
+4
+</div>
 
 <div class="lesson-icon">
-
-<span class="lesson-number">4</span>
-
-📩
-
+🏥
 </div>
 
-<h2>
-Ethics in Nursing Profession
-</h2>
+<h3>
+Roles of the Nurse
+</h3>
 
 <p>
-أخلاقيات مهنة التمريض
+أدوار الممرض / الممرضة
 </p>
 
-<button class="open-btn" onclick="openLesson('lesson4')">
-فتح الدرس
-</button>
-
-</div>
+</a>
 
 
 <!-- LESSON 5 -->
 
-<div class="lesson-card">
+<a class="lesson"
+   href="#lesson5"
+   onclick="openLesson('Nursing Responsibilities','مسؤوليات التمريض','📋')">
+
+<div class="lesson-number">
+5
+</div>
 
 <div class="lesson-icon">
-
-<span class="lesson-number">5</span>
-
-📩
-
+📋
 </div>
 
-<h2>
-Patient Safety
-</h2>
+<h3>
+Nursing Responsibilities
+</h3>
 
 <p>
-سلامة المريض
+مسؤوليات التمريض
 </p>
 
-<button class="open-btn" onclick="openLesson('lesson5')">
-فتح الدرس
-</button>
-
-</div>
+</a>
 
 
 <!-- LESSON 6 -->
 
-<div class="lesson-card">
+<a class="lesson"
+   href="#lesson6"
+   onclick="openLesson('Nursing Standards','معايير ممارسة التمريض','⭐')">
+
+<div class="lesson-number">
+6
+</div>
 
 <div class="lesson-icon">
-
-<span class="lesson-number">6</span>
-
-📩
-
+⭐
 </div>
-
-<h2>
-Health and Illness Concept
-</h2>
-
-<p>
-مفهوم الصحة والمرض
-</p>
-
-<button class="open-btn" onclick="openLesson('lesson6')">
-فتح الدرس
-</button>
-
-</div>
-
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- LESSON 1 CONTENT -->
-<!-- ================================================= -->
-
-<div id="lesson1" class="lesson-content">
-
-<h2>
-🩺 الدرس الأول: Introduction to Nursing
-</h2>
 
 <h3>
-1️⃣ Introduction to Nursing
+Nursing Standards
 </h3>
 
 <p>
-مقدمة عن التمريض
+معايير ممارسة التمريض
 </p>
 
-<div class="english">
-Nursing is an Art and a Science.
-</div>
+</a>
 
-<p>
-التمريض هو فن وعلم.
-</p>
-
-<h3>
-🔹 Nursing as an Art — التمريض كفن
-</h3>
-
-<p>
-الممرض يتعلم كيفية تقديم الرعاية للمريض بطريقة تتصف بـ:
-</p>
-
-<ul>
-<li>Compassion → التعاطف.</li>
-<li>Caring → الاهتمام والرعاية.</li>
-<li>Respect for patient's dignity and personhood → احترام كرامة المريض وشخصيته.</li>
-</ul>
-
-<p>
-يعني الممرض مش بيهتم بالمرض فقط، لكن كمان بطريقة تعامله مع المريض واحترامه له.
-</p>
-
-<h3>
-🔹 Nursing as a Science — التمريض كعلم
-</h3>
-
-<p>
-ممارسة التمريض تعتمد على Body of knowledge يعني مجموعة من المعارف العلمية، وهذه المعرفة تتغير باستمرار مع ظهور:
-</p>
-
-<ul>
-<li>New discoveries → الاكتشافات الجديدة.</li>
-<li>Innovations → الابتكارات.</li>
-</ul>
-
-<div class="summary">
-
-<strong>⭐ الخلاصة:</strong>
-
-<p>
-Nursing = Art + Science
-</p>
-
-<p>
-Art: Compassion + Caring + Respect
-</p>
-
-<p>
-Science: Knowledge + New discoveries + Innovations
-</p>
 
 </div>
 
 
-<h3>
-2️⃣ Definition of Nursing
-</h3>
+<!-- ================= LESSON CONTENT ================= -->
 
-<p>
-تعريف التمريض
-</p>
+<div id="lessonView">
 
-<div class="english">
-Nursing is the protection, promotion, and optimization of health and abilities; prevention of illness and injury; alleviation of suffering through the diagnosis and treatment of human responses; and advocacy in health care for individuals, families, communities, and populations.
-</div>
+<h2 id="lessonTitle"></h2>
 
-<p>
-التمريض هو حماية وتعزيز وتحسين الصحة والقدرات، والوقاية من المرض والإصابة، وتخفيف المعاناة من خلال تشخيص وعلاج استجابات الإنسان، والدفاع عن الرعاية الصحية للأفراد والأسر والمجتمعات والسكان.
-</p>
-
-<h3>
-🧠 نفهم التعريف إزاي؟
-</h3>
-
-<ul>
-<li>Protection → حماية الصحة.</li>
-<li>Promotion & Optimization → تعزيز وتحسين الصحة والقدرات.</li>
-<li>Prevention → الوقاية من المرض والإصابة.</li>
-<li>Alleviation of suffering → تخفيف معاناة المريض.</li>
-<li>Advocacy → الدفاع عن المريض ومساعدته في الحصول على الرعاية الصحية.</li>
-</ul>
-
-
-<h3>
-3️⃣ Definition of Nurse
-</h3>
-
-<p>
-تعريف الممرض
-</p>
-
-<div class="english">
-The nurse is a person who has completed a program of basic, generalized nursing education and is authorized by the appropriate regulatory authority to practice nursing in his/her country.
-</div>
-
-<p>
-الممرض هو الشخص الذي أكمل برنامجًا أساسيًا وعامًا في تعليم التمريض، وحصل على تصريح من الجهة التنظيمية المختصة لممارسة التمريض في بلده.
-</p>
-
-<div class="summary">
-
-<p>
-Nursing Education
-</p>
-
-<p>⬇️</p>
-
-<p>
-يكمل تعليم التمريض الأساسي.
-</p>
-
-<p>
-Authorization
-</p>
-
-<p>⬇️</p>
-
-<p>
-يحصل على التصريح المناسب لممارسة المهنة.
-</p>
+<p id="lessonText"></p>
 
 </div>
 
 
-<h3>
-4️⃣ Aim of Nursing
-</h3>
-
-<p>
-أهداف التمريض
-</p>
-
-<ol>
-<li>To promote health → تعزيز الصحة.</li>
-<li>To prevent illness → الوقاية من المرض.</li>
-<li>To restore health → استعادة الصحة.</li>
-<li>To facilitate coping with disability or death → مساعدة المريض على التكيف مع الإعاقة أو الوفاة.</li>
-</ol>
-
-<div class="summary">
-
-<strong>🧠 ملخص الدرس الأول</strong>
-
-<p>
-Protection → الحماية
-</p>
-
-<p>
-Promotion → التعزيز
-</p>
-
-<p>
-Optimization → التحسين
-</p>
-
-<p>
-Prevention → الوقاية
-</p>
-
-<p>
-Alleviation → تخفيف المعاناة
-</p>
-
-<p>
-Advocacy → الدفاع عن المريض
-</p>
-
-<hr>
-
-<p>
-<strong>Nursing = Art + Science</strong>
-</p>
-
-<p>
-<strong>Nursing Aims = Promote + Prevent + Restore + Cope</strong>
-</p>
-
-</div>
-
-<button class="close-btn" onclick="closeLesson('lesson1')">
-إغلاق الدرس
-</button>
-
 </div>
 
 
-<!-- ================================================= -->
-<!-- LESSON 2 -->
-<!-- ================================================= -->
+<!-- ================= FOOTER ================= -->
 
-<div id="lesson2" class="lesson-content">
+<footer>
 
-<h2>
-🩺 الدرس الثاني: Nursing Profession & Nursing Process
-</h2>
-
-<h3>
-1️⃣ The Nursing Profession
-</h3>
-
-<p>
-مهنة التمريض
-</p>
-
-<p>
-التمريض مهنة لها مجالات عمل متعددة، ومش مقتصرة على العمل داخل المستشفى فقط.
-</p>
-
-<ul>
-<li>Clinical Practice → الممارسة السريرية.</li>
-<li>Education → التعليم.</li>
-<li>Research → البحث العلمي.</li>
-<li>Management → الإدارة.</li>
-<li>Administration → إدارة وتنظيم الخدمات.</li>
-<li>Entrepreneurship → ريادة الأعمال.</li>
-</ul>
-
-<div class="note">
-
-<strong>⭐ نقطة مهمة:</strong>
+<strong>
+🩺 أساس التمريض
+</strong>
 
 <br>
 
-The patient is the center of your practice.
+منصتك التعليمية لطلاب التمريض
 
 <br>
 
-المريض هو محور ممارسة التمريض.
+© 2026 أساس التمريض
 
-</div>
+</footer>
 
 
-<h3>
-2️⃣ Standards of Nursing Practice
-</h3>
+<script>
 
-<div class="english">
-The nursing process is the foundation of clinical decision making and includes all significant actions taken by nurses in providing care to patients.
-</div>
+/* =========================================
+   فتح الدرس داخل نفس الملف
+   ========================================= */
 
-<p>
-عملية التمريض هي أساس اتخاذ القرارات السريرية، وتشمل جميع الإجراءات المهمة التي يقوم بها الممرض أثناء تقديم الرعاية للمرضى.
-</p>
+function openLesson(title,text,icon){
 
+    const view = document.getElementById("lessonView");
 
-<h3>
-🔄 Nursing Process
-</h3>
+    const titleElement = document.getElementById("lessonTitle");
 
-<p>
-خطوات عملية التمريض
-</p>
+    const textElement = document.getElementById("lessonText");
 
-<ol>
-<li>Assessment → التقييم / جمع البيانات.</li>
-<li>Diagnosis → التشخيص.</li>
-<li>Outcomes Identification → تحديد النتائج المتوقعة.</li>
-<li>Planning → التخطيط.</li>
-<li>Implementation → التنفيذ.</li>
-<li>Evaluation → التقييم.</li>
-</ol>
+    titleElement.innerHTML = icon + " " + title;
 
-<div class="summary">
+    textElement.innerHTML = text;
 
-<strong>🧠 احفظ Nursing Process</strong>
+    view.style.display = "block";
 
-<p>
-A → D → O → P → I → E
-</p>
+    setTimeout(function(){
 
-<p>
-Assessment → Diagnosis → Outcomes → Planning → Implementation → Evaluation
-</p>
+        view.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
 
-</div>
+    },100);
 
+}
 
-<h3>
-1️⃣ Assessment
-</h3>
+</script>
 
-<div class="english">
-The registered nurse collects comprehensive data pertinent to the patient’s health and/or the situation.
-</div>
 
-<p>
-الممرض يقوم بجمع بيانات شاملة مرتبطة بصحة المريض أو حالته.
-</p>
+</body>
 
-<h3>
-2️⃣ Diagnosis
-</h3>
-
-<div class="english">
-The registered nurse analyzes the assessment data to determine the diagnoses or issues.
-</div>
-
-<p>
-يقوم الممرض بتحليل بيانات الـAssessment لتحديد التشخيص أو المشكلات الموجودة لدى المريض.
-</p>
-
-<h3>
-3️⃣ Outcomes Identification
-</h3>
-
-<div class="english">
-The registered nurse identifies expected outcomes for a plan individualized to the patient or the situation.
-</div>
-
-<p>
-يحدد الممرض النتائج المتوقعة التي تناسب المريض وحالته بشكل فردي.
-</p>
-
-<h3>
-4️⃣ Planning
-</h3>
-
-<div class="english">
-The registered nurse develops a plan that prescribes strategies and alternatives to attain expected outcomes.
-</div>
-
-<p>
-يضع الممرض خطة تتضمن الاستراتيجيات والبدائل اللازمة للوصول إلى النتائج المتوقعة.
-</p>
-
-<h3>
-5️⃣ Implementation
-</h3>
-
-<div class="english">
-The registered nurse implements the identified plan.
-</div>
-
-<p>
-يقوم الممرض بتنفيذ الخطة المحددة.
-</p>
-
-<h3>
-6️⃣ Evaluation
-</h3>
-
-<div class="english">
-The nurse evaluates progress toward attainment of outcomes.
-</div>
-
-<p>
-يقوم الممرض بتقييم مدى التقدم نحو تحقيق النتائج المطلوبة.
-</p>
-
-<button class="close-btn" onclick="closeLesson('lesson2')">
-إغلاق الدرس
-</button>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- LESSON 3 -->
-<!-- ================================================= -->
-
-<div id="lesson3" class="lesson-content">
-
-<h2>
-🩺 الدرس الثالث: Standards of Professional Performance & The Role of the Nurse
-</h2>
-
-<h3>
-1️⃣ Standards of Professional Performance
-</h3>
-
-<div class="english">
-The American Nurses Association (ANA) Standards of Professional Performance describe a competent level of behavior in the professional role.
-</div>
-
-<p>
-تصف معايير الأداء المهني لجمعية الممرضين الأمريكية ANA مستوى كفء من السلوك في الدور المهني للممرض.
-</p>
-
-<h3>
-🔹 Standards of Professional Performance</h3>
-
-<ul>
-<li>Ethics → الأخلاقيات</li>
-<li>Education → التعليم</li>
-<li>Evidence-Based Practice and Research → الممارسة القائمة على الأدلة والبحث العلمي</li>
-<li>Quality of Practice → جودة الممارسة</li>
-<li>Communication → التواصل</li>
-<li>Leadership → القيادة</li>
-<li>Collaboration → التعاون</li>
-<li>Professional Practice Evaluation → تقييم الممارسة المهنية</li>
-<li>Resources → الموارد</li>
-<li>Environmental Health → الصحة البيئية</li>
-</ul>
-
-<h3>2️⃣ The Role of the Nurse and Its Functions</h3>
-
-<div class="english">
-Nurses provide care and comfort for patients in all health care settings and concern for meeting their patients’ needs.
-</div>
-
-<p>
-يقدم الممرضون الرعاية والراحة للمرضى في جميع أماكن الرعاية الصحية، ويهتمون بتلبية احتياجات مرضاهم.
-</p>
-
-<h3>
-🔄 Roles of the Nurse
-</h3>
-
-<ul>
-<li>Direct Care Provider / Caregiver → مقدم الرعاية المباشرة</li>
-<li>Communicator → المتواصل</li>
-<li>Teacher / Educator → المعلم / المثقف الصحي</li>
-<li>Counselor → المرشد</li>
-<li>Leader → القائد</li>
-<li>Researcher → الباحث</li>
-<li>Advocate → المدافع عن حقوق المريض</li>
-<li>Collaborator → المتعاون</li>
-</ul>
-
-<div class="summary">
-
-<strong>🧠 ملخص الدرس الثالث</strong>
-
-<p>
-Standards of Professional Performance:
-</p>
-
-<p>
-Ethics → Education → Evidence-Based Practice and Research → Quality of Practice → Communication → Leadership → Collaboration → Professional Practice Evaluation → Resources → Environmental Health
-</p>
-
-<p>
-Roles of the Nurse:
-</p>
-
-<p>
-Direct Care Provider → Communicator → Teacher → Counselor → Leader → Researcher → Advocate → Collaborator
-</p>
-
-</div>
-
-<button class="close-btn" onclick="closeLesson('lesson3')">
-إغلاق الدرس
-</button>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- LESSON 4 -->
-<!-- ================================================= -->
-
-<div id="lesson4" class="lesson-content">
-
-<h2>
-🩺 الدرس الرابع: Ethics in Nursing Profession
-</h2>
-
-<h3>
-1️⃣ Ethical Values
-</h3>
-
-<div class="english">
-Ethical values are universal rules of conduct that provide a practical basis for identifying what kinds of actions, intentions, and motives are valued.
-</div>
-
-<p>
-القيم الأخلاقية هي قواعد عامة للسلوك توفر أساسًا عمليًا لتحديد أنواع الأفعال والنوايا والدوافع التي لها قيمة.
-</p>
-
-<h3>
-2️⃣ Definition of Ethics
-</h3>
-
-<div class="english">
-Ethics are moral principles that govern how the person or a group will behave or conduct themselves.
-</div>
-
-<p>
-الأخلاقيات هي مبادئ أخلاقية تحكم كيفية تصرف الشخص أو المجموعة وسلوكهم.
-</p>
-
-<h3>
-3️⃣ Definition of Nursing Ethics
-</h3>
-
-<div class="english">
-Nursing ethics are systematic rules or principles governing right conduct. Each nurse is practiced with the responsibility to adhere to the standards of ethical practice and conduct set by the profession.
-</div>
-
-<p>
-أخلاقيات التمريض هي مجموعة من القواعد أو المبادئ المنظمة التي تحكم السلوك الصحيح. ويكون كل ممرض مسؤولًا عن الالتزام بمعايير الممارسة والسلوك الأخلاقي التي تحددها المهنة.
-</p>
-
-<h3>
-4️⃣ Ethical Principles
-</h3>
-
-<ul>
-<li>Beneficence → الإحسان / فعل الخير</li>
-<li>Nonmaleficence → عدم الإضرار</li>
-<li>Autonomy → الاستقلالية</li>
-<li>Justice → العدالة</li>
-<li>Veracity → الصدق</li>
-<li>Fidelity → الوفاء / الإخلاص</li>
-<li>Integrity → النزاهة</li>
-</ul>
-
-<h3>Beneficence</h3>
-
-<div class="english">
-Beneficence: Acting for the good and welfare of others and including such attributes as kindness and charity.
-</div>
-
-<h3>Nonmaleficence</h3>
-
-<div class="english">
-Nonmaleficence: Acting in such a way as to prevent harm to others or to inflict the minimal harm possible.
-</div>
-
-<h3>Autonomy</h3>
-
-<div class="english">
-Autonomy: Recognizing the individual’s right to self-determination and decision-making.
-</div>
-
-<h3>Justice</h3>
-
-<div class="english">
-Justice: Acting in fairness to all individuals, treating others equally and showing all individuals the same degree of respect and concern.
-</div>
-
-<h3>Veracity</h3>
-
-<div class="english">
-Veracity: Being truthful, trustworthy, and accurate in all interactions with others.
-</div>
-
-<h3>Fidelity</h3>
-
-<div class="english">
-Fidelity: Being loyal and faithful to individuals who place trust in the nurse.
-</div>
-
-<h3>Integrity</h3>
-
-<div class="english">
-Integrity: Acting consistently with honesty and basing actions on moral standards.
-</div>
-
-<h3>
-5️⃣ International Council of Nurses Code of Ethics
-</h3>
-
-<ul>
-<li>Nurses and People → الممرضون والناس</li>
-<li>Nurses and Practice → الممرضون والممارسة</li>
-<li>Nurses and the Profession → الممرضون والمهنة</li>
-<li>Nurses and Co-workers → الممرضون وزملاء العمل</li>
-</ul>
-
-<div class="summary">
-
-<strong>⭐ للحفظ:</strong>
-
-<p>Beneficence → Do Good</p>
-<p>Nonmaleficence → Do No Harm</p>
-<p>Autonomy → Patient’s Right to Decide</p>
-<p>Justice → Fairness</p>
-<p>Veracity → Truthfulness</p>
-<p>Fidelity → Loyalty</p>
-<p>Integrity → Honesty</p>
-
-</div>
-
-<button class="close-btn" onclick="closeLesson('lesson4')">
-إغلاق الدرس
-</button>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- LESSON 5 -->
-<!-- ================================================= -->
-
-<div id="lesson5" class="lesson-content">
-
-<h2>
-🩺 الدرس الخامس: Patient Safety
-</h2>
-
-<h3>
-1️⃣ Safety
-</h3>
-
-<div class="english">
-Safety is often defined as freedom from psychological and physical injury.
-</div>
-
-<p>
-غالبًا ما تُعرَّف السلامة بأنها التحرر من الإصابة النفسية والجسدية.
-</p>
-
-<h3>
-2️⃣ Definition of Patient Safety
-</h3>
-
-<div class="english">
-The World Health Organization (WHO) defined patient safety as the prevention of errors and adverse effects to patients associated with health care.
-</div>
-
-<p>
-عرّفت منظمة الصحة العالمية WHO سلامة المريض بأنها الوقاية من الأخطاء والآثار الضارة التي قد تحدث للمرضى والمرتبطة بالرعاية الصحية.
-</p>
-
-<h3>
-3️⃣ Purpose of Patient Safety
-</h3>
-
-<div class="english">
-It aims to prevent and reduce risks, errors and harm that occur to patients during provision of health care.
-</div>
-
-<p>
-تهدف سلامة المريض إلى منع وتقليل المخاطر والأخطاء والأضرار التي تحدث للمرضى أثناء تقديم الرعاية الصحية.
-</p>
-
-<p>
-وكمان من أساسيات سلامة المريض التحسين المستمر من خلال التعلم من الأخطاء والأحداث الضارة وعدم تكرارها.
-</p>
-
-<h3>
-4️⃣ Factors Influencing Patient Safety
-</h3>
-
-<ul>
-<li>Age and Development → العمر والتط
+    </html>
